@@ -79,13 +79,13 @@ public class ShiftRightClickSkybreakerProcedure extends StormlightModModElements
 				world.getWorld().getServer().getCommandManager().handleCommand(
 						new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
 								new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
-						"/summon area_effect_cloud ~ ~.75 ~ {CustomName:\u201D\\\u201DDivision\\\u201D\u201D,Radius:5f,Duration:1200,RadiusOnUse:-0.01f,RadiusPerTick:-0.0002f,ReapplicationDelay:20,Effects:[{Duration:1280,Id:20b,Amplifier:5b},{Duration:40,Id:7b,Amplifier:1b}]}");
+						"/summon area_effect_cloud ~ ~.75 ~ {Radius:5f,Duration:1200,RadiusOnUse:-0.01f,RadiusPerTick:-0.0002f,ReapplicationDelay:20,Effects:[{Duration:1280,Id:20b,Amplifier:5b},{Duration:40,Id:7b,Amplifier:1b}]}");
 			}
 			if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
 				world.getWorld().getServer().getCommandManager().handleCommand(
 						new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
 								new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
-						"/fill ~5 ~5 ~5 ~-5 ~-5 ~-5 minecraft:dirt_path 0 replace grass_block");
+						"/fill ~5 ~5 ~5 ~-5 ~-5 ~-5 minecraft:grass_path replace grass_block");
 			}
 			if (world instanceof ServerWorld) {
 				((ServerWorld) world).spawnParticle(GlorySprenParticle.particle, x, y, z, (int) 10, 1, 1, 1, (-0.5));
