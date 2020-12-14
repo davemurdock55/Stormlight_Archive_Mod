@@ -66,7 +66,7 @@ public class InfusedDiamondChipItem extends StormlightModModElements.ModElement 
 		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
 			list.add(new StringTextComponent(
-					"A small, glass sphere with a small piece of diamond set inside of it. The gem glows brightly with the light of a tiny storm."));
+					"A small, glass sphere with a small piece of diamond set inside of it. The gem glows brightly with the light of a tiny storm"));
 		}
 
 		@Override

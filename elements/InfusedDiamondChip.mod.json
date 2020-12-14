@@ -24,7 +24,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInfo": [
-      "A small, glass sphere with a small piece of diamond set inside of it. The gem glows brightly with the light of a tiny storm."
+      "A small, glass sphere with a small piece of diamond set inside of it. The gem glows brightly with the light of a tiny storm"
     ],
     "hasGlow": true,
     "guiBoundTo": "<NONE>",
