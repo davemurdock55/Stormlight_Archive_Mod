@@ -1,0 +1,21 @@
+{
+  "_fv": 13,
+  "_type": "fluid",
+  "definition": {
+    "name": "Shadesbeads",
+    "textureStill": "shadesmarbeadsdark",
+    "textureFlowing": "shadesmarbeadstex1",
+    "luminosity": 0,
+    "density": 2000,
+    "viscosity": 2000,
+    "isGas": false,
+    "type": "WATER",
+    "generateBucket": true,
+    "creativeTab": {
+      "value": "MISC"
+    },
+    "frequencyOnChunks": 5,
+    "spawnWorldTypes": [],
+    "restrictionBiomes": []
+  }
+}

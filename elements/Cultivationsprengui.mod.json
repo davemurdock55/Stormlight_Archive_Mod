@@ -1,0 +1,12 @@
+{
+  "_fv": 13,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "C",
+    "keyBindingName": "Cultivationsprenguikey",
+    "keyBindingCategoryKey": "misc",
+    "onKeyPressed": {
+      "name": "CultivationsprenguiOnKeyPressed"
+    }
+  }
+}

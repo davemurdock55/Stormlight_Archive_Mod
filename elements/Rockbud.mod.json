@@ -1,0 +1,57 @@
+{
+  "_fv": 13,
+  "_type": "plant",
+  "definition": {
+    "renderType": 2,
+    "texture": "rockbud",
+    "textureBottom": "",
+    "customModelName": "rockbud:default",
+    "itemTexture": "",
+    "particleTexture": "",
+    "plantType": "normal",
+    "staticPlantGenerationType": "Grass",
+    "growapableSpawnType": "Plains",
+    "growapableMaxHeight": 1,
+    "doublePlantGenerationType": "Flower",
+    "name": "Rockbud",
+    "specialInfo": [
+      "Rockbuds can be found on the shattered plains"
+    ],
+    "creativeTab": {
+      "value": "DECORATIONS"
+    },
+    "hardness": 1.0,
+    "resistance": 1.0,
+    "luminance": 0.0,
+    "unbreakable": false,
+    "soundOnStep": {
+      "value": "PLANT"
+    },
+    "useLootTableForDrops": false,
+    "customDrop": {
+      "value": "Blocks.WHEAT"
+    },
+    "dropAmount": 2,
+    "forceTicking": false,
+    "emissiveRendering": false,
+    "hasTileEntity": false,
+    "isReplaceable": false,
+    "colorOnMap": "GRASS",
+    "creativePickItem": {
+      "value": ""
+    },
+    "offsetType": "XZ",
+    "aiPathNodeType": "DEFAULT",
+    "flammability": 1,
+    "fireSpreadSpeed": 1,
+    "frequencyOnChunks": 4,
+    "spawnWorldTypes": [
+      "Surface"
+    ],
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:ShatteredPlains"
+      }
+    ]
+  }
+}

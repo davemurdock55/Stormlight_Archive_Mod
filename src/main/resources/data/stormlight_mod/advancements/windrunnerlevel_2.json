@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "stormlight_mod:unknown_element"
+    },
+    "title": {
+      "translate": "advancements.windrunnerlevel_2.title"
+    },
+    "description": {
+      "translate": "advancements.windrunnerlevel_2.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "windrunnerlevel_2": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 5
+  },
+  "parent": "stormlight_mod:windrunner"
+}

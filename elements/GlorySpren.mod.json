@@ -1,0 +1,19 @@
+{
+  "_fv": 13,
+  "_type": "particle",
+  "definition": {
+    "texture": "defaultsphere.png",
+    "animate": false,
+    "frameDuration": 1,
+    "width": 0.2,
+    "height": 0.2,
+    "scale": 1.0,
+    "speedFactor": 1.0,
+    "gravity": -0.30000000000000004,
+    "maxAge": 7,
+    "maxAgeDiff": 0,
+    "canCollide": true,
+    "alwaysShow": true,
+    "renderType": "LIT"
+  }
+}

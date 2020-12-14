@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "stormlight_mod:blocks/rockbud2",
+    "particle": "stormlight_mod:blocks/rockbud2"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "stormlight_mod:blocks/shadesmarobsidian",
+    "up": "stormlight_mod:blocks/shadesmarobsidian",
+    "north": "stormlight_mod:blocks/shadesmarobsidian",
+    "east": "stormlight_mod:blocks/shadesmarobsidian",
+    "south": "stormlight_mod:blocks/shadesmarobsidian",
+    "west": "stormlight_mod:blocks/shadesmarobsidian",
+    "particle": "stormlight_mod:blocks/shadesmarobsidian"
+  }
+}

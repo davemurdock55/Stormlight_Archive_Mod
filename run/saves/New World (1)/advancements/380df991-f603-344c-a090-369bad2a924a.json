@@ -1,0 +1,59 @@
+{
+  "minecraft:adventure/voluntary_exile": {
+    "criteria": {
+      "voluntary_exile": "2020-12-12 15:18:37 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/tnt": {
+    "criteria": {
+      "has_gunpowder": "2020-12-12 15:24:21 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2020-12-12 15:24:19 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "minecraft:creeper": "2020-12-12 15:24:19 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "minecraft:creeper": "2020-12-12 15:24:19 -0700"
+    },
+    "done": false
+  },
+  "stormlight_mod:radiant": {
+    "criteria": {
+      "radiant": "2020-12-12 15:18:44 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:beach": "2020-12-12 15:18:17 -0700",
+      "minecraft:river": "2020-12-12 15:19:24 -0700",
+      "minecraft:plains": "2020-12-12 14:56:39 -0700"
+    },
+    "done": false
+  },
+  "minecraft:husbandry/tame_an_animal": {
+    "criteria": {
+      "tamed_animal": "2020-12-12 15:19:07 -0700"
+    },
+    "done": true
+  },
+  "stormlight_mod:skybreakerlevel_1": {
+    "criteria": {
+      "skybreakerlevel_1": "2020-12-12 15:18:44 -0700"
+    },
+    "done": true
+  },
+  "DataVersion": 2230
+}

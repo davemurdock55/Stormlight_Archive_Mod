@@ -1,0 +1,43 @@
+{
+  "_fv": 13,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "text": "Go to Shadesmar",
+          "onClick": {
+            "name": "OathGateProcedure"
+          },
+          "width": 135,
+          "height": 20,
+          "name": "Go to Shadesmar",
+          "x": 145,
+          "y": 106
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Go to Urithiru",
+          "onClick": {
+            "name": "TeleportToUrithiru"
+          },
+          "width": 135,
+          "height": 20,
+          "name": "Go to Urithiru",
+          "x": 144,
+          "y": 78
+        }
+      }
+    ]
+  }
+}

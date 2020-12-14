@@ -1,0 +1,7 @@
+{
+  "_fv": 13,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><xml xmlns=\"https://developers.google.com/blockly/xml\"><block deletable=\"false\" type=\"event_trigger\" x=\"143\" y=\"22\"><field name=\"trigger\">no_ext_trigger</field><next><block type=\"variables_set_itemstack\"><field name=\"VAR\">global:sphereTypeInfused</field><value name=\"VAL\"><block type=\"mcitem_all\"><field name=\"value\">CUSTOM:InfusedSmokestoneBroam</field></block></value><next><block type=\"variables_set_itemstack\"><field name=\"VAR\">global:sphereTypeDun</field><value name=\"VAL\"><block type=\"mcitem_all\"><field name=\"value\">CUSTOM:DunSmokestoneBroam</field></block></value><next><block type=\"call_procedure\"><field name=\"procedure\">InfusedBroamRightClicked</field></block></next></block></next></block></next></block></xml>"
+  }
+}

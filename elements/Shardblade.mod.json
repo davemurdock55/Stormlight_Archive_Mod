@@ -1,0 +1,31 @@
+{
+  "_fv": 13,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "shardblade1",
+    "customModelName": "Normal",
+    "name": "Shardblade",
+    "specialInfo": [
+      "Long sword that nobody knows how to make, it is a very dangerous sword that can cut through stone easily"
+    ],
+    "creativeTab": {
+      "value": "COMBAT"
+    },
+    "toolType": "MultiTool",
+    "harvestLevel": 3,
+    "efficiency": 10.5,
+    "attackSpeed": 1.0,
+    "enchantability": 2,
+    "damageVsEntity": 31.0,
+    "usageCount": 0,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "ShardbladeToolInInventoryTick"
+    }
+  }
+}

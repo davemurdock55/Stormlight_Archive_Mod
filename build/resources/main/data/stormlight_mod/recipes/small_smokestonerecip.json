@@ -1,0 +1,9 @@
+{
+  "group": "stormlight_mod",
+  "type": "minecraft:stonecutting",
+  "count": 10,
+  "ingredient": {
+    "item": "stormlight_mod:medium_smokestone_gem"
+  },
+  "result": "stormlight_mod:small_smokestonerecipe"
+}

@@ -1,0 +1,20 @@
+{
+  "_fv": 13,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Stone cutting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 10,
+    "group": "",
+    "recipeShapeless": false,
+    "stoneCuttingInputStack": {
+      "value": "CUSTOM:MediumSmokestoneGem"
+    },
+    "stoneCuttingReturnStack": {
+      "value": "CUSTOM:SmallSmokestonerecipe"
+    },
+    "name": "small_smokestonerecip",
+    "namespace": "mod"
+  }
+}

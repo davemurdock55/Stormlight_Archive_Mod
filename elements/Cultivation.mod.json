@@ -1,0 +1,56 @@
+{
+  "_fv": 13,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": true,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "I will Remeber",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "I will Remeber",
+          "x": 178,
+          "y": 74
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "SAY THE WORDS",
+          "onClick": {
+            "name": "CultivationSprenspawning"
+          },
+          "width": 130,
+          "height": 20,
+          "name": "SAY THE WORDS",
+          "x": 148,
+          "y": 90
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "x",
+          "onClick": {
+            "name": "CloseGUI"
+          },
+          "width": 10,
+          "height": 20,
+          "name": "x",
+          "x": 130,
+          "y": 41
+        }
+      }
+    ]
+  }
+}

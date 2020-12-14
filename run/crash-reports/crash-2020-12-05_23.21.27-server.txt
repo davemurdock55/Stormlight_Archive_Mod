@@ -1,0 +1,105 @@
+---- Minecraft Crash Report ----
+// I let you down. Sorry :(
+
+Time: 12/5/20 11:21 PM
+Description: Ticking player
+
+java.lang.NullPointerException: Ticking player
+	at net.minecraft.advancements.PlayerAdvancements.startProgress(PlayerAdvancements.java:324) ~[?:?] {re:classloading}
+	at net.minecraft.advancements.PlayerAdvancements.getProgress(PlayerAdvancements.java:317) ~[?:?] {re:classloading}
+	at net.mcreator.stormlightmod.procedures.InfusedMarkRightClickedProcedure.executeProcedure(InfusedMarkRightClickedProcedure.java:96) ~[?:?] {re:classloading}
+	at net.mcreator.stormlightmod.procedures.InfusedAmethystMarkRightClickedProcedure.executeProcedure(InfusedAmethystMarkRightClickedProcedure.java:52) ~[?:?] {re:classloading}
+	at net.mcreator.stormlightmod.item.InfusedAmethystMarkItem$ItemCustom.inventoryTick(InfusedAmethystMarkItem.java:82) ~[?:?] {re:classloading}
+	at net.minecraft.item.ItemStack.inventoryTick(ItemStack.java:478) ~[?:?] {re:classloading}
+	at net.minecraft.entity.player.PlayerInventory.tick(PlayerInventory.java:292) ~[?:?] {re:classloading}
+	at net.minecraft.entity.player.PlayerEntity.livingTick(PlayerEntity.java:532) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.entity.LivingEntity.tick(LivingEntity.java:2264) ~[?:?] {re:classloading}
+	at net.minecraft.entity.player.PlayerEntity.tick(PlayerEntity.java:237) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.entity.player.ServerPlayerEntity.playerTick(ServerPlayerEntity.java:379) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.network.play.ServerPlayNetHandler.tick(ServerPlayNetHandler.java:188) ~[?:?] {re:classloading}
+	at net.minecraft.network.NetworkManager.tick(NetworkManager.java:250) ~[?:?] {re:classloading}
+	at net.minecraft.network.NetworkSystem.tick(NetworkSystem.java:152) ~[?:?] {re:classloading}
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:903) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:821) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:120) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:662) [?:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_265] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraft.advancements.PlayerAdvancements.startProgress(PlayerAdvancements.java:324)
+	at net.minecraft.advancements.PlayerAdvancements.getProgress(PlayerAdvancements.java:317)
+	at net.mcreator.stormlightmod.procedures.InfusedMarkRightClickedProcedure.executeProcedure(InfusedMarkRightClickedProcedure.java:96)
+	at net.mcreator.stormlightmod.procedures.InfusedAmethystMarkRightClickedProcedure.executeProcedure(InfusedAmethystMarkRightClickedProcedure.java:52)
+	at net.mcreator.stormlightmod.item.InfusedAmethystMarkItem$ItemCustom.inventoryTick(InfusedAmethystMarkItem.java:82)
+	at net.minecraft.item.ItemStack.inventoryTick(ItemStack.java:478)
+	at net.minecraft.entity.player.PlayerInventory.tick(PlayerInventory.java:292)
+	at net.minecraft.entity.player.PlayerEntity.livingTick(PlayerEntity.java:532)
+	at net.minecraft.entity.LivingEntity.tick(LivingEntity.java:2264)
+	at net.minecraft.entity.player.PlayerEntity.tick(PlayerEntity.java:237)
+
+-- Player being ticked --
+Details:
+	Entity Type: minecraft:player (net.minecraft.entity.player.ServerPlayerEntity)
+	Entity ID: 48
+	Entity Name: Dev
+	Entity's Exact location: -80.40, 70.00, 64.24
+	Entity's Block location: World: (-81,70,64), Chunk: (at 15,4,0 in -6,4; contains blocks -96,0,64 to -81,255,79), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.entity.player.ServerPlayerEntity.playerTick(ServerPlayerEntity.java:379)
+	at net.minecraft.network.play.ServerPlayNetHandler.tick(ServerPlayNetHandler.java:188)
+	at net.minecraft.network.NetworkManager.tick(NetworkManager.java:250)
+
+-- Ticking connection --
+Details:
+	Connection: net.minecraft.network.NetworkManager@780fca77
+Stacktrace:
+	at net.minecraft.network.NetworkSystem.tick(NetworkSystem.java:152)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:903)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:821)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:120)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:662)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.15.2
+	Minecraft Version ID: 1.15.2
+	Operating System: Mac OS X (x86_64) version 10.16
+	Java Version: 1.8.0_265, BellSoft
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), BellSoft
+	Memory: 804541376 bytes (767 MB) / 2208301056 bytes (2106 MB) up to 3817865216 bytes (3641 MB)
+	CPUs: 8
+	JVM Flags: 1 total; -Xss1M
+	ModLauncher: 5.1.2+70+master.2845bb9
+	ModLauncher launch target: fmluserdevclient
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		/eventbus-2.2.0-service.jar eventbus PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar runtime_enum_extender PLUGINSERVICE 
+		/accesstransformers-2.1.1-shadowed.jar accesstransformer PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar capability_inject_definalize PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar runtimedistcleaner PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar fml TRANSFORMATIONSERVICE 
+	FML: 31.2
+	Forge: net.minecraftforge:31.2.0
+	FML Language Providers: 
+		javafml@31.2
+		minecraft@1
+	Mod List: 
+		client-extra.jar Minecraft {minecraft@1.15.2 DONE}
+		forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar Forge {forge@31.2.0 DONE}
+		main Stormlight Mod {stormlight_mod@1.0.0 DONE}
+	Player Count: 1 / 8; [ServerPlayerEntity['Dev'/48, l='New World', x=-80.40, y=70.00, z=64.24]]
+	Data Packs: vanilla, mod:forge (incompatible), mod:stormlight_mod
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'

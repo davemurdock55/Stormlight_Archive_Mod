@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "stormlight_mod:dun_sapphire_broam"
+    },
+    "title": {
+      "translate": "advancements.windrunner.title"
+    },
+    "description": {
+      "translate": "advancements.windrunner.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "windrunner": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 5
+  },
+  "parent": "stormlight_mod:radiant"
+}

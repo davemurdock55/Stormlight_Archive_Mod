@@ -1,0 +1,9 @@
+{
+  "group": "stormlight_mod",
+  "type": "minecraft:stonecutting",
+  "count": 5,
+  "ingredient": {
+    "item": "stormlight_mod:amethystgem"
+  },
+  "result": "stormlight_mod:medium_amethystgem"
+}

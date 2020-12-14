@@ -1,0 +1,25 @@
+{
+  "_fv": 13,
+  "_type": "potion",
+  "definition": {
+    "name": "Gravitation",
+    "effectName": "Gravitation",
+    "icon": "gravitation_glyph.png",
+    "color": {
+      "value": -16777216,
+      "falpha": 0.0
+    },
+    "isInstant": true,
+    "isBad": false,
+    "isBenefitical": false,
+    "registerPotionType": true,
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "onStarted": {
+      "name": "GravitationPotionStartedapplied"
+    },
+    "onExpired": {
+      "name": "GravitationPotionExpires"
+    }
+  }
+}

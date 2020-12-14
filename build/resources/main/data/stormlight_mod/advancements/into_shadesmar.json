@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "stormlight_mod:shadesmar_1"
+    },
+    "title": {
+      "translate": "advancements.into_shadesmar.title"
+    },
+    "description": {
+      "translate": "advancements.into_shadesmar.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "into_shadesmar": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "stormlight_mod:shadesmar_1"
+      }
+    }
+  },
+  "rewards": {
+    "experience": 10
+  },
+  "parent": "minecraft:end/enter_end_gateway"
+}

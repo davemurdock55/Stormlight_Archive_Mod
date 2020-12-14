@@ -1,0 +1,9 @@
+{
+  "group": "stormlight_mod",
+  "type": "minecraft:stonecutting",
+  "count": 5,
+  "ingredient": {
+    "item": "stormlight_mod:zircon_gem"
+  },
+  "result": "stormlight_mod:medium_zircon_gem"
+}

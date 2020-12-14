@@ -1,0 +1,115 @@
+---- Minecraft Crash Report ----
+// I'm sorry, Dave.
+
+Time: 10/14/20 4:53 PM
+Description: Exception generating new chunk
+
+java.lang.NullPointerException: Exception generating new chunk
+	at net.minecraft.world.spawner.WorldEntitySpawner.performWorldGenSpawning(WorldEntitySpawner.java:261) ~[?:?] {re:classloading}
+	at net.minecraft.world.gen.OverworldChunkGenerator.spawnMobs(OverworldChunkGenerator.java:52) ~[?:?] {re:classloading}
+	at net.minecraft.world.chunk.ChunkStatus.lambda$static$12(ChunkStatus.java:86) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.chunk.ChunkStatus$ISelectiveWorker.doWork(ChunkStatus.java:241) ~[?:?] {re:classloading}
+	at net.minecraft.world.chunk.ChunkStatus.doGenerationWork(ChunkStatus.java:195) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.server.ChunkManager.lambda$null$18(ChunkManager.java:535) ~[?:?] {re:classloading}
+	at com.mojang.datafixers.util.Either$Left.map(Either.java:38) ~[datafixerupper-2.0.24.jar:?] {}
+	at net.minecraft.world.server.ChunkManager.lambda$func_223156_b$20(ChunkManager.java:533) ~[?:?] {re:classloading}
+	at java.util.concurrent.CompletableFuture.uniCompose(CompletableFuture.java:966) ~[?:1.8.0_252] {}
+	at java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:940) ~[?:1.8.0_252] {}
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:456) ~[?:1.8.0_252] {}
+	at net.minecraft.world.chunk.ChunkTaskPriorityQueueSorter.lambda$null$1(ChunkTaskPriorityQueueSorter.java:44) ~[?:?] {re:classloading}
+	at net.minecraft.util.concurrent.DelegatedTaskExecutor.driveOne(DelegatedTaskExecutor.java:83) ~[?:?] {re:classloading}
+	at net.minecraft.util.concurrent.DelegatedTaskExecutor.driveWhile(DelegatedTaskExecutor.java:123) ~[?:?] {re:classloading}
+	at net.minecraft.util.concurrent.DelegatedTaskExecutor.run(DelegatedTaskExecutor.java:91) ~[?:?] {re:classloading}
+	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402) ~[?:1.8.0_252] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289) ~[?:1.8.0_252] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056) ~[?:1.8.0_252] {}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692) ~[?:1.8.0_252] {}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157) ~[?:1.8.0_252] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraft.world.spawner.WorldEntitySpawner.performWorldGenSpawning(WorldEntitySpawner.java:261)
+	at net.minecraft.world.gen.OverworldChunkGenerator.spawnMobs(OverworldChunkGenerator.java:52)
+	at net.minecraft.world.chunk.ChunkStatus.lambda$static$12(ChunkStatus.java:86)
+	at net.minecraft.world.chunk.ChunkStatus$ISelectiveWorker.doWork(ChunkStatus.java:241)
+	at net.minecraft.world.chunk.ChunkStatus.doGenerationWork(ChunkStatus.java:195)
+
+-- Chunk to be generated --
+Details:
+	Location: 11,0
+	Position hash: 11
+	Generator: net.minecraft.world.gen.OverworldChunkGenerator@3e62430b
+Stacktrace:
+	at net.minecraft.world.server.ChunkManager.lambda$null$18(ChunkManager.java:535)
+	at com.mojang.datafixers.util.Either$Left.map(Either.java:38)
+	at net.minecraft.world.server.ChunkManager.lambda$func_223156_b$20(ChunkManager.java:533)
+	at java.util.concurrent.CompletableFuture.uniCompose(CompletableFuture.java:966)
+	at java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:940)
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:456)
+	at net.minecraft.world.chunk.ChunkTaskPriorityQueueSorter.lambda$null$1(ChunkTaskPriorityQueueSorter.java:44)
+	at net.minecraft.util.concurrent.DelegatedTaskExecutor.driveOne(DelegatedTaskExecutor.java:83)
+	at net.minecraft.util.concurrent.DelegatedTaskExecutor.driveWhile(DelegatedTaskExecutor.java:123)
+	at net.minecraft.util.concurrent.DelegatedTaskExecutor.run(DelegatedTaskExecutor.java:91)
+
+-- Affected level --
+Details:
+	All players: 1 total; [ServerPlayerEntity['Dev'/109, l='New World 1', x=-1.89, y=84.60, z=-181.13]]
+	Chunk stats: ServerChunkCache: 2292
+	Level dimension: DimensionType{minecraft:overworld}
+	Level name: New World 1
+	Level seed: -5716384845758021408
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: {}
+	Level spawn location: World: (32,64,-223), Chunk: (at 0,4,1 in 2,-14; contains blocks 32,0,-224 to 47,255,-209), Region: (0,-1; contains chunks 0,-32 to 31,-1, blocks 0,0,-512 to 511,255,-1)
+	Level time: 1622 game time, 1622 day time
+	Known server brands: forge
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 133909 (now: false), thunder time: 125616 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:889)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:821)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:120)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:662)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.15.2
+	Minecraft Version ID: 1.15.2
+	Operating System: Mac OS X (x86_64) version 10.15.6
+	Java Version: 1.8.0_252, BellSoft
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), BellSoft
+	Memory: 810819008 bytes (773 MB) / 2236612608 bytes (2133 MB) up to 3817865216 bytes (3641 MB)
+	CPUs: 8
+	JVM Flags: 1 total; -Xss1M
+	ModLauncher: 5.1.2+70+master.2845bb9
+	ModLauncher launch target: fmluserdevclient
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		/eventbus-2.2.0-service.jar eventbus PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar runtime_enum_extender PLUGINSERVICE 
+		/accesstransformers-2.1.1-shadowed.jar accesstransformer PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar capability_inject_definalize PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar runtimedistcleaner PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar fml TRANSFORMATIONSERVICE 
+	FML: 31.2
+	Forge: net.minecraftforge:31.2.0
+	FML Language Providers: 
+		javafml@31.2
+		minecraft@1
+	Mod List: 
+		client-extra.jar Minecraft {minecraft@1.15.2 DONE}
+		forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar Forge {forge@31.2.0 DONE}
+		main Stormlight Mod {stormlight_mod@1.0.0 DONE}
+	Player Count: 1 / 8; [ServerPlayerEntity['Dev'/109, l='New World 1', x=-1.89, y=84.60, z=-181.13]]
+	Data Packs: vanilla, mod:forge (incompatible), mod:stormlight_mod
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'

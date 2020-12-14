@@ -1,0 +1,69 @@
+{
+  "_fv": 13,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": true,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "text": "SAY THE WORDS!",
+          "onClick": {
+            "name": "GetHonorSpregg"
+          },
+          "width": 130,
+          "height": 20,
+          "name": "SAY THE WORDS!",
+          "x": 149,
+          "y": 90
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "cannot protect themselves",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "cannot protect themselves",
+          "x": 151,
+          "y": 72
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "I will protect those who",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "I will protect those who",
+          "x": 153,
+          "y": 61
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "x",
+          "onClick": {
+            "name": "CloseGUI"
+          },
+          "width": 10,
+          "height": 20,
+          "name": "x",
+          "x": 128,
+          "y": 40
+        }
+      }
+    ]
+  }
+}

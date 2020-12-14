@@ -1,0 +1,45 @@
+[13Dec2020 19:12:43.320] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--gameDir, ., --launchTarget, fmluserdevclient, --fml.mcpVersion, 20200515.085601, --fml.mcVersion, 1.15.2, --fml.forgeGroup, net.minecraftforge, --fml.forgeVersion, 31.2.0, --version, MOD_DEV, --assetIndex, 1.15, --assetsDir, /Users/davidmurdock/.mcreator/gradle/caches/forge_gradle/assets, --username, Dev, --accessToken, ❄❄❄❄❄❄❄❄, --userProperties, {}]
+[13Dec2020 19:12:43.325] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 5.1.2+70+master.2845bb9 starting: java version 1.8.0_265 by BellSoft
+[13Dec2020 19:12:43.521] [main/INFO] [net.minecraftforge.fml.loading.FixSSL/CORE]: Added Lets Encrypt root certificates as additional trust
+[13Dec2020 19:12:45.149] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'fmluserdevclient' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, /Users/davidmurdock/.mcreator/gradle/caches/forge_gradle/assets, --assetIndex, 1.15, --username, Dev, --accessToken, ❄❄❄❄❄❄❄❄, --userProperties, {}]
+[13Dec2020 19:12:47.451] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[13Dec2020 19:13:01.001] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.2.1 build 12
+[13Dec2020 19:13:02.078] [modloading-worker-1/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 31.2.0, for MC 1.15.2 with MCP 20200515.085601
+[13Dec2020 19:13:02.079] [modloading-worker-1/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v31.2.0 Initialized
+[13Dec2020 19:13:03.519] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity shardbearer
+[13Dec2020 19:13:03.522] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity nightwatcher
+[13Dec2020 19:13:03.526] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity honor_spren
+[13Dec2020 19:13:03.557] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity parshendiarcher
+[13Dec2020 19:13:03.565] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity elsecallerfused
+[13Dec2020 19:13:03.575] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity windrunnerfused
+[13Dec2020 19:13:03.589] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity high_spren
+[13Dec2020 19:13:03.591] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity truthwatcher_spren
+[13Dec2020 19:13:03.593] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity cultivation_spren
+[13Dec2020 19:13:03.607] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity ink_spren
+[13Dec2020 19:13:03.614] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity axehound
+[13Dec2020 19:13:03.696] [Render thread/INFO] [net.minecraftforge.fml.DeferredWorkQueue/LOADING]: Dispatching synchronous work after CONSTRUCT: 6 jobs
+[13Dec2020 19:13:03.949] [Render thread/INFO] [net.minecraftforge.fml.DeferredWorkQueue/LOADING]: Synchronous work queue completed in 00:00:00.248
+[13Dec2020 19:13:04.090] [Render thread/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity entitybulletparshendiarcher
+[13Dec2020 19:13:04.091] [Render thread/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity entitybulletwindrunnerfused
+[13Dec2020 19:13:04.140] [Render thread/INFO] [net.minecraftforge.registries.GameData/]: Potentially Dangerous alternative prefix `minecraft` for name `shadesmar_1_portal`, expected `stormlight_mod`. This could be a intended override, but in most cases indicates a broken mod.
+[13Dec2020 19:13:04.140] [Render thread/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry PointOfInterestType: The object shadesmar_1_portal has been registered twice for the same name minecraft:shadesmar_1_portal.
+[13Dec2020 19:13:07.498] [Render thread/INFO] [net.minecraft.resources.SimpleReloadableResourceManager/]: Reloading ResourceManager: Default, Mod Resources
+[13Dec2020 19:13:07.653] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
+[13Dec2020 19:13:07.751] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
+[13Dec2020 19:13:09.364] [Render thread/ERROR] [net.minecraft.client.Minecraft/]: Shutdown failure!
+java.lang.NullPointerException: null
+	at net.minecraft.client.renderer.model.ModelManager.close(ModelManager.java:105) ~[forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar:?]
+	at net.minecraft.client.Minecraft.close(Minecraft.java:889) ~[forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar:?]
+	at net.minecraft.client.Minecraft.shutdownMinecraftApplet(Minecraft.java:876) ~[forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:191) ~[forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_265]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_265]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_265]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_265]
+	at net.minecraftforge.userdev.FMLUserdevClientLaunchProvider.lambda$launchService$0(FMLUserdevClientLaunchProvider.java:55) ~[forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar:?]
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-5.1.2.jar:?]
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54) [modlauncher-5.1.2.jar:?]
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72) [modlauncher-5.1.2.jar:?]
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:81) [modlauncher-5.1.2.jar:?]
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:65) [modlauncher-5.1.2.jar:?]
+	at net.minecraftforge.userdev.LaunchTesting.main(LaunchTesting.java:102) [forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar:?]

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "stormlight_mod:blocks/heliodorstoneore",
+    "up": "stormlight_mod:blocks/heliodorstoneore",
+    "north": "stormlight_mod:blocks/heliodorstoneore",
+    "east": "stormlight_mod:blocks/heliodorstoneore",
+    "south": "stormlight_mod:blocks/heliodorstoneore",
+    "west": "stormlight_mod:blocks/heliodorstoneore",
+    "particle": "stormlight_mod:blocks/heliodorstoneore"
+  }
+}

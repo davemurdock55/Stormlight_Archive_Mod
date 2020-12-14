@@ -1,0 +1,9 @@
+{
+  "group": "stormlight_mod",
+  "type": "minecraft:stonecutting",
+  "count": 10,
+  "ingredient": {
+    "item": "stormlight_mod:medium_topazgem"
+  },
+  "result": "stormlight_mod:small_topaz_gem"
+}

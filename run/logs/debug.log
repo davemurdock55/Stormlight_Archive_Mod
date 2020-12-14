@@ -1,0 +1,487 @@
+[13Dec2020 19:12:43.320] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--gameDir, ., --launchTarget, fmluserdevclient, --fml.mcpVersion, 20200515.085601, --fml.mcVersion, 1.15.2, --fml.forgeGroup, net.minecraftforge, --fml.forgeVersion, 31.2.0, --version, MOD_DEV, --assetIndex, 1.15, --assetsDir, /Users/davidmurdock/.mcreator/gradle/caches/forge_gradle/assets, --username, Dev, --accessToken, ❄❄❄❄❄❄❄❄, --userProperties, {}]
+[13Dec2020 19:12:43.325] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 5.1.2+70+master.2845bb9 starting: java version 1.8.0_265 by BellSoft
+[13Dec2020 19:12:43.344] [main/DEBUG] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Found launch services [minecraft,fmldevdata,fmldevclient,fmldevserver,fmluserdevserver,testharness,fmluserdevdata,fmlclient,fmluserdevclient,fmlserver]
+[13Dec2020 19:12:43.357] [main/DEBUG] [cpw.mods.modlauncher.NameMappingServiceHandler/MODLAUNCHER]: Found naming services : [srgtomcp]
+[13Dec2020 19:12:43.369] [main/DEBUG] [cpw.mods.modlauncher.LaunchPluginHandler/MODLAUNCHER]: Found launch plugins: [eventbus,object_holder_definalize,runtime_enum_extender,accesstransformer,capability_inject_definalize,runtimedistcleaner]
+[13Dec2020 19:12:43.380] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Discovering transformation services
+[13Dec2020 19:12:43.388] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Found additional transformation services from discovery services: []
+[13Dec2020 19:12:43.426] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Found transformer services : [fml]
+[13Dec2020 19:12:43.426] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Transformation services loading
+[13Dec2020 19:12:43.428] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Loading service fml
+[13Dec2020 19:12:43.428] [main/DEBUG] [net.minecraftforge.fml.loading.FMLServiceProvider/]: Injecting tracing printstreams for STDOUT/STDERR.
+[13Dec2020 19:12:43.432] [main/DEBUG] [net.minecraftforge.fml.loading.LauncherVersion/CORE]: Found FMLLauncher version 31.2
+[13Dec2020 19:12:43.432] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: FML 31.2 loading
+[13Dec2020 19:12:43.433] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: FML found ModLauncher version : 5.1.2+70+master.2845bb9
+[13Dec2020 19:12:43.433] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: Initializing modjar URL handler
+[13Dec2020 19:12:43.434] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: FML found AccessTransformer version : 2.1.1+55+master.08d32b9
+[13Dec2020 19:12:43.434] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: FML found EventBus version : 2.2.0+59+master.4f71e48
+[13Dec2020 19:12:43.435] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: Found Runtime Dist Cleaner
+[13Dec2020 19:12:43.438] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: FML found CoreMod version : 2.0.3+8+master.ca72757
+[13Dec2020 19:12:43.439] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: Found ForgeSPI package implementation version 2.1.2+9+master.a8b4d92
+[13Dec2020 19:12:43.439] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: Found ForgeSPI package specification 3
+[13Dec2020 19:12:43.521] [main/INFO] [net.minecraftforge.fml.loading.FixSSL/CORE]: Added Lets Encrypt root certificates as additional trust
+[13Dec2020 19:12:43.522] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Loaded service fml
+[13Dec2020 19:12:43.525] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Configuring option handling for services
+[13Dec2020 19:12:43.535] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Transformation services initializing
+[13Dec2020 19:12:43.535] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Initializing transformation service fml
+[13Dec2020 19:12:43.536] [main/DEBUG] [net.minecraftforge.fml.loading.FMLServiceProvider/CORE]: Setting up basic FML game directories
+[13Dec2020 19:12:43.537] [main/DEBUG] [net.minecraftforge.fml.loading.FileUtils/CORE]: Found existing GAMEDIR directory : /Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/run
+[13Dec2020 19:12:43.538] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path GAMEDIR is /Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/run
+[13Dec2020 19:12:43.538] [main/DEBUG] [net.minecraftforge.fml.loading.FileUtils/CORE]: Found existing MODSDIR directory : /Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/run/mods
+[13Dec2020 19:12:43.539] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path MODSDIR is /Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/run/mods
+[13Dec2020 19:12:43.539] [main/DEBUG] [net.minecraftforge.fml.loading.FileUtils/CORE]: Found existing CONFIGDIR directory : /Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/run/config
+[13Dec2020 19:12:43.539] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path CONFIGDIR is /Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/run/config
+[13Dec2020 19:12:43.539] [main/DEBUG] [net.minecraftforge.fml.loading.FMLPaths/CORE]: Path FMLCONFIG is /Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/run/config/fml.toml
+[13Dec2020 19:12:43.540] [main/DEBUG] [net.minecraftforge.fml.loading.FMLServiceProvider/CORE]: Loading configuration
+[13Dec2020 19:12:43.589] [main/DEBUG] [net.minecraftforge.fml.loading.FileUtils/CORE]: Found existing default config directory directory : /Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/run/defaultconfigs
+[13Dec2020 19:12:43.589] [main/DEBUG] [net.minecraftforge.fml.loading.FMLServiceProvider/CORE]: Preparing launch handler
+[13Dec2020 19:12:43.589] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: Using fmluserdevclient as launch service
+[13Dec2020 19:12:43.891] [main/DEBUG] [net.minecraftforge.fml.loading.FMLLoader/CORE]: Received command line version data  : MC Version: '1.15.2' MCP Version: '20200515.085601' Forge Version: '31.2.0' Forge group: 'net.minecraftforge'
+[13Dec2020 19:12:43.893] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR forge at path /Users/davidmurdock/.mcreator/gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar
+[13Dec2020 19:12:43.893] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR mcdata at path /Users/davidmurdock/.mcreator/gradle/caches/forge_gradle/minecraft_repo/versions/1.15.2/client-extra.jar
+[13Dec2020 19:12:43.894] [main/DEBUG] [net.minecraftforge.userdev.FMLUserdevLaunchProvider/CORE]: Injecting maven path /Users/davidmurdock/.mcreator/gradle/caches/forge_gradle/minecraft_user_repo
+[13Dec2020 19:12:43.895] [main/DEBUG] [net.minecraftforge.fml.loading.FMLCommonLaunchHandler/CORE]: Got mod coordinates examplemod%%/Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/build/resources/main:examplemod%%/Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/build/classes/java/main from env
+[13Dec2020 19:12:43.899] [main/DEBUG] [net.minecraftforge.fml.loading.FMLCommonLaunchHandler/CORE]: Found supplied mod coordinates [{examplemod=[/Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/build/resources/main, /Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/build/classes/java/main]}]
+[13Dec2020 19:12:43.906] [main/DEBUG] [net.minecraftforge.fml.loading.LanguageLoadingProvider/CORE]: Found 2 language providers
+[13Dec2020 19:12:43.908] [main/DEBUG] [net.minecraftforge.fml.loading.LanguageLoadingProvider/CORE]: Found language provider javafml, version 31.2
+[13Dec2020 19:12:43.980] [main/DEBUG] [net.minecraftforge.fml.loading.LanguageLoadingProvider/CORE]: Found language provider minecraft, version 1
+[13Dec2020 19:12:43.980] [main/DEBUG] [net.minecraftforge.fml.loading.LanguageLoadingProvider/CORE]: Skipping adding forge jar - javafml is already present
+[13Dec2020 19:12:44.051] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Initialized transformation service fml
+[13Dec2020 19:12:44.052] [main/DEBUG] [cpw.mods.modlauncher.NameMappingServiceHandler/MODLAUNCHER]: Current naming domain is 'mcp'
+[13Dec2020 19:12:44.053] [main/DEBUG] [cpw.mods.modlauncher.NameMappingServiceHandler/MODLAUNCHER]: Identified name mapping providers {srg=srgtomcp:1234}
+[13Dec2020 19:12:44.054] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Transformation services begin scanning
+[13Dec2020 19:12:44.054] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Beginning scan trigger - transformation service fml
+[13Dec2020 19:12:44.055] [main/DEBUG] [net.minecraftforge.fml.loading.FMLServiceProvider/CORE]: Initiating mod scan
+[13Dec2020 19:12:44.090] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR classpath_mod at path /Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/build/resources/main
+[13Dec2020 19:12:44.091] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR classpath_mod at path /Users/davidmurdock/.mcreator/gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar
+[13Dec2020 19:12:44.091] [main/DEBUG] [net.minecraftforge.userdev.ClasspathLocator/CORE]: Found classpath mod: /Users/davidmurdock/.mcreator/gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar
+[13Dec2020 19:12:44.093] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/Desktop/MCreator.app/Contents/MacOS/jdk/Contents/Home/jre/lib/ext/jfxrt.jar
+[13Dec2020 19:12:44.096] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar
+[13Dec2020 19:12:44.101] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar
+[13Dec2020 19:12:44.103] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/forge_gradle/minecraft_repo/versions/1.15.2/client-extra.jar
+[13Dec2020 19:12:44.132] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/net.minecraftforge/eventbus/2.2.0/e663ad1f795b81da8a132c8fde40580b05c2343d/eventbus-2.2.0-service.jar
+[13Dec2020 19:12:44.133] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/net.minecraftforge/coremods/2.0.3/9e3f5323f6a2c3ac04fa27481cbeeb48f89757bd/coremods-2.0.3.jar
+[13Dec2020 19:12:44.134] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/net.minecraftforge/forgespi/2.1.2/867d339ca81f375c560da6d37084066e7f537f15/forgespi-2.1.2.jar
+[13Dec2020 19:12:44.135] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/net.minecraftforge/accesstransformers/2.1.1/1d1e439ef345ab5fd76df679de70a0c35f03bf4a/accesstransformers-2.1.1-shadowed.jar
+[13Dec2020 19:12:44.136] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/cpw.mods/modlauncher/5.1.2/42f764429585b8a12ba42d43a02c0c9018710052/modlauncher-5.1.2.jar
+[13Dec2020 19:12:44.136] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/cpw.mods/modlauncher/5.1.2/63c817b0e96e6accbb602e7de7c938fc444025f3/modlauncher-5.1.2-api.jar
+[13Dec2020 19:12:44.137] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar
+[13Dec2020 19:12:44.138] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/net.minecraftforge/mergetool/1.0.9/d1e1ba354a40b5703340b5cb02fdca489cff3646/mergetool-1.0.9-api.jar
+[13Dec2020 19:12:44.139] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/7.2/ca2954e8d92a05bacc28ff465b25c70e0f512497/asm-commons-7.2.jar
+[13Dec2020 19:12:44.140] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/6.2/a9690730f92cc79eeadc20e400ebb41eccce10b1/asm-util-6.2.jar
+[13Dec2020 19:12:44.141] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/7.2/b6e6abe057f23630113f4167c34bda7086691258/asm-analysis-7.2.jar
+[13Dec2020 19:12:44.141] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/7.2/3a23cc36edaf8fc5a89cb100182758ccb5991487/asm-tree-7.2.jar
+[13Dec2020 19:12:44.142] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/7.2/fa637eb67eb7628c915d73762b681ae7ff0b9731/asm-7.2.jar
+[13Dec2020 19:12:44.143] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/cpw.mods/grossjava9hacks/1.3.0/1a922de964d0c19d864fbcba2678c1a1c4602c35/grossjava9hacks-1.3.0.jar
+[13Dec2020 19:12:44.144] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/net.minecraftforge/unsafe/0.2.0/54d7a0a5e8fdb71b973025caa46f341ae5904f39/unsafe-0.2.0.jar
+[13Dec2020 19:12:44.144] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/com.electronwill.night-config/toml/3.6.2/3ac4263d06433da39a5eee95e2679f1642d921f0/toml-3.6.2.jar
+[13Dec2020 19:12:44.145] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/com.electronwill.night-config/core/3.6.2/56f6500038861d4a8832072676da7bf7916217d0/core-3.6.2.jar
+[13Dec2020 19:12:44.146] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.jline/jline/3.12.1/de2bd909cb9f8eaa741bd03df4a1bd3f6eb593c7/jline-3.12.1.jar
+[13Dec2020 19:12:44.147] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.6.3/f8ff8032903882376e8d000c51e3e16d20fc7df7/maven-artifact-3.6.3.jar
+[13Dec2020 19:12:44.147] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/net.jodah/typetools/0.8.3/98f84f353457629e81cc6827224871b1a8faa7af/typetools-0.8.3.jar
+[13Dec2020 19:12:44.148] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/net.minecrell/terminalconsoleappender/1.2.0/96d02cd3b384ff015a8fef4223bcb4ccf1717c95/terminalconsoleappender-1.2.0.jar
+[13Dec2020 19:12:44.149] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.11.2/6c2fb3f5b7cd27504726aef1b674b542a0c9cf53/log4j-core-2.11.2.jar
+[13Dec2020 19:12:44.151] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.11.2/f5e9a2ffca496057d6891a3de65128efc636e26e/log4j-api-2.11.2.jar
+[13Dec2020 19:12:44.152] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/5.0.4/4fdac2fbe92dfad86aa6e9301736f6b4342a3f5c/jopt-simple-5.0.4.jar
+[13Dec2020 19:12:44.152] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/com.mojang/patchy/1.1/aef610b34a1be37fa851825f12372b78424d8903/patchy-1.1.jar
+[13Dec2020 19:12:44.153] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/oshi-project/oshi-core/1.1/9ddf7b048a8d701be231c0f4f95fd986198fd2d8/oshi-core-1.1.jar
+[13Dec2020 19:12:44.154] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/ca.weblite/java-objc-bridge/1.0.0/6ef160c3133a78de015830860197602ca1c855d3/java-objc-bridge-1.0.0.jar
+[13Dec2020 19:12:44.154] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/4.4.0/cb208278274bf12ebdb56c61bd7407e6f774d65a/jna-4.4.0.jar
+[13Dec2020 19:12:44.155] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/net.java.dev.jna/platform/3.4.0/e3f70017be8100d3d6923f50b3d2ee17714e9c13/platform-3.4.0.jar
+[13Dec2020 19:12:44.156] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/com.ibm.icu/icu4j-core-mojang/51.2/63d216a9311cca6be337c1e458e587f99d382b84/icu4j-core-mojang-51.2.jar
+[13Dec2020 19:12:44.157] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/com.mojang/javabridge/1.0.22/6aa6453aa99a52a5cd91749da1af6ab70e082ab3/javabridge-1.0.22.jar
+[13Dec2020 19:12:44.157] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.1.25.Final/d0626cd3108294d1d58c05859add27b4ef21f83b/netty-all-4.1.25.Final.jar
+[13Dec2020 19:12:44.158] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/com.google.guava/guava/21.0/3a3d111be1be1b745edfa7d91678a12d7ed38709/guava-21.0.jar
+[13Dec2020 19:12:44.159] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.8.1/6505a72a097d9270f7a9e7bf42c4238283247755/commons-lang3-3.8.1.jar
+[13Dec2020 19:12:44.160] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.5/2852e6e05fbb95076fc091f6d1780f1f8fe35e0f/commons-io-2.5.jar
+[13Dec2020 19:12:44.160] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.3.3/18f4247ff4572a074444572cee34647c43e7c9c7/httpclient-4.3.3.jar
+[13Dec2020 19:12:44.161] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.10/4b95f4897fa13f2cd904aee711aeafc0c5295cd8/commons-codec-1.10.jar
+[13Dec2020 19:12:44.163] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/net.java.jinput/jinput/2.0.5/39c7796b469a600f72380316f6b1f11db6c2c7c4/jinput-2.0.5.jar
+[13Dec2020 19:12:44.164] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/net.java.jutils/jutils/1.0.0/e12fe1fda814bd348c1579329c86943d2cd3c6a6/jutils-1.0.0.jar
+[13Dec2020 19:12:44.165] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/com.mojang/brigadier/1.0.17/c6b7dc51dd44379cc751b7504816006e9be4b1e6/brigadier-1.0.17.jar
+[13Dec2020 19:12:44.165] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/com.mojang/datafixerupper/2.0.24/944c24a8519981847ffb36c6dcd059d96fcb4b0/datafixerupper-2.0.24.jar
+[13Dec2020 19:12:44.166] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.0/c4ba5371a29ac9b2ad6129b1d39ea38750043eff/gson-2.8.0.jar
+[13Dec2020 19:12:44.167] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/com.mojang/authlib/1.5.25/9834cdf236c22e84b946bba989e2f94ef5897c3c/authlib-1.5.25.jar
+[13Dec2020 19:12:44.168] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.8.1/a698750c16740fd5b3871425f4cb3bbaa87f529d/commons-compress-1.8.1.jar
+[13Dec2020 19:12:44.169] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.3/f6f66e966c70a83ffbdb6f17a0919eaf7c8aca7f/commons-logging-1.1.3.jar
+[13Dec2020 19:12:44.170] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.3.2/31fbbff1ddbf98f3aa7377c94d33b0447c646b6e/httpcore-4.3.2.jar
+[13Dec2020 19:12:44.171] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/it.unimi.dsi/fastutil/8.2.1/5ad88f325e424f8dbc2be5459e21ea5cab3864e9/fastutil-8.2.1.jar
+[13Dec2020 19:12:44.172] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-jemalloc/3.2.1/7a0c583fcbec32b15784f846df536e1837d83666/lwjgl-jemalloc-3.2.1.jar
+[13Dec2020 19:12:44.172] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-jemalloc/3.2.1/439ab9d0264167a949cc7bcce673704322baaf50/lwjgl-jemalloc-3.2.1-natives-macos.jar
+[13Dec2020 19:12:44.173] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-openal/3.2.1/dc7ff2dabb40a141ee9bf2e326d9b1b19f3278fb/lwjgl-openal-3.2.1.jar
+[13Dec2020 19:12:44.173] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-openal/3.2.1/9357ebfc82a0d6f64e17093dd963219367cd6fa2/lwjgl-openal-3.2.1-natives-macos.jar
+[13Dec2020 19:12:44.174] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-opengl/3.2.1/57008c2374c5bc434b18adfef3f3653ee450ee18/lwjgl-opengl-3.2.1.jar
+[13Dec2020 19:12:44.175] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-opengl/3.2.1/dca9ad9e59a87172144d531e08ef7f6988073db0/lwjgl-opengl-3.2.1-natives-macos.jar
+[13Dec2020 19:12:44.175] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-glfw/3.2.1/27abb7f64894b61cad163791acd8113f0b21296/lwjgl-glfw-3.2.1.jar
+[13Dec2020 19:12:44.176] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-glfw/3.2.1/72fe6dab6110a5a1cd4833f11840eef7b2eadce5/lwjgl-glfw-3.2.1-natives-macos.jar
+[13Dec2020 19:12:44.177] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-stb/3.2.1/31f5eb5fce3791d58ec898bc5c1867d76d781ba1/lwjgl-stb-3.2.1.jar
+[13Dec2020 19:12:44.177] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-stb/3.2.1/1f5615c952451c30afafba4a6e3ba4e1cd9e7f5c/lwjgl-stb-3.2.1-natives-macos.jar
+[13Dec2020 19:12:44.178] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-tinyfd/3.2.1/259f1dbddb921e27e01b32458d6f584eb8bba13a/lwjgl-tinyfd-3.2.1.jar
+[13Dec2020 19:12:44.179] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-tinyfd/3.2.1/759c2fd9cc5c6ce0b5b7af77ac8200483b7fb660/lwjgl-tinyfd-3.2.1-natives-macos.jar
+[13Dec2020 19:12:44.179] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl/3.2.1/2bb514e444994c6fece99a21f76e0c90438e377f/lwjgl-3.2.1.jar
+[13Dec2020 19:12:44.180] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl/3.2.1/5a4c271d150906858d475603dcb9479453c60555/lwjgl-3.2.1-natives-macos.jar
+[13Dec2020 19:12:44.181] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/com.mojang/text2speech/1.11.3/f378f889797edd7df8d32272c06ca80a1b6b0f58/text2speech-1.11.3.jar
+[13Dec2020 19:12:44.181] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.antlr/antlr4-runtime/4.7.2/e27d8ab4f984f9d186f54da984a6ab1cccac755e/antlr4-runtime-4.7.2.jar
+[13Dec2020 19:12:44.182] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.jline/jline-reader/3.12.1/4382ab1382c7b6f379377ed5f665dc2f6e1218bc/jline-reader-3.12.1.jar
+[13Dec2020 19:12:44.183] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-utils/3.2.1/13b015768e0d04849d2794e4c47eb02d01a0de32/plexus-utils-3.2.1.jar
+[13Dec2020 19:12:44.184] [main/DEBUG] [net.minecraftforge.fml.loading.LibraryFinder/CORE]: Found JAR manifest_jar at path /Users/davidmurdock/.mcreator/gradle/caches/modules-2/files-2.1/org.jline/jline-terminal/3.12.1/c777448314e050d980a6b697c140f3bfe9eb7416/jline-terminal-3.12.1.jar
+[13Dec2020 19:12:44.188] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModListHandler/CORE]: Found mod coordinates from lists: []
+[13Dec2020 19:12:44.287] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModDiscoverer/CORE]: Found Mod Locators : (userdev classpath:null),(mods folder:null),(maven libs:null),(exploded directory:null),(minecraft:null)
+[13Dec2020 19:12:44.307] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ExplodedDirectoryLocator/LOADING]: Found exploded directory mod manifest at /Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/build/resources/main/META-INF/mods.toml
+[13Dec2020 19:12:44.310] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate /Users/davidmurdock/.mcreator/gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar
+[13Dec2020 19:12:44.343] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar with {forge} mods - versions {31.2.0}
+[13Dec2020 19:12:44.343] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFile/LOADING]: Loading mod file /Users/davidmurdock/.mcreator/gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar with language javafml
+[13Dec2020 19:12:44.376] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Found coremod fieldtomethodtransformers with Javascript path META-INF/fieldtomethodtransformers.js
+[13Dec2020 19:12:44.377] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFile/LOADING]: Found coremod META-INF/fieldtomethodtransformers.js
+[13Dec2020 19:12:44.378] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate /Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/build/resources/main
+[13Dec2020 19:12:44.382] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file main with {stormlight_mod} mods - versions {1.0.0}
+[13Dec2020 19:12:44.383] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFile/LOADING]: Loading mod file /Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/build/resources/main with language javafml
+[13Dec2020 19:12:44.385] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Considering mod file candidate /Users/davidmurdock/.mcreator/gradle/caches/forge_gradle/minecraft_repo/versions/1.15.2/client-extra.jar
+[13Dec2020 19:12:44.388] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFileInfo/LOADING]: Found valid mod file client-extra.jar with {minecraft} mods - versions {1.15.2}
+[13Dec2020 19:12:44.388] [main/DEBUG] [net.minecraftforge.fml.loading.moddiscovery.ModFile/LOADING]: Loading mod file /Users/davidmurdock/.mcreator/gradle/caches/forge_gradle/minecraft_repo/versions/1.15.2/client-extra.jar with language minecraft
+[13Dec2020 19:12:44.399] [main/DEBUG] [net.minecraftforge.fml.loading.ModSorter/LOADING]: Found 1 mandatory requirements
+[13Dec2020 19:12:44.400] [main/DEBUG] [net.minecraftforge.fml.loading.ModSorter/LOADING]: Found 0 mandatory mod requirements missing
+[13Dec2020 19:12:44.822] [main/DEBUG] [net.minecraftforge.userdev.MCPNamingService/CORE]: Loaded 12295 method mappings from methods.csv
+[13Dec2020 19:12:44.866] [main/DEBUG] [net.minecraftforge.userdev.MCPNamingService/CORE]: Loaded 16430 field mappings from fields.csv
+[13Dec2020 19:12:44.903] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: End scan trigger - transformation service fml
+[13Dec2020 19:12:44.903] [main/DEBUG] [cpw.mods.modlauncher.TransformationServicesHandler/MODLAUNCHER]: Transformation services loading transformers
+[13Dec2020 19:12:44.904] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Initializing transformers for transformation service fml
+[13Dec2020 19:12:44.904] [main/DEBUG] [net.minecraftforge.fml.loading.FMLServiceProvider/CORE]: Loading coremod transformers
+[13Dec2020 19:12:44.905] [main/DEBUG] [net.minecraftforge.coremod.CoreModEngine/COREMOD]: Loading CoreMod from META-INF/fieldtomethodtransformers.js
+[13Dec2020 19:12:45.120] [main/DEBUG] [net.minecraftforge.coremod.CoreModEngine/COREMOD]: CoreMod loaded successfully
+[13Dec2020 19:12:45.131] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@46ab18da to Target : CLASS {Lnet/minecraft/potion/EffectInstance;} {} {V}
+[13Dec2020 19:12:45.133] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@733c423e to Target : CLASS {Lnet/minecraft/block/FlowingFluidBlock;} {} {V}
+[13Dec2020 19:12:45.133] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@4b629f13 to Target : CLASS {Lnet/minecraft/item/BucketItem;} {} {V}
+[13Dec2020 19:12:45.134] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@70925b45 to Target : CLASS {Lnet/minecraft/block/StairsBlock;} {} {V}
+[13Dec2020 19:12:45.134] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@1b9ea3e3 to Target : CLASS {Lnet/minecraft/block/FlowerPotBlock;} {} {V}
+[13Dec2020 19:12:45.134] [main/DEBUG] [cpw.mods.modlauncher.TransformStore/MODLAUNCHER]: Adding transformer net.minecraftforge.coremod.transformer.CoreModClassTransformer@aa22f1c to Target : CLASS {Lnet/minecraft/item/FishBucketItem;} {} {V}
+[13Dec2020 19:12:45.135] [main/DEBUG] [cpw.mods.modlauncher.TransformationServiceDecorator/MODLAUNCHER]: Initialized transformers for transformation service fml
+[13Dec2020 19:12:45.149] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'fmluserdevclient' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, /Users/davidmurdock/.mcreator/gradle/caches/forge_gradle/assets, --assetIndex, 1.15, --username, Dev, --accessToken, ❄❄❄❄❄❄❄❄, --userProperties, {}]
+[13Dec2020 19:12:45.150] [main/DEBUG] [net.minecraftforge.userdev.FMLUserdevClientLaunchProvider/CORE]: Launching minecraft in cpw.mods.modlauncher.TransformingClassLoader@23c388c2 with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, /Users/davidmurdock/.mcreator/gradle/caches/forge_gradle/assets, --assetIndex, 1.15, --username, Dev, --accessToken, DONT_CRASH, --userProperties, {}]
+[13Dec2020 19:12:47.451] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[13Dec2020 19:12:48.340] [pool-3-thread-1/DEBUG] [net.minecraftforge.coremod.transformer.CoreModBaseTransformer/COREMOD]: Transforming net/minecraft/block/FlowingFluidBlock
+[13Dec2020 19:12:48.484] [pool-3-thread-1/DEBUG] [net.minecraftforge.coremod.transformer.CoreModBaseTransformer/COREMOD]: Transforming net/minecraft/block/StairsBlock
+[13Dec2020 19:12:48.681] [pool-3-thread-1/DEBUG] [net.minecraftforge.coremod.transformer.CoreModBaseTransformer/COREMOD]: Transforming net/minecraft/block/FlowerPotBlock
+[13Dec2020 19:12:54.524] [pool-3-thread-1/DEBUG] [net.minecraftforge.coremod.transformer.CoreModBaseTransformer/COREMOD]: Transforming net/minecraft/item/BucketItem
+[13Dec2020 19:12:54.559] [pool-3-thread-1/DEBUG] [net.minecraftforge.coremod.transformer.CoreModBaseTransformer/COREMOD]: Transforming net/minecraft/item/FishBucketItem
+[13Dec2020 19:12:55.248] [pool-3-thread-1/DEBUG] [net.minecraftforge.coremod.transformer.CoreModBaseTransformer/COREMOD]: Transforming net/minecraft/potion/EffectInstance
+[13Dec2020 19:13:01.001] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.2.1 build 12
+[13Dec2020 19:13:01.466] [Render thread/DEBUG] [net.minecraftforge.fml.ForgeI18n/CORE]: Loading I18N data entries: 4535
+[13Dec2020 19:13:01.885] [Render thread/DEBUG] [net.minecraftforge.fml.ModLoader/CORE]: Loading Network data for FML net version: FML2
+[13Dec2020 19:13:01.937] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Using 8 threads for parallel mod-loading
+[13Dec2020 19:13:01.943] [Render thread/DEBUG] [net.minecraftforge.fml.ModLoader/LOADING]: ModContainer is cpw.mods.modlauncher.TransformingClassLoader@23c388c2
+[13Dec2020 19:13:01.957] [Render thread/DEBUG] [net.minecraftforge.fml.ModLoader/LOADING]: ModContainer is cpw.mods.modlauncher.TransformingClassLoader@23c388c2
+[13Dec2020 19:13:01.962] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@23c388c2 - got cpw.mods.modlauncher.TransformingClassLoader@23c388c2
+[13Dec2020 19:13:01.963] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for net.minecraftforge.common.ForgeMod with classLoader cpw.mods.modlauncher.TransformingClassLoader@23c388c2 & cpw.mods.modlauncher.TransformingClassLoader@23c388c2
+[13Dec2020 19:13:01.986] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Loaded modclass net.minecraftforge.common.ForgeMod with cpw.mods.modlauncher.TransformingClassLoader@23c388c2
+[13Dec2020 19:13:01.986] [Render thread/DEBUG] [net.minecraftforge.fml.ModLoader/LOADING]: ModContainer is cpw.mods.modlauncher.TransformingClassLoader@23c388c2
+[13Dec2020 19:13:01.987] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@23c388c2 - got cpw.mods.modlauncher.TransformingClassLoader@23c388c2
+[13Dec2020 19:13:01.987] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for net.mcreator.stormlightmod.StormlightModMod with classLoader cpw.mods.modlauncher.TransformingClassLoader@23c388c2 & cpw.mods.modlauncher.TransformingClassLoader@23c388c2
+[13Dec2020 19:13:01.990] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Loaded modclass net.mcreator.stormlightmod.StormlightModMod with cpw.mods.modlauncher.TransformingClassLoader@23c388c2
+[13Dec2020 19:13:02.060] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching parallel event LifecycleEvent:CONSTRUCT
+[13Dec2020 19:13:02.073] [modloading-worker-3/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Loading mod instance stormlight_mod of type net.mcreator.stormlightmod.StormlightModMod
+[13Dec2020 19:13:02.073] [modloading-worker-1/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Loading mod instance forge of type net.minecraftforge.common.ForgeMod
+[13Dec2020 19:13:02.073] [modloading-worker-1/DEBUG] [net.minecraftforge.versions.forge.ForgeVersion/CORE]: Forge Version package package net.minecraftforge.versions.forge, Forge, version 31.2 from cpw.mods.modlauncher.TransformingClassLoader@23c388c2
+[13Dec2020 19:13:02.074] [modloading-worker-1/DEBUG] [net.minecraftforge.versions.forge.ForgeVersion/CORE]: Found Forge version 31.2.0
+[13Dec2020 19:13:02.074] [modloading-worker-1/DEBUG] [net.minecraftforge.versions.forge.ForgeVersion/CORE]: Found Forge spec 31.2
+[13Dec2020 19:13:02.074] [modloading-worker-1/DEBUG] [net.minecraftforge.versions.forge.ForgeVersion/CORE]: Found Forge group net.minecraftforge
+[13Dec2020 19:13:02.078] [modloading-worker-1/DEBUG] [net.minecraftforge.versions.mcp.MCPVersion/CORE]: Found MC version information 1.15.2
+[13Dec2020 19:13:02.078] [modloading-worker-1/DEBUG] [net.minecraftforge.versions.mcp.MCPVersion/CORE]: Found MCP version information 20200515.085601
+[13Dec2020 19:13:02.078] [modloading-worker-1/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 31.2.0, for MC 1.15.2 with MCP 20200515.085601
+[13Dec2020 19:13:02.079] [modloading-worker-1/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v31.2.0 Initialized
+[13Dec2020 19:13:02.423] [modloading-worker-1/DEBUG] [net.minecraftforge.fml.config.ConfigTracker/CONFIG]: Config file forge-client.toml for forge tracking
+[13Dec2020 19:13:02.423] [modloading-worker-1/DEBUG] [net.minecraftforge.fml.config.ConfigTracker/CONFIG]: Config file forge-server.toml for forge tracking
+[13Dec2020 19:13:02.426] [modloading-worker-1/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Loaded mod instance forge of type net.minecraftforge.common.ForgeMod
+[13Dec2020 19:13:02.427] [modloading-worker-1/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Injecting Automatic event subscribers for forge
+[13Dec2020 19:13:02.467] [modloading-worker-1/DEBUG] [net.minecraftforge.fml.AutomaticEventSubscriber/LOADING]: Attempting to inject @EventBusSubscriber classes into the eventbus for forge
+[13Dec2020 19:13:02.501] [modloading-worker-1/DEBUG] [net.minecraftforge.fml.AutomaticEventSubscriber/LOADING]: Auto-subscribing net.minecraftforge.client.model.ModelDataManager to FORGE
+[13Dec2020 19:13:02.606] [modloading-worker-1/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Completed Automatic event subscribers for forge
+[13Dec2020 19:13:03.519] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity shardbearer
+[13Dec2020 19:13:03.522] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity nightwatcher
+[13Dec2020 19:13:03.526] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity honor_spren
+[13Dec2020 19:13:03.557] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity parshendiarcher
+[13Dec2020 19:13:03.565] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity elsecallerfused
+[13Dec2020 19:13:03.575] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity windrunnerfused
+[13Dec2020 19:13:03.589] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity high_spren
+[13Dec2020 19:13:03.591] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity truthwatcher_spren
+[13Dec2020 19:13:03.593] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity cultivation_spren
+[13Dec2020 19:13:03.607] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity ink_spren
+[13Dec2020 19:13:03.614] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity axehound
+[13Dec2020 19:13:03.693] [modloading-worker-3/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Loaded mod instance stormlight_mod of type net.mcreator.stormlightmod.StormlightModMod
+[13Dec2020 19:13:03.694] [modloading-worker-3/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Injecting Automatic event subscribers for stormlight_mod
+[13Dec2020 19:13:03.694] [modloading-worker-3/DEBUG] [net.minecraftforge.fml.AutomaticEventSubscriber/LOADING]: Attempting to inject @EventBusSubscriber classes into the eventbus for stormlight_mod
+[13Dec2020 19:13:03.695] [modloading-worker-3/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Completed Automatic event subscribers for stormlight_mod
+[13Dec2020 19:13:03.696] [Render thread/INFO] [net.minecraftforge.fml.DeferredWorkQueue/LOADING]: Dispatching synchronous work after CONSTRUCT: 6 jobs
+[13Dec2020 19:13:03.949] [Render thread/INFO] [net.minecraftforge.fml.DeferredWorkQueue/LOADING]: Synchronous work queue completed in 00:00:00.248
+[13Dec2020 19:13:03.951] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:CREATE_REGISTRIES
+[13Dec2020 19:13:03.959] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.NewRegistry
+[13Dec2020 19:13:03.960] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.NewRegistry
+[13Dec2020 19:13:03.960] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.NewRegistry
+[13Dec2020 19:13:03.961] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.NewRegistry
+[13Dec2020 19:13:03.967] [Render thread/DEBUG] [net.minecraftforge.registries.ObjectHolderRegistry/REGISTRIES]: Processing ObjectHolder annotations
+[13Dec2020 19:13:03.994] [Render thread/DEBUG] [net.minecraftforge.registries.ObjectHolderRegistry/REGISTRIES]: Found 2726 ObjectHolder annotations
+[13Dec2020 19:13:04.007] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.009] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:block>
+[13Dec2020 19:13:04.009] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:block>
+[13Dec2020 19:13:04.010] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:block>
+[13Dec2020 19:13:04.018] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:block>
+[13Dec2020 19:13:04.018] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:block
+[13Dec2020 19:13:04.022] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:block
+[13Dec2020 19:13:04.022] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.023] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:item>
+[13Dec2020 19:13:04.023] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:item>
+[13Dec2020 19:13:04.023] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:item>
+[13Dec2020 19:13:04.055] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:item>
+[13Dec2020 19:13:04.055] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:item
+[13Dec2020 19:13:04.055] [Render thread/DEBUG] [net.minecraftforge.registries.ObjectHolderRef/]: Unable to lookup stormlight_mod:havah_helmet for public static net.minecraft.item.Item net.mcreator.stormlightmod.item.HavahItem.helmet. This means the object wasn't registered. It's likely just mod options.
+[13Dec2020 19:13:04.056] [Render thread/DEBUG] [net.minecraftforge.registries.ObjectHolderRef/]: Unable to lookup stormlight_mod:havah_leggings for public static net.minecraft.item.Item net.mcreator.stormlightmod.item.HavahItem.legs. This means the object wasn't registered. It's likely just mod options.
+[13Dec2020 19:13:04.056] [Render thread/DEBUG] [net.minecraftforge.registries.ObjectHolderRef/]: Unable to lookup stormlight_mod:havah_boots for public static net.minecraft.item.Item net.mcreator.stormlightmod.item.HavahItem.boots. This means the object wasn't registered. It's likely just mod options.
+[13Dec2020 19:13:04.057] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:item
+[13Dec2020 19:13:04.057] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.058] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<forge:loot_modifier_serializers>
+[13Dec2020 19:13:04.059] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<forge:loot_modifier_serializers>
+[13Dec2020 19:13:04.059] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<forge:loot_modifier_serializers>
+[13Dec2020 19:13:04.059] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<forge:loot_modifier_serializers>
+[13Dec2020 19:13:04.059] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: forge:loot_modifier_serializers
+[13Dec2020 19:13:04.060] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: forge:loot_modifier_serializers
+[13Dec2020 19:13:04.060] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.060] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<forge:moddimensions>
+[13Dec2020 19:13:04.060] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<forge:moddimensions>
+[13Dec2020 19:13:04.061] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<forge:moddimensions>
+[13Dec2020 19:13:04.066] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<forge:moddimensions>
+[13Dec2020 19:13:04.066] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: forge:moddimensions
+[13Dec2020 19:13:04.067] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: forge:moddimensions
+[13Dec2020 19:13:04.067] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.067] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:activities>
+[13Dec2020 19:13:04.068] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:activities>
+[13Dec2020 19:13:04.068] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:activities>
+[13Dec2020 19:13:04.068] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:activities>
+[13Dec2020 19:13:04.068] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:activities
+[13Dec2020 19:13:04.069] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:activities
+[13Dec2020 19:13:04.069] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.069] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:biome>
+[13Dec2020 19:13:04.069] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:biome>
+[13Dec2020 19:13:04.069] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:biome>
+[13Dec2020 19:13:04.073] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:biome>
+[13Dec2020 19:13:04.073] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:biome
+[13Dec2020 19:13:04.074] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:biome
+[13Dec2020 19:13:04.074] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.074] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:biome_source_type>
+[13Dec2020 19:13:04.074] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:biome_source_type>
+[13Dec2020 19:13:04.074] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:biome_source_type>
+[13Dec2020 19:13:04.074] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:biome_source_type>
+[13Dec2020 19:13:04.074] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:biome_source_type
+[13Dec2020 19:13:04.075] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:biome_source_type
+[13Dec2020 19:13:04.075] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.075] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:block_entity_type>
+[13Dec2020 19:13:04.075] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:block_entity_type>
+[13Dec2020 19:13:04.075] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:block_entity_type>
+[13Dec2020 19:13:04.076] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:block_entity_type>
+[13Dec2020 19:13:04.076] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:block_entity_type
+[13Dec2020 19:13:04.076] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:block_entity_type
+[13Dec2020 19:13:04.077] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.077] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:carver>
+[13Dec2020 19:13:04.077] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:carver>
+[13Dec2020 19:13:04.077] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:carver>
+[13Dec2020 19:13:04.077] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:carver>
+[13Dec2020 19:13:04.077] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:carver
+[13Dec2020 19:13:04.078] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:carver
+[13Dec2020 19:13:04.078] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.078] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:chunk_generator_type>
+[13Dec2020 19:13:04.078] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:chunk_generator_type>
+[13Dec2020 19:13:04.078] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:chunk_generator_type>
+[13Dec2020 19:13:04.078] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:chunk_generator_type>
+[13Dec2020 19:13:04.078] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:chunk_generator_type
+[13Dec2020 19:13:04.079] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:chunk_generator_type
+[13Dec2020 19:13:04.079] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.079] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:chunk_status>
+[13Dec2020 19:13:04.079] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:chunk_status>
+[13Dec2020 19:13:04.080] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:chunk_status>
+[13Dec2020 19:13:04.080] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:chunk_status>
+[13Dec2020 19:13:04.080] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:chunk_status
+[13Dec2020 19:13:04.081] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:chunk_status
+[13Dec2020 19:13:04.081] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.081] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:dataserializers>
+[13Dec2020 19:13:04.081] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:dataserializers>
+[13Dec2020 19:13:04.081] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:dataserializers>
+[13Dec2020 19:13:04.081] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:dataserializers>
+[13Dec2020 19:13:04.082] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:dataserializers
+[13Dec2020 19:13:04.083] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:dataserializers
+[13Dec2020 19:13:04.083] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.083] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:decorator>
+[13Dec2020 19:13:04.083] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:decorator>
+[13Dec2020 19:13:04.083] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:decorator>
+[13Dec2020 19:13:04.083] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:decorator>
+[13Dec2020 19:13:04.083] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:decorator
+[13Dec2020 19:13:04.084] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:decorator
+[13Dec2020 19:13:04.084] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.084] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:enchantment>
+[13Dec2020 19:13:04.085] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:enchantment>
+[13Dec2020 19:13:04.085] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:enchantment>
+[13Dec2020 19:13:04.087] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:enchantment>
+[13Dec2020 19:13:04.087] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:enchantment
+[13Dec2020 19:13:04.088] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:enchantment
+[13Dec2020 19:13:04.088] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.088] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:entity_type>
+[13Dec2020 19:13:04.088] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:entity_type>
+[13Dec2020 19:13:04.088] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:entity_type>
+[13Dec2020 19:13:04.090] [Render thread/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity entitybulletparshendiarcher
+[13Dec2020 19:13:04.091] [Render thread/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity entitybulletwindrunnerfused
+[13Dec2020 19:13:04.091] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:entity_type>
+[13Dec2020 19:13:04.091] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:entity_type
+[13Dec2020 19:13:04.092] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:entity_type
+[13Dec2020 19:13:04.092] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.093] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:feature>
+[13Dec2020 19:13:04.093] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:feature>
+[13Dec2020 19:13:04.093] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:feature>
+[13Dec2020 19:13:04.093] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:feature>
+[13Dec2020 19:13:04.093] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:feature
+[13Dec2020 19:13:04.094] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:feature
+[13Dec2020 19:13:04.094] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.094] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:fluid>
+[13Dec2020 19:13:04.094] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:fluid>
+[13Dec2020 19:13:04.094] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:fluid>
+[13Dec2020 19:13:04.094] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:fluid>
+[13Dec2020 19:13:04.094] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:fluid
+[13Dec2020 19:13:04.095] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:fluid
+[13Dec2020 19:13:04.095] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.095] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:memory_module_type>
+[13Dec2020 19:13:04.096] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:memory_module_type>
+[13Dec2020 19:13:04.096] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:memory_module_type>
+[13Dec2020 19:13:04.096] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:memory_module_type>
+[13Dec2020 19:13:04.096] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:memory_module_type
+[13Dec2020 19:13:04.096] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:memory_module_type
+[13Dec2020 19:13:04.096] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.097] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:menu>
+[13Dec2020 19:13:04.097] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:menu>
+[13Dec2020 19:13:04.097] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:menu>
+[13Dec2020 19:13:04.097] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:menu>
+[13Dec2020 19:13:04.097] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:menu
+[13Dec2020 19:13:04.098] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:menu
+[13Dec2020 19:13:04.098] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.098] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:mob_effect>
+[13Dec2020 19:13:04.098] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:mob_effect>
+[13Dec2020 19:13:04.098] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:mob_effect>
+[13Dec2020 19:13:04.114] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:mob_effect>
+[13Dec2020 19:13:04.114] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:mob_effect
+[13Dec2020 19:13:04.115] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:mob_effect
+[13Dec2020 19:13:04.115] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.117] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:motive>
+[13Dec2020 19:13:04.117] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:motive>
+[13Dec2020 19:13:04.117] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:motive>
+[13Dec2020 19:13:04.117] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:motive>
+[13Dec2020 19:13:04.118] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:motive
+[13Dec2020 19:13:04.119] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:motive
+[13Dec2020 19:13:04.119] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.119] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:particle_type>
+[13Dec2020 19:13:04.119] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:particle_type>
+[13Dec2020 19:13:04.119] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:particle_type>
+[13Dec2020 19:13:04.119] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:particle_type>
+[13Dec2020 19:13:04.119] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:particle_type
+[13Dec2020 19:13:04.120] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:particle_type
+[13Dec2020 19:13:04.121] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.121] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:point_of_interest_type>
+[13Dec2020 19:13:04.121] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:point_of_interest_type>
+[13Dec2020 19:13:04.121] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:point_of_interest_type>
+[13Dec2020 19:13:04.140] [Render thread/INFO] [net.minecraftforge.registries.GameData/]: Potentially Dangerous alternative prefix `minecraft` for name `shadesmar_1_portal`, expected `stormlight_mod`. This could be a intended override, but in most cases indicates a broken mod.
+[13Dec2020 19:13:04.140] [Render thread/WARN] [net.minecraftforge.registries.ForgeRegistry/REGISTRIES]: Registry PointOfInterestType: The object shadesmar_1_portal has been registered twice for the same name minecraft:shadesmar_1_portal.
+[13Dec2020 19:13:04.141] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:point_of_interest_type>
+[13Dec2020 19:13:04.141] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:point_of_interest_type
+[13Dec2020 19:13:04.142] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:point_of_interest_type
+[13Dec2020 19:13:04.142] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.142] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:potion>
+[13Dec2020 19:13:04.142] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:potion>
+[13Dec2020 19:13:04.142] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:potion>
+[13Dec2020 19:13:04.151] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:potion>
+[13Dec2020 19:13:04.151] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:potion
+[13Dec2020 19:13:04.152] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:potion
+[13Dec2020 19:13:04.152] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.152] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:recipe_serializer>
+[13Dec2020 19:13:04.280] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:recipe_serializer>
+[13Dec2020 19:13:04.280] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:recipe_serializer>
+[13Dec2020 19:13:04.281] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:recipe_serializer>
+[13Dec2020 19:13:04.281] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:recipe_serializer
+[13Dec2020 19:13:04.282] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:recipe_serializer
+[13Dec2020 19:13:04.282] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.284] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:schedule>
+[13Dec2020 19:13:04.284] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:schedule>
+[13Dec2020 19:13:04.284] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:schedule>
+[13Dec2020 19:13:04.284] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:schedule>
+[13Dec2020 19:13:04.284] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:schedule
+[13Dec2020 19:13:04.285] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:schedule
+[13Dec2020 19:13:04.286] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.286] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:sensor_type>
+[13Dec2020 19:13:04.286] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:sensor_type>
+[13Dec2020 19:13:04.286] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:sensor_type>
+[13Dec2020 19:13:04.286] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:sensor_type>
+[13Dec2020 19:13:04.286] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:sensor_type
+[13Dec2020 19:13:04.287] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:sensor_type
+[13Dec2020 19:13:04.287] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.287] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:sound_event>
+[13Dec2020 19:13:04.287] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:sound_event>
+[13Dec2020 19:13:04.287] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:sound_event>
+[13Dec2020 19:13:04.288] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:sound_event>
+[13Dec2020 19:13:04.288] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:sound_event
+[13Dec2020 19:13:04.289] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:sound_event
+[13Dec2020 19:13:04.289] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.290] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:stat_type>
+[13Dec2020 19:13:04.290] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:stat_type>
+[13Dec2020 19:13:04.290] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:stat_type>
+[13Dec2020 19:13:04.290] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:stat_type>
+[13Dec2020 19:13:04.290] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:stat_type
+[13Dec2020 19:13:04.291] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:stat_type
+[13Dec2020 19:13:04.291] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.291] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:surface_builder>
+[13Dec2020 19:13:04.291] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:surface_builder>
+[13Dec2020 19:13:04.291] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:surface_builder>
+[13Dec2020 19:13:04.291] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:surface_builder>
+[13Dec2020 19:13:04.291] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:surface_builder
+[13Dec2020 19:13:04.292] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:surface_builder
+[13Dec2020 19:13:04.292] [Render thread/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching synchronous event LifecycleEvent:LOAD_REGISTRIES
+[13Dec2020 19:13:04.292] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : RegistryEvent.Register<minecraft:villager_profession>
+[13Dec2020 19:13:04.292] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : RegistryEvent.Register<minecraft:villager_profession>
+[13Dec2020 19:13:04.293] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : RegistryEvent.Register<minecraft:villager_profession>
+[13Dec2020 19:13:04.293] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : RegistryEvent.Register<minecraft:villager_profession>
+[13Dec2020 19:13:04.293] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Applying holder lookups: minecraft:villager_profession
+[13Dec2020 19:13:04.294] [Render thread/DEBUG] [net.minecraftforge.registries.GameData/REGISTRIES]: Holder lookups applied: minecraft:villager_profession
+[13Dec2020 19:13:04.448] [Render thread/DEBUG] [net.minecraftforge.fml.client.ClientModLoader/CORE]: Generating PackInfo named mod:forge for mod file /Users/davidmurdock/.mcreator/gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar
+[13Dec2020 19:13:04.450] [Render thread/DEBUG] [net.minecraftforge.fml.client.ClientModLoader/CORE]: Generating PackInfo named mod:stormlight_mod for mod file /Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/build/resources/main
+[13Dec2020 19:13:04.463] [Render thread/DEBUG] [net.minecraftforge.fml.client.ClientModLoader/CORE]: Generating PackInfo named mod:forge for mod file /Users/davidmurdock/.mcreator/gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar
+[13Dec2020 19:13:04.463] [Render thread/DEBUG] [net.minecraftforge.fml.client.ClientModLoader/CORE]: Generating PackInfo named mod:stormlight_mod for mod file /Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/build/resources/main
+[13Dec2020 19:13:04.478] [Render thread/DEBUG] [net.minecraftforge.fml.ForgeI18n/CORE]: Loading I18N data entries: 0
+[13Dec2020 19:13:07.498] [Render thread/INFO] [net.minecraft.resources.SimpleReloadableResourceManager/]: Reloading ResourceManager: Default, Mod Resources
+[13Dec2020 19:13:07.519] [Server-Worker-2/DEBUG] [net.minecraftforge.fml.config.ConfigTracker/CONFIG]: Loading configs type CLIENT
+[13Dec2020 19:13:07.521] [Server-Worker-2/DEBUG] [net.minecraftforge.fml.config.ConfigFileTypeHandler/CONFIG]: Built TOML config for /Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/run/config/forge-client.toml
+[13Dec2020 19:13:07.522] [Server-Worker-2/DEBUG] [net.minecraftforge.fml.config.ConfigFileTypeHandler/CONFIG]: Loaded TOML config file /Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/run/config/forge-client.toml
+[13Dec2020 19:13:07.526] [Server-Worker-2/DEBUG] [net.minecraftforge.fml.config.ConfigFileTypeHandler/CONFIG]: Watching TOML config file /Users/davidmurdock/MCreatorWorkspaces/stormlight_mod/Stormlight_Archive_Mod_REAL/run/config/forge-client.toml for changes
+[13Dec2020 19:13:07.528] [Server-Worker-2/DEBUG] [net.minecraftforge.common.ForgeConfig/FORGEMOD]: Loaded forge config file forge-client.toml
+[13Dec2020 19:13:07.528] [Server-Worker-2/DEBUG] [net.minecraftforge.fml.config.ConfigTracker/CONFIG]: Loading configs type COMMON
+[13Dec2020 19:13:07.529] [Server-Worker-2/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching parallel event LifecycleEvent:COMMON_SETUP
+[13Dec2020 19:13:07.529] [modloading-worker-1/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : FMLCommonSetupEvent
+[13Dec2020 19:13:07.529] [modloading-worker-2/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : FMLCommonSetupEvent
+[13Dec2020 19:13:07.647] [modloading-worker-1/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : FMLCommonSetupEvent
+[13Dec2020 19:13:07.653] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
+[13Dec2020 19:13:07.678] [modloading-worker-2/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : FMLCommonSetupEvent
+[13Dec2020 19:13:07.679] [Server-Worker-2/DEBUG] [net.minecraftforge.fml.ModList/LOADING]: Dispatching parallel event LifecycleEvent:SIDED_SETUP
+[13Dec2020 19:13:07.680] [modloading-worker-1/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid forge : FMLClientSetupEvent
+[13Dec2020 19:13:07.680] [modloading-worker-4/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Firing event for modid stormlight_mod : FMLClientSetupEvent
+[13Dec2020 19:13:07.680] [modloading-worker-1/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid forge : FMLClientSetupEvent
+[13Dec2020 19:13:07.689] [modloading-worker-4/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Fired event for modid stormlight_mod : FMLClientSetupEvent
+[13Dec2020 19:13:07.751] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
+[13Dec2020 19:13:09.364] [Render thread/ERROR] [net.minecraft.client.Minecraft/]: Shutdown failure!
+java.lang.NullPointerException: null
+	at net.minecraft.client.renderer.model.ModelManager.close(ModelManager.java:105) ~[forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar:?]
+	at net.minecraft.client.Minecraft.close(Minecraft.java:889) ~[forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar:?]
+	at net.minecraft.client.Minecraft.shutdownMinecraftApplet(Minecraft.java:876) ~[forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:191) ~[forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_265]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_265]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_265]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_265]
+	at net.minecraftforge.userdev.FMLUserdevClientLaunchProvider.lambda$launchService$0(FMLUserdevClientLaunchProvider.java:55) ~[forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar:?]
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-5.1.2.jar:?]
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54) [modlauncher-5.1.2.jar:?]
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72) [modlauncher-5.1.2.jar:?]
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:81) [modlauncher-5.1.2.jar:?]
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:65) [modlauncher-5.1.2.jar:?]
+	at net.minecraftforge.userdev.LaunchTesting.main(LaunchTesting.java:102) [forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar:?]

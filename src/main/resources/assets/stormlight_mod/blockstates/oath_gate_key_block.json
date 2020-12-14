@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "stormlight_mod:block/oath_gate_key_block"
+    }
+  }
+}

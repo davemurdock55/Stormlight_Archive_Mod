@@ -1,0 +1,41 @@
+{
+  "minecraft:adventure/voluntary_exile": {
+    "criteria": {
+      "voluntary_exile": "2020-12-12 14:50:16 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2020-12-12 14:50:40 -0700"
+    },
+    "done": true
+  },
+  "stormlight_mod:radiant": {
+    "criteria": {
+      "radiant": "2020-12-12 14:50:20 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:beach": "2020-12-12 14:49:43 -0700",
+      "minecraft:river": "2020-12-12 14:50:44 -0700",
+      "minecraft:plains": "2020-12-12 14:50:16 -0700"
+    },
+    "done": false
+  },
+  "minecraft:husbandry/tame_an_animal": {
+    "criteria": {
+      "tamed_animal": "2020-12-12 14:50:39 -0700"
+    },
+    "done": true
+  },
+  "stormlight_mod:skybreakerlevel_1": {
+    "criteria": {
+      "skybreakerlevel_1": "2020-12-12 14:50:20 -0700"
+    },
+    "done": true
+  },
+  "DataVersion": 2230
+}

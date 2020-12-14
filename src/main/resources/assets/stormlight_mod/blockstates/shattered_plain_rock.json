@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "stormlight_mod:block/shattered_plain_rock"
+    },
+    "facing=east": {
+      "model": "stormlight_mod:block/shattered_plain_rock",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "stormlight_mod:block/shattered_plain_rock",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "stormlight_mod:block/shattered_plain_rock",
+      "y": 270
+    }
+  }
+}

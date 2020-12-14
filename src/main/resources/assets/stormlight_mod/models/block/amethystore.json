@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "stormlight_mod:blocks/amethyst_ore",
+    "up": "stormlight_mod:blocks/amethyst_ore",
+    "north": "stormlight_mod:blocks/amethyst_ore",
+    "east": "stormlight_mod:blocks/amethyst_ore",
+    "south": "stormlight_mod:blocks/amethyst_ore",
+    "west": "stormlight_mod:blocks/amethyst_ore",
+    "particle": "stormlight_mod:blocks/amethyst_ore"
+  }
+}

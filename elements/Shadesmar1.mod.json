@@ -1,0 +1,47 @@
+{
+  "_fv": 13,
+  "_type": "dimension",
+  "definition": {
+    "portalFrame": {
+      "value": "Blocks.STAINED_GLASS_PANE#15"
+    },
+    "portalParticles": {
+      "value": "PORTAL"
+    },
+    "portalLuminance": 0.0,
+    "portalSound": {
+      "value": "block.portal.ambient"
+    },
+    "igniterName": "Shadesmar 1 Portal Igniter",
+    "igniterTab": {
+      "value": "TOOLS"
+    },
+    "texture": "sunraiser1",
+    "portalTexture": "shadesmarobsidian",
+    "enablePortal": true,
+    "biomesInDimension": [
+      {
+        "value": "CUSTOM:Shadesmar"
+      }
+    ],
+    "worldGenType": "Normal world gen",
+    "mainFillerBlock": {
+      "value": "CUSTOM:ShadesmarObsidian"
+    },
+    "fluidBlock": {
+      "value": "CUSTOM:Shadesbeads"
+    },
+    "airColor": {
+      "value": -15921906,
+      "falpha": 0.0
+    },
+    "canRespawnHere": false,
+    "hasFog": false,
+    "hasWeather": false,
+    "isDark": false,
+    "doesWaterVaporize": false,
+    "sleepResult": "DENY",
+    "hasSkyLight": true,
+    "imitateOverworldBehaviour": false
+  }
+}

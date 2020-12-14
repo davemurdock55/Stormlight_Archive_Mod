@@ -1,0 +1,28 @@
+{
+  "_fv": 13,
+  "_type": "food",
+  "definition": {
+    "renderType": 0,
+    "texture": "curry",
+    "customModelName": "Normal",
+    "name": "Curry",
+    "rarity": "COMMON",
+    "specialInfo": [
+      "This food is hot and is called mens food in Roshar"
+    ],
+    "creativeTab": {
+      "value": "FOOD"
+    },
+    "stackSize": 64,
+    "nutritionalValue": 10,
+    "saturation": 2.0,
+    "eatingSpeed": 150,
+    "forDogs": true,
+    "isAlwaysEdible": true,
+    "animation": "eat",
+    "hasGlow": false,
+    "onEaten": {
+      "name": "CurryFoodEaten"
+    }
+  }
+}

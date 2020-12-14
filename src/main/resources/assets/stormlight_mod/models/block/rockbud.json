@@ -1,0 +1,8 @@
+{
+  "parent": "stormlight_mod:custom/rockbud",
+  "textures": {
+    "all": "stormlight_mod:blocks/rockbud",
+    "particle": "stormlight_mod:blocks/rockbud",
+    "0": "stormlight_mod:blocks/"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "_fv": 13,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "T",
+    "keyBindingName": "Secondary Radiant Power",
+    "keyBindingCategoryKey": "misc",
+    "onKeyReleased": {
+      "name": "DownLashing"
+    }
+  }
+}
