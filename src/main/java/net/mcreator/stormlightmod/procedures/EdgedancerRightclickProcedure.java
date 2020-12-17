@@ -4,21 +4,19 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.common.MinecraftForge;
 
-import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.potion.Effects;
 import net.minecraft.potion.EffectInstance;
-import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
+import net.mcreator.stormlightmod.potion.Edgedancer1Potion;
 import net.mcreator.stormlightmod.StormlightModModElements;
 
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Collection;
 
 @StormlightModModElements.ModElement.Tag
 public class EdgedancerRightclickProcedure extends StormlightModModElements.ModElement {
@@ -40,14 +38,20 @@ public class EdgedancerRightclickProcedure extends StormlightModModElements.ModE
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		Entity sourceentity = (Entity) dependencies.get("sourceentity");
-		if ((((sourceentity instanceof ServerPlayerEntity) && (sourceentity.world instanceof ServerWorld))
-				? ((ServerPlayerEntity) sourceentity).getAdvancements()
-						.getProgress(((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager()
-								.getAdvancement(new ResourceLocation("stormlight_mod:edgedancerlevel_1")))
-						.isDone()
-				: false)) {
+		if ((new Object() {
+			boolean check(Entity _entity) {
+				if (_entity instanceof LivingEntity) {
+					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+					for (EffectInstance effect : effects) {
+						if (effect.getPotion() == Edgedancer1Potion.potion)
+							return true;
+					}
+				}
+				return false;
+			}
+		}.check(sourceentity))) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.REGENERATION, (int) 100, (int) 1, (false), (false)));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.INSTANT_HEALTH, (int) 100, (int) 1, (false), (false)));
 		}
 	}
 

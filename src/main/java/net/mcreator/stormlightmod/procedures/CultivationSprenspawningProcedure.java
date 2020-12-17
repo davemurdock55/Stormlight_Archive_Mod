@@ -81,7 +81,7 @@ public class CultivationSprenspawningProcedure extends StormlightModModElements.
 					SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 		}
 		if (world instanceof ServerWorld) {
-			((ServerWorld) world).spawnParticle(ParticleTypes.DRAGON_BREATH, x, y, z, (int) 5, 3, 3, 3, 1);
+			((ServerWorld) world).spawnParticle(ParticleTypes.EXPLOSION, x, y, z, (int) 5, 3, 3, 3, 1);
 		}
 		if (entity instanceof ServerPlayerEntity) {
 			Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()

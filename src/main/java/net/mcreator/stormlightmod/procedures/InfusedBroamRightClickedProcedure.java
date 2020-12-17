@@ -21,7 +21,6 @@ import net.mcreator.stormlightmod.potion.Stoneward1Potion;
 import net.mcreator.stormlightmod.potion.Skybreaker1Potion;
 import net.mcreator.stormlightmod.potion.Lightweaver1Potion;
 import net.mcreator.stormlightmod.potion.Elsecaller1Potion;
-import net.mcreator.stormlightmod.potion.Edgedancerlevel1potionPotion;
 import net.mcreator.stormlightmod.potion.Edgedancer1Potion;
 import net.mcreator.stormlightmod.potion.Dustbringer1Potion;
 import net.mcreator.stormlightmod.potion.Bondsmith1Potion;
@@ -112,9 +111,6 @@ public class InfusedBroamRightClickedProcedure extends StormlightModModElements.
 					: false)) {
 				if (entity instanceof LivingEntity)
 					((LivingEntity) entity).addPotionEffect(new EffectInstance(Edgedancer1Potion.potion,
-							(int) (StormlightModModVariables.WorldVariables.get(world).bromeStormlightAmount), (int) 1));
-				if (entity instanceof LivingEntity)
-					((LivingEntity) entity).addPotionEffect(new EffectInstance(Edgedancerlevel1potionPotion.potion,
 							(int) (StormlightModModVariables.WorldVariables.get(world).bromeStormlightAmount), (int) 1));
 				if (entity instanceof LivingEntity)
 					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.GLOWING,

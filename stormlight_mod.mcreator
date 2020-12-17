@@ -1780,15 +1780,6 @@
       "registry_name": "dustbringer_1"
     },
     {
-      "name": "Edgedancer1",
-      "type": "potion",
-      "sortid": 172,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "edgedancer_1"
-    },
-    {
       "name": "Truthwatcher1",
       "type": "potion",
       "sortid": 173,
@@ -4729,39 +4720,6 @@
       }
     },
     {
-      "name": "EdgedancerGrowthingsOnKeyPressed",
-      "type": "procedure",
-      "sortid": 389,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "edgedancer_growthings_on_key_pressed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
       "name": "SkybreakerLeftClick",
       "type": "procedure",
       "sortid": 387,
@@ -4777,15 +4735,6 @@
           }
         ]
       }
-    },
-    {
-      "name": "Edgedancerlevel1potion",
-      "type": "potion",
-      "sortid": 391,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "edgedancerlevel_1potion"
     },
     {
       "name": "UseRadientPowers",
@@ -4897,6 +4846,48 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "attempt"
+    },
+    {
+      "name": "PressREdgedancer",
+      "type": "procedure",
+      "sortid": 399,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "press_r_edgedancer",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Edgedancer1",
+      "type": "potion",
+      "sortid": 400,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "edgedancer_1"
     }
   ],
   "variable_elements": [
@@ -5052,14 +5043,13 @@
       "item.minecraft.lingering_potion.effect.gravitation": "Lingering Gravitation",
       "advancements.skybreakerlevel_1.title": "Skybreaker",
       "advancements.into_shadesmar.title": "Into Shadesmar",
-      "block.stormlight_mod.zircon_ore": "Zirconore",
       "item.stormlight_mod.heliodor_gem": "Heliodorgem",
+      "block.stormlight_mod.zircon_ore": "Zirconore",
       "item.stormlight_mod.cultivation_spren_spawn_egg": "Cultivation Spren Spawn Egg",
       "entity.stormlight_mod.ink_spren": "Ink Spren",
       "item.stormlight_mod.dun_amethyst_broam": "Dun Amethyst Broam",
       "item.stormlight_mod.infused_topaz_broam": "Infused Topaz Broam",
       "item.stormlight_mod.windrunnerfused_spawn_egg": "Heavenly Ones Spawn Egg",
-      "item.minecraft.lingering_potion.effect.edgedancerlevel_1potion": "Lingering Edgedancer 1",
       "advancements.edgedancerlevel_1.title": "Edgedancer",
       "item.stormlight_mod.infused_heliodor_broam": "Infused Heliodor Broam",
       "item.minecraft.tipped_arrow.effect.lightweaver_1": "Arrow of Lightweaver 1",
@@ -5067,9 +5057,7 @@
       "item.minecraft.lingering_potion.effect.stoneward_1": "Lingering Skybreaker 1",
       "item.stormlight_mod.infused_ruby_broam": "Infused Ruby Broam",
       "item.stormlight_mod.dun_ruby_chip": "Dun Ruby Chip",
-      "item.minecraft.tipped_arrow.effect.edgedancerlevel_1potion": "Arrow of Edgedancer 1",
       "item.stormlight_mod.small_smokestonerecipe": "Small Smokestonerecipe",
-      "item.minecraft.potion.effect.edgedancerlevel_1potion": "Edgedancer 1",
       "effect.stoneward_1": "Skybreaker 1",
       "item.minecraft.potion.effect.gravitation": "Gravitation",
       "advancements.becominga_shardbearer.title": "Becoming a Shardbearer",
@@ -5080,8 +5068,8 @@
       "advancements.stonewardlevel_1.title": "Windrunner",
       "effect.willshaper_1": "Skybreaker 1",
       "item.stormlight_mod.high_spren": "High Spren Spawn Egg",
-      "item.minecraft.splash_potion.effect.dustbringer_1": "Splash Skybreaker 1",
       "item.minecraft.splash_potion.effect.skybreaker_1": "Splash Skybreaker 1",
+      "item.minecraft.splash_potion.effect.dustbringer_1": "Splash Skybreaker 1",
       "effect.elsecaller_1": "Elsecaller 1",
       "effect.gravitation": "Gravitation",
       "item.minecraft.potion.effect.dustbringer_1": "Skybreaker 1",
@@ -5099,8 +5087,8 @@
       "advancements.bond_smithlevel_1.title": "Windrunner",
       "item.stormlight_mod.small_sapphire": "Small Sapphire",
       "item.stormlight_mod.infused_smokestone_mark": "Infused Smokestone Mark",
-      "item.minecraft.potion.effect.edgedancer_1": "Edgedancer 1",
       "item.stormlight_mod.ruby_gem": "RubyGem",
+      "item.minecraft.potion.effect.edgedancer_1": "Edgedancer 1",
       "item.stormlight_mod.small_amethystgem": "Small Amethystgem",
       "key.mcreator.radient_1_power_2": "Secondary Radiant Power",
       "item.stormlight_mod.havah_chestplate": "Havah Body",
@@ -5112,8 +5100,8 @@
       "advancements.self_improvement.descr": "Have a certain amount of experience",
       "item.stormlight_mod.dun_sapphire_chip": "Dun Sapphire Chip",
       "item.stormlight_mod.shardblade": "Shardblade",
-      "item.stormlight_mod.infused_emerald_chip": "Infused Emerald Chip",
       "item.minecraft.tipped_arrow.effect.stoneward_1": "Arrow of Skybreaker 1",
+      "item.stormlight_mod.infused_emerald_chip": "Infused Emerald Chip",
       "advancements.makeabook.title": "Makeabook",
       "item.minecraft.splash_potion.effect.edgedancer_1": "Splash Edgedancer 1",
       "enchantment.stormlight_mod.attempt": "Attempt",
@@ -5123,8 +5111,8 @@
       "item.minecraft.potion.effect.lightweaver_1": "Lightweaver 1",
       "item.stormlight_mod.medium_heliodor_gem": "Medium Heliodorgem",
       "advancements.windrunnerlevel_3.descr": "I will protect even those I hate",
-      "item.minecraft.lingering_potion.effect.elsecaller_1": "Lingering Elsecaller 1",
       "item.minecraft.tipped_arrow.effect.windrunner_1": "Arrow of Windrunner 1",
+      "item.minecraft.lingering_potion.effect.elsecaller_1": "Lingering Elsecaller 1",
       "item.minecraft.lingering_potion.effect.willshaper_1": "Lingering Skybreaker 1",
       "item.stormlight_mod.small_topaz_gem": "SmallTopazGem",
       "item.stormlight_mod.infused_sapphire_mark": "Infused Sapphire Mark",
@@ -5136,7 +5124,6 @@
       "item.minecraft.tipped_arrow.effect.elsecaller_1": "Arrow of Elsecaller 1",
       "item.stormlight_mod.small_heliodor_gem": "SmallHeliodorgem",
       "advancements.willshaperlevel_1.descr": "Become a Windrunner",
-      "item.minecraft.splash_potion.effect.edgedancerlevel_1potion": "Splash Edgedancer 1",
       "key.mcreator.lashing_amount_1": "Lashing Amount 1",
       "key.mcreator.lashing_amount_2": "Lashing Amount 2",
       "item.stormlight_mod.elsecallerfused_spawn_egg": "Husked Ones Spawn Egg",
@@ -5277,7 +5264,6 @@
       "advancements.radiant.descr": "\"Life Before Death...\"",
       "block.stormlight_mod.shadesmar_obsidian": "Shadesmar Obsidian",
       "effect.windrunner_1": "Windrunner 1",
-      "effect.edgedancerlevel_1potion": "Edgedancer 1",
       "item.stormlight_mod.dun_diamond_mark": "Dun Diamond Mark",
       "key.mcreator.radient_power": "Primary Radient Power",
       "item.stormlight_mod.dun_gartnetchip": "Dun Gartnet Chip",

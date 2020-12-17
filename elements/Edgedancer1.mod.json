@@ -6,17 +6,14 @@
     "effectName": "Edgedancer 1",
     "icon": "edgedancer_glyph_pixelized.png",
     "color": {
-      "value": -16738048,
+      "value": -16751104,
       "falpha": 0.0
     },
     "isInstant": true,
     "isBad": false,
-    "isBenefitical": true,
-    "registerPotionType": false,
+    "isBenefitical": false,
+    "registerPotionType": true,
     "renderStatusInInventory": true,
-    "renderStatusInHUD": true,
-    "onStarted": {
-      "name": "Edgedancer1PotionStartedapplied"
-    }
+    "renderStatusInHUD": true
   }
 }

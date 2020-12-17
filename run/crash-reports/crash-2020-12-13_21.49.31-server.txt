@@ -1,0 +1,50 @@
+---- Minecraft Crash Report ----
+// I blame Dinnerbone.
+
+Time: 12/13/20 9:49 PM
+Description: Exception in server tick loop
+
+java.lang.NullPointerException: Exception in server tick loop
+	at net.minecraft.server.integrated.IntegratedServer.loadAllWorlds(IntegratedServer.java:79) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.integrated.IntegratedServer.init(IntegratedServer.java:99) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:638) [?:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_265] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.15.2
+	Minecraft Version ID: 1.15.2
+	Operating System: Mac OS X (x86_64) version 10.16
+	Java Version: 1.8.0_265, BellSoft
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), BellSoft
+	Memory: 758666512 bytes (723 MB) / 2218262528 bytes (2115 MB) up to 3817865216 bytes (3641 MB)
+	CPUs: 8
+	JVM Flags: 1 total; -Xss1M
+	ModLauncher: 5.1.2+70+master.2845bb9
+	ModLauncher launch target: fmluserdevclient
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		/eventbus-2.2.0-service.jar eventbus PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar runtime_enum_extender PLUGINSERVICE 
+		/accesstransformers-2.1.1-shadowed.jar accesstransformer PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar capability_inject_definalize PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar runtimedistcleaner PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar fml TRANSFORMATIONSERVICE 
+	FML: 31.2
+	Forge: net.minecraftforge:31.2.0
+	FML Language Providers: 
+		javafml@31.2
+		minecraft@1
+	Mod List: 
+		client-extra.jar Minecraft {minecraft@1.15.2 DONE}
+		forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar Forge {forge@31.2.0 DONE}
+		main Stormlight Mod {stormlight_mod@1.0.0 DONE}
+	Player Count: 0 / 8; []
+	Data Packs: vanilla, mod:forge (incompatible), mod:stormlight_mod
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'

@@ -9,7 +9,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.stormlightmod.StormlightModModVariables;
+import net.mcreator.stormlightmod.potion.Edgedancer1Potion;
 import net.mcreator.stormlightmod.StormlightModModElements;
 
 import java.util.Map;
@@ -40,10 +40,12 @@ public class Edgedancer1PotionStartedappliedProcedure extends StormlightModModEl
 						.isDone()
 				: false)) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(
-						new EffectInstance(Effects.SPEED, (int) ((entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new StormlightModModVariables.PlayerVariables())).lastInfusionAmnt), (int) 1));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 6000, (int) 1));
 			entity.setMotion(((entity.getMotion().getX()) * 2), y, ((entity.getMotion().getZ()) * 2));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.INSTANT_HEALTH, (int) 6000, (int) 1));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Edgedancer1Potion.potion, (int) 6000, (int) 1));
 		}
 	}
 }

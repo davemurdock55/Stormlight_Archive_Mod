@@ -4,18 +4,15 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.common.MinecraftForge;
 
-import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.potion.Effects;
 import net.minecraft.potion.EffectInstance;
-import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.stormlightmod.potion.Windrunner1Potion;
+import net.mcreator.stormlightmod.potion.Skybreaker1Potion;
 import net.mcreator.stormlightmod.StormlightModModElements;
 
 import java.util.Map;
@@ -53,14 +50,20 @@ public class RightclickonentityProcedure extends StormlightModModElements.ModEle
 				}
 				return false;
 			}
-		}.check(sourceentity)) || (((sourceentity instanceof ServerPlayerEntity) && (sourceentity.world instanceof ServerWorld))
-				? ((ServerPlayerEntity) sourceentity).getAdvancements()
-						.getProgress(((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager()
-								.getAdvancement(new ResourceLocation("stormlight_mod:skybreakerlevel_1")))
-						.isDone()
-				: false))) {
+		}.check(sourceentity)) || (new Object() {
+			boolean check(Entity _entity) {
+				if (_entity instanceof LivingEntity) {
+					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+					for (EffectInstance effect : effects) {
+						if (effect.getPotion() == Skybreaker1Potion.potion)
+							return true;
+					}
+				}
+				return false;
+			}
+		}.check(sourceentity)))) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.LEVITATION, (int) 100, (int) 5, (false), (false)));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.LEVITATION, (int) 100, (int) 2, (false), (false)));
 		}
 	}
 

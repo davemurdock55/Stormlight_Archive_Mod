@@ -18,7 +18,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.stormlightmod.procedures.EdgedancerGrowthingsOnKeyPressedProcedure;
+import net.mcreator.stormlightmod.procedures.PressREdgedancerProcedure;
 import net.mcreator.stormlightmod.StormlightModModElements;
 import net.mcreator.stormlightmod.StormlightModMod;
 
@@ -97,7 +97,7 @@ public class EdgedancerGrowthingsKeyBinding extends StormlightModModElements.Mod
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				EdgedancerGrowthingsOnKeyPressedProcedure.executeProcedure($_dependencies);
+				PressREdgedancerProcedure.executeProcedure($_dependencies);
 			}
 		}
 	}

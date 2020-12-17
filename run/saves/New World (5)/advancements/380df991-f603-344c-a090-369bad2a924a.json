@@ -1,0 +1,41 @@
+{
+  "stormlight_mod:edgedancerlevel_1": {
+    "criteria": {
+      "edgedancerlevel_1": "2020-12-15 18:00:13 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/hero_of_the_village": {
+    "criteria": {
+      "hero_of_the_village": "2020-12-15 18:00:10 -0700"
+    },
+    "done": true
+  },
+  "stormlight_mod:windrunner": {
+    "criteria": {
+      "windrunner": "2020-12-15 18:01:01 -0700"
+    },
+    "done": true
+  },
+  "stormlight_mod:radiant": {
+    "criteria": {
+      "radiant": "2020-12-15 18:00:13 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:forest": "2020-12-15 18:01:08 -0700",
+      "minecraft:wooded_hills": "2020-12-15 18:01:20 -0700",
+      "minecraft:plains": "2020-12-15 18:00:01 -0700"
+    },
+    "done": false
+  },
+  "minecraft:husbandry/tame_an_animal": {
+    "criteria": {
+      "tamed_animal": "2020-12-15 18:00:26 -0700"
+    },
+    "done": true
+  },
+  "DataVersion": 2230
+}
