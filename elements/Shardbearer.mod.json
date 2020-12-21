@@ -93,6 +93,9 @@
     "particleSpawningShape": "Top",
     "particleSpawningRadious": 0.0,
     "particleAmount": 2,
+    "whenMobDies": {
+      "name": "ShardbearerEntityDies"
+    },
     "whenMobIsHurt": {
       "name": "ShardbearerParticleSpawningCondition"
     },

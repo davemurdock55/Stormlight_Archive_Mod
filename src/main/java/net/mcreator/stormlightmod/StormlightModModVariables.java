@@ -229,6 +229,8 @@ public class StormlightModModVariables {
 			nbt.putDouble("radiant2Level", instance.radiant2Level);
 			nbt.putBoolean("receivedSprenblade", instance.receivedSprenblade);
 			nbt.putDouble("lastInfusionAmnt", instance.lastInfusionAmnt);
+			nbt.putBoolean("recievedShardBlade", instance.recievedShardBlade);
+			nbt.putDouble("shardBladeClock", instance.shardBladeClock);
 			return nbt;
 		}
 
@@ -256,6 +258,8 @@ public class StormlightModModVariables {
 			instance.radiant2Level = nbt.getDouble("radiant2Level");
 			instance.receivedSprenblade = nbt.getBoolean("receivedSprenblade");
 			instance.lastInfusionAmnt = nbt.getDouble("lastInfusionAmnt");
+			instance.recievedShardBlade = nbt.getBoolean("recievedShardBlade");
+			instance.shardBladeClock = nbt.getDouble("shardBladeClock");
 		}
 	}
 
@@ -281,6 +285,8 @@ public class StormlightModModVariables {
 		public double radiant2Level = 0;
 		public boolean receivedSprenblade = false;
 		public double lastInfusionAmnt = 0;
+		public boolean recievedShardBlade = false;
+		public double shardBladeClock = 0;
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
 				StormlightModMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity),
@@ -334,7 +340,9 @@ public class StormlightModModVariables {
 		clone.radiant2Level = original.radiant2Level;
 		clone.receivedSprenblade = original.receivedSprenblade;
 		clone.lastInfusionAmnt = original.lastInfusionAmnt;
+		clone.recievedShardBlade = original.recievedShardBlade;
 		if (!event.isWasDeath()) {
+			clone.shardBladeClock = original.shardBladeClock;
 		}
 	}
 	public static class PlayerVariablesSyncMessage {
@@ -379,6 +387,8 @@ public class StormlightModModVariables {
 					variables.radiant2Level = message.data.radiant2Level;
 					variables.receivedSprenblade = message.data.receivedSprenblade;
 					variables.lastInfusionAmnt = message.data.lastInfusionAmnt;
+					variables.recievedShardBlade = message.data.recievedShardBlade;
+					variables.shardBladeClock = message.data.shardBladeClock;
 				}
 			});
 			context.setPacketHandled(true);

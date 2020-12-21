@@ -1,0 +1,94 @@
+{
+  "_fv": 13,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 198,
+    "height": 170,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "What Boon do you ask of me?",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "What Boon do you ask of me?",
+          "x": 148,
+          "y": 45
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Night vision",
+          "width": 85,
+          "height": 20,
+          "name": "Night vision",
+          "x": 118,
+          "y": 57
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Stregnth",
+          "width": 65,
+          "height": 20,
+          "name": "Stregnth",
+          "x": 217,
+          "y": 56
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Speed",
+          "width": 50,
+          "height": 20,
+          "name": "Speed",
+          "x": 128,
+          "y": 78
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Health Regeneration",
+          "width": 120,
+          "height": 20,
+          "name": "Health Regeneration",
+          "x": 190,
+          "y": 78
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Jump Boost",
+          "width": 70,
+          "height": 20,
+          "name": "Jump Boost",
+          "x": 121,
+          "y": 98
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Health Boost",
+          "width": 85,
+          "height": 20,
+          "name": "Health Boost",
+          "x": 207,
+          "y": 98
+        }
+      }
+    ]
+  }
+}

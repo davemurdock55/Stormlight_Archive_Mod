@@ -57,6 +57,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.stormlightmod.procedures.ShardbearerParticleSpawningConditionProcedure;
+import net.mcreator.stormlightmod.procedures.ShardbearerEntityDiesProcedure;
 import net.mcreator.stormlightmod.item.ShardplateItem;
 import net.mcreator.stormlightmod.item.ShardbladeItem;
 import net.mcreator.stormlightmod.StormlightModModElements;
@@ -188,6 +189,21 @@ public class ShardbearerEntity extends StormlightModModElements.ModElement {
 			if (source == DamageSource.CACTUS)
 				return false;
 			return super.attackEntityFrom(source, amount);
+		}
+
+		@Override
+		public void onDeath(DamageSource source) {
+			super.onDeath(source);
+			double x = this.getPosX();
+			double y = this.getPosY();
+			double z = this.getPosZ();
+			Entity sourceentity = source.getTrueSource();
+			Entity entity = this;
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("sourceentity", sourceentity);
+				ShardbearerEntityDiesProcedure.executeProcedure($_dependencies);
+			}
 		}
 
 		@Override

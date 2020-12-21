@@ -1,0 +1,27 @@
+{
+  "minecraft:recipes/redstone/dispenser": {
+    "criteria": {
+      "has_bow": "2020-12-20 18:03:31 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2020-12-20 18:03:22 -0700"
+    },
+    "done": true
+  },
+  "stormlight_mod:intothe_shatteredplains": {
+    "criteria": {
+      "intothe_shatteredplains": "2020-12-20 18:02:38 -0700"
+    },
+    "done": true
+  },
+  "stormlight_mod:becominga_shardbearer": {
+    "criteria": {
+      "becominga_shardbearer": "2020-12-20 18:02:59 -0700"
+    },
+    "done": true
+  },
+  "DataVersion": 2230
+}

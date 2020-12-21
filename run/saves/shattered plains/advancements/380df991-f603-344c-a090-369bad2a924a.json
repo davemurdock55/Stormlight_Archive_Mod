@@ -1,0 +1,21 @@
+{
+  "stormlight_mod:intothe_shatteredplains": {
+    "criteria": {
+      "intothe_shatteredplains": "2020-12-20 18:08:35 -0700"
+    },
+    "done": true
+  },
+  "stormlight_mod:becominga_shardbearer": {
+    "criteria": {
+      "becominga_shardbearer": "2020-12-20 18:09:00 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:river": "2020-12-20 18:08:29 -0700"
+    },
+    "done": false
+  },
+  "DataVersion": 2230
+}

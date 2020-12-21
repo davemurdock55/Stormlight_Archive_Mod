@@ -87,7 +87,6 @@ public class ShardplateItem extends StormlightModModElements.ModElement {
 				double z = entity.getPosZ();
 				{
 					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("entity", entity);
 					$_dependencies.put("itemstack", itemstack);
 					ShardplateHelmetTickEventProcedure.executeProcedure($_dependencies);
 				}
