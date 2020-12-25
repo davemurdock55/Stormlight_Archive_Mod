@@ -29,6 +29,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.ai.goal.SwimGoal;
@@ -190,7 +191,7 @@ public class WindrunnerfusedEntity extends StormlightModModElements.ModElement {
 					return new Vec3d(dir_x, dir_y, dir_z);
 				}
 			});
-			this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, ShardbearerEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, ServerPlayerEntity.class, false, false));
 			this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, PlayerEntity.class, false, false));
 			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
 				@Override

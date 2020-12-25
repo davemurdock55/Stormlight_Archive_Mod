@@ -24,7 +24,6 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.block.Blocks;
 
-import net.mcreator.stormlightmod.entity.ShardbearerEntity;
 import net.mcreator.stormlightmod.block.ShatteredPlainRockBlock;
 import net.mcreator.stormlightmod.StormlightModModElements;
 
@@ -78,7 +77,6 @@ public class ShatteredPlainsBiome extends StormlightModModElements.ModElement {
 							.withConfiguration(new SphereReplaceConfig(Blocks.GRAVEL.getDefaultState(), 6, 2,
 									Lists.newArrayList(ShatteredPlainRockBlock.block.getDefaultState(), Blocks.STONE.getDefaultState())))
 							.withPlacement(Placement.COUNT_TOP_SOLID.configure(new FrequencyConfig(1))));
-			this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(ShardbearerEntity.entity, 5, 1, 1));
 			this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.CREEPER, 20, 1, 1));
 			this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.EVOKER, 20, 1, 1));
 			this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.RAVAGER, 20, 1, 1));

@@ -1,6 +1,7 @@
 {
-  "parent": "item/handheld",
+  "parent": "stormlight_mod:custom/shardblade",
   "textures": {
-    "layer0": "stormlight_mod:items/shardblade1"
+    "2": "stormlight_mod:blocks/",
+    "particle": "stormlight_mod:items/shardblade"
   }
 }

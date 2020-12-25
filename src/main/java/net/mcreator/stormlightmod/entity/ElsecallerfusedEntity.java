@@ -26,6 +26,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.monster.EndermanEntity;
@@ -123,7 +124,7 @@ public class ElsecallerfusedEntity extends StormlightModModElements.ModElement {
 			this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
 			this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
 			this.goalSelector.addGoal(5, new SwimGoal(this));
-			this.goalSelector.addGoal(6, new LookAtGoal(this, ShardbearerEntity.CustomEntity.class, (float) 6));
+			this.goalSelector.addGoal(6, new LookAtGoal(this, ServerPlayerEntity.class, (float) 6));
 			this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, (float) 6));
 			this.goalSelector.addGoal(8, new Goal() {
 				{

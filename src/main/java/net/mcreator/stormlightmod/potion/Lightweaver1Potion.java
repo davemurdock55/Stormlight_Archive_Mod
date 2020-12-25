@@ -6,12 +6,19 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.RegistryEvent;
 
+import net.minecraft.world.World;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.potion.EffectType;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effect;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Entity;
 
+import net.mcreator.stormlightmod.procedures.Lightweaver1PotionStartedappliedProcedure;
 import net.mcreator.stormlightmod.StormlightModModElements;
+
+import java.util.Map;
+import java.util.HashMap;
 
 @StormlightModModElements.ModElement.Tag
 public class Lightweaver1Potion extends StormlightModModElements.ModElement {
@@ -31,7 +38,7 @@ public class Lightweaver1Potion extends StormlightModModElements.ModElement {
 		public EffectCustom() {
 			super(EffectType.BENEFICIAL, -6710887);
 			setRegistryName("lightweaver_1");
-			potionIcon = new ResourceLocation("stormlight_mod:textures/image_1.png");
+			potionIcon = new ResourceLocation("stormlight_mod:textures/lightweaverglyphpixel.png");
 		}
 
 		@Override
@@ -62,6 +69,19 @@ public class Lightweaver1Potion extends StormlightModModElements.ModElement {
 		@Override
 		public boolean shouldRenderHUD(EffectInstance effect) {
 			return true;
+		}
+
+		@Override
+		public void affectEntity(Entity source, Entity indirectSource, LivingEntity entity, int amplifier, double health) {
+			World world = entity.world;
+			double x = entity.getPosX();
+			double y = entity.getPosY();
+			double z = entity.getPosZ();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				Lightweaver1PotionStartedappliedProcedure.executeProcedure($_dependencies);
+			}
 		}
 
 		@Override

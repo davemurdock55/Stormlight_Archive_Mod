@@ -7,7 +7,6 @@ import net.minecraft.entity.Entity;
 
 import net.mcreator.stormlightmod.potion.Windrunner1Potion;
 import net.mcreator.stormlightmod.potion.Skybreaker1Potion;
-import net.mcreator.stormlightmod.StormlightModModVariables;
 import net.mcreator.stormlightmod.StormlightModModElements;
 
 import java.util.Map;
@@ -38,13 +37,7 @@ public class LashingProcedure extends StormlightModModElements.ModElement {
 				return false;
 			}
 		}.check(entity))) {
-			entity.setMotion(
-					((entity.getMotion().getX()) * ((entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new StormlightModModVariables.PlayerVariables())).radiantLevel)),
-					((entity.getMotion().getY()) * ((entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new StormlightModModVariables.PlayerVariables())).radiantLevel)),
-					((entity.getMotion().getZ()) * ((entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new StormlightModModVariables.PlayerVariables())).radiantLevel)));
+			entity.setMotion(((entity.getMotion().getX()) * 2), ((entity.getMotion().getY()) * 2), ((entity.getMotion().getZ()) * 2));
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.LEVITATION, (int) 40, (int) 1));
 		} else if ((new Object() {
@@ -59,13 +52,7 @@ public class LashingProcedure extends StormlightModModElements.ModElement {
 				return false;
 			}
 		}.check(entity))) {
-			entity.setMotion(
-					((entity.getMotion().getX()) * ((entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new StormlightModModVariables.PlayerVariables())).radiantLevel)),
-					((entity.getMotion().getY()) * ((entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new StormlightModModVariables.PlayerVariables())).radiantLevel)),
-					((entity.getMotion().getZ()) * ((entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new StormlightModModVariables.PlayerVariables())).radiantLevel)));
+			entity.setMotion(((entity.getMotion().getX()) * 2), ((entity.getMotion().getY()) * 2), ((entity.getMotion().getZ()) * 2));
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.LEVITATION, (int) 40, (int) 1));
 		}

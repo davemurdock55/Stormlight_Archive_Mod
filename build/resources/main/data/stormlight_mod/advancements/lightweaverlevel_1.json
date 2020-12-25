@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "stormlight_mod:unknown_element"
+      "item": "stormlight_mod:infused_garnet_broam"
     },
     "title": {
       "translate": "advancements.lightweaverlevel_1.title"
@@ -16,7 +16,18 @@
   },
   "criteria": {
     "lightweaverlevel_1": {
-      "trigger": "minecraft:impossible"
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:painting",
+            "count": {
+              "min": 1200,
+              "max": 90000000000
+            }
+          }
+        ]
+      }
     }
   },
   "rewards": {

@@ -101,11 +101,7 @@
     "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"98\" y=\"-24\"><next><block type=\"follow_owner\"><field name=\"speed\">5</field><field name=\"min_distance\">1</field><field name=\"max_distance\">2</field><field name=\"condition\">null,null</field><next><block type=\"watch_closest_entity\"><field name=\"radius\">12</field><field name=\"entity\">EntityPlayerMP</field><field name=\"condition\">null,null</field><next><block type=\"watch_closest_entity\"><field name=\"radius\">12</field><field name=\"entity\">EntityPlayer</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
     "breedable": true,
     "tameable": true,
-    "breedTriggerItems": [
-      {
-        "value": "CUSTOM:Sprenblade"
-      }
-    ],
+    "breedTriggerItems": [],
     "ranged": false,
     "rangedAttackItem": {
       "value": ""
@@ -117,7 +113,11 @@
     "mobSpawningType": "creature",
     "minNumberOfMobsPerGroup": 1,
     "maxNumberOfMobsPerGroup": 1,
-    "restrictionBiomes": [],
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:Shadesmar"
+      }
+    ],
     "spawnInDungeons": false
   }
 }

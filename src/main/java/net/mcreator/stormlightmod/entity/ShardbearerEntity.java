@@ -57,7 +57,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.stormlightmod.procedures.ShardbearerParticleSpawningConditionProcedure;
-import net.mcreator.stormlightmod.procedures.ShardbearerEntityDiesProcedure;
 import net.mcreator.stormlightmod.item.ShardplateItem;
 import net.mcreator.stormlightmod.item.ShardbladeItem;
 import net.mcreator.stormlightmod.StormlightModModElements;
@@ -89,6 +88,11 @@ public class ShardbearerEntity extends StormlightModModElements.ModElement {
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 		for (Biome biome : ForgeRegistries.BIOMES.getValues()) {
+			boolean biomeCriteria = false;
+			if (ForgeRegistries.BIOMES.getKey(biome).equals(new ResourceLocation("stormlight_mod:shattered_plains")))
+				biomeCriteria = true;
+			if (!biomeCriteria)
+				continue;
 			biome.getSpawns(EntityClassification.CREATURE).add(new Biome.SpawnListEntry(entity, 5, 1, 4));
 		}
 		EntitySpawnPlacementRegistry.register(entity, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
@@ -189,21 +193,6 @@ public class ShardbearerEntity extends StormlightModModElements.ModElement {
 			if (source == DamageSource.CACTUS)
 				return false;
 			return super.attackEntityFrom(source, amount);
-		}
-
-		@Override
-		public void onDeath(DamageSource source) {
-			super.onDeath(source);
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Entity sourceentity = source.getTrueSource();
-			Entity entity = this;
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("sourceentity", sourceentity);
-				ShardbearerEntityDiesProcedure.executeProcedure($_dependencies);
-			}
 		}
 
 		@Override

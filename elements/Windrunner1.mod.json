@@ -11,7 +11,7 @@
     },
     "isInstant": true,
     "isBad": false,
-    "isBenefitical": false,
+    "isBenefitical": true,
     "registerPotionType": false,
     "renderStatusInInventory": true,
     "renderStatusInHUD": true,

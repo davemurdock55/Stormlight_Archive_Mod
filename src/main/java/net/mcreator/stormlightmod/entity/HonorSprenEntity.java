@@ -17,12 +17,12 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.World;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Hand;
 import net.minecraft.util.DamageSource;
 import net.minecraft.pathfinding.FlyingPathNavigator;
-import net.minecraft.particles.ParticleTypes;
 import net.minecraft.network.IPacket;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.SpawnEggItem;
@@ -38,7 +38,6 @@ import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.RandomWalkingGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.LookAtGoal;
-import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.goal.FollowOwnerGoal;
 import net.minecraft.entity.ai.controller.FlyingMovementController;
 import net.minecraft.entity.SpawnReason;
@@ -50,19 +49,21 @@ import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.CreatureAttribute;
 import net.minecraft.entity.AgeableEntity;
-import net.minecraft.client.renderer.entity.model.BipedModel;
-import net.minecraft.client.renderer.entity.layers.BipedArmorLayer;
-import net.minecraft.client.renderer.entity.BipedRenderer;
+import net.minecraft.client.renderer.model.ModelRenderer;
+import net.minecraft.client.renderer.entity.model.EntityModel;
+import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.stormlightmod.procedures.HonorSprenRightClickedOnEntityProcedure;
-import net.mcreator.stormlightmod.item.SprenbladeItem;
 import net.mcreator.stormlightmod.StormlightModModElements;
 
 import java.util.Random;
 import java.util.Map;
 import java.util.HashMap;
+
+import com.mojang.blaze3d.vertex.IVertexBuilder;
+import com.mojang.blaze3d.matrix.MatrixStack;
 
 @StormlightModModElements.ModElement.Tag
 public class HonorSprenEntity extends StormlightModModElements.ModElement {
@@ -85,6 +86,11 @@ public class HonorSprenEntity extends StormlightModModElements.ModElement {
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 		for (Biome biome : ForgeRegistries.BIOMES.getValues()) {
+			boolean biomeCriteria = false;
+			if (ForgeRegistries.BIOMES.getKey(biome).equals(new ResourceLocation("stormlight_mod:shadesmar")))
+				biomeCriteria = true;
+			if (!biomeCriteria)
+				continue;
 			biome.getSpawns(EntityClassification.CREATURE).add(new Biome.SpawnListEntry(entity, 1, 1, 1));
 		}
 		EntitySpawnPlacementRegistry.register(entity, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
@@ -96,14 +102,12 @@ public class HonorSprenEntity extends StormlightModModElements.ModElement {
 	@OnlyIn(Dist.CLIENT)
 	public void registerModels(ModelRegistryEvent event) {
 		RenderingRegistry.registerEntityRenderingHandler(entity, renderManager -> {
-			BipedRenderer customRender = new BipedRenderer(renderManager, new BipedModel(0), 0.5f) {
+			return new MobRenderer(renderManager, new Modelvex(), 0.5f) {
 				@Override
 				public ResourceLocation getEntityTexture(Entity entity) {
 					return new ResourceLocation("stormlight_mod:textures/syl11.png");
 				}
 			};
-			customRender.addLayer(new BipedArmorLayer(customRender, new BipedModel(0.5f), new BipedModel(1)));
-			return customRender;
 		});
 	}
 	public static class CustomEntity extends TameableEntity {
@@ -130,7 +134,7 @@ public class HonorSprenEntity extends StormlightModModElements.ModElement {
 		@Override
 		protected void registerGoals() {
 			super.registerGoals();
-			this.goalSelector.addGoal(1, new FollowOwnerGoal(this, 5, (float) 1, (float) 2, false));
+			this.goalSelector.addGoal(1, new FollowOwnerGoal(this, 0.3, (float) 1, (float) 2, false));
 			this.goalSelector.addGoal(2, new LookAtGoal(this, ServerPlayerEntity.class, (float) 12));
 			this.goalSelector.addGoal(3, new LookAtGoal(this, PlayerEntity.class, (float) 12));
 			this.goalSelector.addGoal(4, new RandomWalkingGoal(this, 1, 20) {
@@ -143,9 +147,8 @@ public class HonorSprenEntity extends StormlightModModElements.ModElement {
 					return new Vec3d(dir_x, dir_y, dir_z);
 				}
 			});
-			this.targetSelector.addGoal(5, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
-			this.goalSelector.addGoal(6, new LookRandomlyGoal(this));
-			this.goalSelector.addGoal(7, new SwimGoal(this));
+			this.goalSelector.addGoal(5, new LookRandomlyGoal(this));
+			this.goalSelector.addGoal(6, new SwimGoal(this));
 		}
 
 		@Override
@@ -285,8 +288,6 @@ public class HonorSprenEntity extends StormlightModModElements.ModElement {
 		public boolean isBreedingItem(ItemStack stack) {
 			if (stack == null)
 				return false;
-			if (new ItemStack(SprenbladeItem.block, (int) (1)).getItem() == stack.getItem())
-				return true;
 			return false;
 		}
 
@@ -302,18 +303,68 @@ public class HonorSprenEntity extends StormlightModModElements.ModElement {
 		public void livingTick() {
 			super.livingTick();
 			this.setNoGravity(true);
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Random random = this.rand;
-			Entity entity = this;
-			if (true)
-				for (int l = 0; l < 3; ++l) {
-					double d0 = (double) ((float) x + 0.5) + (double) (random.nextFloat() - 0.5) * 0.5D;
-					double d1 = ((double) ((float) y + 0.7) + (double) (random.nextFloat() - 0.5) * 0.5D) + 0.5;
-					double d2 = (double) ((float) z + 0.5) + (double) (random.nextFloat() - 0.5) * 0.5D;
-					world.addParticle(ParticleTypes.END_ROD, d0, d1, d2, 0, 0, 0);
-				}
+		}
+	}
+
+	// Made with Blockbench 3.7.4
+	// Exported for Minecraft version 1.15
+	// Paste this class into your mod and generate all required imports
+	public static class Modelvex extends EntityModel<Entity> {
+		private final ModelRenderer head;
+		private final ModelRenderer body;
+		private final ModelRenderer rightArm;
+		private final ModelRenderer rightItem;
+		private final ModelRenderer leftArm;
+		private final ModelRenderer leg0;
+		private final ModelRenderer legright;
+		public Modelvex() {
+			textureWidth = 64;
+			textureHeight = 64;
+			head = new ModelRenderer(this);
+			head.setRotationPoint(0.0F, 0.0F, 0.0F);
+			head.setTextureOffset(0, 0).addBox(-4.0F, -1.0F, -5.0F, 8.0F, 8.0F, 8.0F, -2.0F, false);
+			body = new ModelRenderer(this);
+			body.setRotationPoint(0.0F, 0.0F, 0.0F);
+			body.setTextureOffset(16, 16).addBox(-4.0F, 3.0F, -4.0F, 8.0F, 10.0F, 6.0F, -2.0F, false);
+			rightArm = new ModelRenderer(this);
+			rightArm.setRotationPoint(-5.0F, 2.0F, 0.0F);
+			rightArm.setTextureOffset(40, 16).addBox(0.0F, 0.0F, -3.0F, 4.0F, 12.0F, 4.0F, -3.0F, false);
+			rightItem = new ModelRenderer(this);
+			rightItem.setRotationPoint(-6.0F, 11.0F, 0.0F);
+			leftArm = new ModelRenderer(this);
+			leftArm.setRotationPoint(5.0F, 2.0F, 0.0F);
+			leftArm.setTextureOffset(40, 16).addBox(-4.0F, 0.0F, -3.0F, 4.0F, 12.0F, 4.0F, -3.0F, true);
+			leg0 = new ModelRenderer(this);
+			leg0.setRotationPoint(-1.9F, 12.0F, 0.0F);
+			leg0.setTextureOffset(0, 16).addBox(1.0F, -4.0F, -3.0F, 4.0F, 12.0F, 4.0F, -3.0F, false);
+			leg0.setTextureOffset(32, 0).addBox(-1.0F, -4.0F, -3.0F, 4.0F, 12.0F, 4.0F, -3.0F, false);
+			legright = new ModelRenderer(this);
+			legright.setRotationPoint(5.9F, 10.0F, 0.0F);
+			leg0.addChild(legright);
+		}
+
+		@Override
+		public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue,
+				float alpha) {
+			head.render(matrixStack, buffer, packedLight, packedOverlay);
+			body.render(matrixStack, buffer, packedLight, packedOverlay);
+			rightArm.render(matrixStack, buffer, packedLight, packedOverlay);
+			rightItem.render(matrixStack, buffer, packedLight, packedOverlay);
+			leftArm.render(matrixStack, buffer, packedLight, packedOverlay);
+			leg0.render(matrixStack, buffer, packedLight, packedOverlay);
+		}
+
+		public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+			modelRenderer.rotateAngleX = x;
+			modelRenderer.rotateAngleY = y;
+			modelRenderer.rotateAngleZ = z;
+		}
+
+		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+			this.leg0.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+			this.legright.rotateAngleX = MathHelper.cos(f * 0.6662F + (float) Math.PI) * f1;
+			this.rightArm.rotateAngleX = MathHelper.cos(f * 0.6662F + (float) Math.PI) * f1;
+			this.leftArm.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
 		}
 	}
 }

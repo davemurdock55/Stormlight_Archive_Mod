@@ -38,7 +38,7 @@ public class HonorSprenRightClickedOnEntityProcedure extends StormlightModModEle
 		if ((((sourceentity instanceof ServerPlayerEntity) && (sourceentity.world instanceof ServerWorld))
 				? ((ServerPlayerEntity) sourceentity).getAdvancements()
 						.getProgress(((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager()
-								.getAdvancement(new ResourceLocation("minecraft:adventure/hero_of_the_village")))
+								.getAdvancement(new ResourceLocation("stormlight_mod:windrunnerlevel_3")))
 						.isDone()
 				: false)) {
 			{

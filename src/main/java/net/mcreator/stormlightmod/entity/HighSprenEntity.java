@@ -53,7 +53,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.stormlightmod.procedures.HighsprenRightClickedOnEntityProcedure;
-import net.mcreator.stormlightmod.item.SprenbladeItem;
 import net.mcreator.stormlightmod.StormlightModModElements;
 
 import java.util.Map;
@@ -80,6 +79,11 @@ public class HighSprenEntity extends StormlightModModElements.ModElement {
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 		for (Biome biome : ForgeRegistries.BIOMES.getValues()) {
+			boolean biomeCriteria = false;
+			if (ForgeRegistries.BIOMES.getKey(biome).equals(new ResourceLocation("stormlight_mod:shadesmar")))
+				biomeCriteria = true;
+			if (!biomeCriteria)
+				continue;
 			biome.getSpawns(EntityClassification.CREATURE).add(new Biome.SpawnListEntry(entity, 1, 1, 1));
 		}
 		EntitySpawnPlacementRegistry.register(entity, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
@@ -221,8 +225,6 @@ public class HighSprenEntity extends StormlightModModElements.ModElement {
 			Entity entity = this;
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("sourceentity", sourceentity);
 				HighsprenRightClickedOnEntityProcedure.executeProcedure($_dependencies);
 			}
 			return retval;
@@ -257,8 +259,6 @@ public class HighSprenEntity extends StormlightModModElements.ModElement {
 		public boolean isBreedingItem(ItemStack stack) {
 			if (stack == null)
 				return false;
-			if (new ItemStack(SprenbladeItem.block, (int) (1)).getItem() == stack.getItem())
-				return true;
 			return false;
 		}
 

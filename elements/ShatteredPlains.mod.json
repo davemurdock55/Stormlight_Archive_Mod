@@ -93,15 +93,6 @@
     "spawnEntries": [
       {
         "entity": {
-          "value": "CUSTOM:Shardbearer"
-        },
-        "minGroup": 1,
-        "maxGroup": 1,
-        "weight": 5,
-        "spawnType": "creature"
-      },
-      {
-        "entity": {
           "value": "EntityCreeper"
         },
         "minGroup": 1,

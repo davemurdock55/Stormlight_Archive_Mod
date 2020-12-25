@@ -6,12 +6,15 @@ import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.ILivingEntityData;
@@ -24,8 +27,10 @@ import net.mcreator.stormlightmod.entity.HonorSprenEntity;
 import net.mcreator.stormlightmod.StormlightModModVariables;
 import net.mcreator.stormlightmod.StormlightModModElements;
 
+import java.util.function.Function;
 import java.util.Map;
 import java.util.Iterator;
+import java.util.Comparator;
 
 @StormlightModModElements.ModElement.Tag
 public class GetHonorSpreggProcedure extends StormlightModModElements.ModElement {
@@ -71,6 +76,31 @@ public class GetHonorSpreggProcedure extends StormlightModModElements.ModElement
 				((MobEntity) entityToSpawn).onInitialSpawn(world, world.getDifficultyForLocation(new BlockPos(entityToSpawn)),
 						SpawnReason.MOB_SUMMONED, (ILivingEntityData) null, (CompoundNBT) null);
 			world.addEntity(entityToSpawn);
+		}
+		if ((((Entity) world
+				.getEntitiesWithinAABB(HonorSprenEntity.CustomEntity.class,
+						new AxisAlignedBB(x - (4 / 2d), y - (4 / 2d), z - (4 / 2d), x + (4 / 2d), y + (4 / 2d), z + (4 / 2d)), null)
+				.stream().sorted(new Object() {
+					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+						return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+					}
+				}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof TameableEntity) && (entity instanceof PlayerEntity)) {
+			((TameableEntity) ((Entity) world
+					.getEntitiesWithinAABB(HonorSprenEntity.CustomEntity.class,
+							new AxisAlignedBB(x - (4 / 2d), y - (4 / 2d), z - (4 / 2d), x + (4 / 2d), y + (4 / 2d), z + (4 / 2d)), null)
+					.stream().sorted(new Object() {
+						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+							return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+						}
+					}.compareDistOf(x, y, z)).findFirst().orElse(null))).setTamed(true);
+			((TameableEntity) ((Entity) world
+					.getEntitiesWithinAABB(HonorSprenEntity.CustomEntity.class,
+							new AxisAlignedBB(x - (4 / 2d), y - (4 / 2d), z - (4 / 2d), x + (4 / 2d), y + (4 / 2d), z + (4 / 2d)), null)
+					.stream().sorted(new Object() {
+						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+							return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+						}
+					}.compareDistOf(x, y, z)).findFirst().orElse(null))).setTamedBy((PlayerEntity) entity);
 		}
 		if (!world.getWorld().isRemote) {
 			world.playSound(null, new BlockPos((int) x, (int) y, (int) z),

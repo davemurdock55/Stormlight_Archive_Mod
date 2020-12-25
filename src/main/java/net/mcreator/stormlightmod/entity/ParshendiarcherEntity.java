@@ -29,6 +29,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.monster.SkeletonEntity;
 import net.minecraft.entity.monster.MonsterEntity;
@@ -138,7 +139,7 @@ public class ParshendiarcherEntity extends StormlightModModElements.ModElement {
 			this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
 			this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
 			this.goalSelector.addGoal(5, new SwimGoal(this));
-			this.goalSelector.addGoal(6, new LookAtGoal(this, ShardbearerEntity.CustomEntity.class, (float) 6));
+			this.goalSelector.addGoal(6, new LookAtGoal(this, ServerPlayerEntity.class, (float) 6));
 			this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, (float) 10));
 			this.targetSelector.addGoal(8, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
 			this.targetSelector.addGoal(9, new NearestAttackableTargetGoal(this, PlayerEntity.class, false, false));

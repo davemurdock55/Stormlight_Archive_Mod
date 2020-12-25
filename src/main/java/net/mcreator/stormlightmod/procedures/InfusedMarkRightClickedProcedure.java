@@ -56,6 +56,7 @@ public class InfusedMarkRightClickedProcedure extends StormlightModModElements.M
 					capability.syncPlayerVariables(entity);
 				});
 			}
+			entity.getPersistentData().putDouble("stormlightLevel", (StormlightModModVariables.WorldVariables.get(world).markStormlightAmount));
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);

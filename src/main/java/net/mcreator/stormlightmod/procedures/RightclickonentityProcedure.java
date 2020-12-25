@@ -60,7 +60,7 @@ public class RightclickonentityProcedure extends StormlightModModElements.ModEle
 						.isDone()
 				: false))) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.LEVITATION, (int) 100, (int) 5, (false), (false)));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.LEVITATION, (int) 100, (int) 1, (false), (false)));
 		}
 	}
 

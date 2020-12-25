@@ -36,7 +36,7 @@ public class Edgedancerlevel1potionPotion extends StormlightModModElements.ModEl
 	public static class EffectCustom extends Effect {
 		private final ResourceLocation potionIcon;
 		public EffectCustom() {
-			super(EffectType.NEUTRAL, -16738048);
+			super(EffectType.BENEFICIAL, -16738048);
 			setRegistryName("edgedancerlevel_1potion");
 			potionIcon = new ResourceLocation("stormlight_mod:textures/edgedancer_glyph_pixelized.png");
 		}
@@ -48,7 +48,7 @@ public class Edgedancerlevel1potionPotion extends StormlightModModElements.ModEl
 
 		@Override
 		public boolean isBeneficial() {
-			return false;
+			return true;
 		}
 
 		@Override

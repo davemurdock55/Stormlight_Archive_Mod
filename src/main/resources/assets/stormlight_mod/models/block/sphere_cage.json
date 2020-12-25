@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "stormlight_mod:blocks/spherecage",
+    "up": "stormlight_mod:blocks/spherecage",
+    "north": "stormlight_mod:blocks/spherecage",
+    "east": "stormlight_mod:blocks/spherecage",
+    "south": "stormlight_mod:blocks/spherecage",
+    "west": "stormlight_mod:blocks/spherecage",
+    "particle": "stormlight_mod:blocks/spherecage"
+  }
+}

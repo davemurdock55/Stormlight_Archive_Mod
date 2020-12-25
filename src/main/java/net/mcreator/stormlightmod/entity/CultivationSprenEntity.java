@@ -27,7 +27,6 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.entity.projectile.PotionEntity;
 import net.minecraft.entity.projectile.ArrowEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.ai.goal.SwimGoal;
@@ -49,7 +48,6 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.block.material.Material;
 
 import net.mcreator.stormlightmod.procedures.HonorSprenRightClickedOnEntityProcedure;
-import net.mcreator.stormlightmod.item.SprenbladeItem;
 import net.mcreator.stormlightmod.StormlightModModElements;
 
 import java.util.Map;
@@ -76,6 +74,11 @@ public class CultivationSprenEntity extends StormlightModModElements.ModElement 
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 		for (Biome biome : ForgeRegistries.BIOMES.getValues()) {
+			boolean biomeCriteria = false;
+			if (ForgeRegistries.BIOMES.getKey(biome).equals(new ResourceLocation("stormlight_mod:shadesmar")))
+				biomeCriteria = true;
+			if (!biomeCriteria)
+				continue;
 			biome.getSpawns(EntityClassification.CREATURE).add(new Biome.SpawnListEntry(entity, 1, 1, 1));
 		}
 		EntitySpawnPlacementRegistry.register(entity, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
@@ -114,7 +117,7 @@ public class CultivationSprenEntity extends StormlightModModElements.ModElement 
 		protected void registerGoals() {
 			super.registerGoals();
 			this.goalSelector.addGoal(1, new FollowOwnerGoal(this, 5, (float) 1, (float) 2, false));
-			this.goalSelector.addGoal(2, new LookAtGoal(this, ServerPlayerEntity.class, (float) 12));
+			this.goalSelector.addGoal(2, new LookAtGoal(this, ShardbearerEntity.CustomEntity.class, (float) 12));
 			this.goalSelector.addGoal(3, new LookAtGoal(this, PlayerEntity.class, (float) 12));
 			this.goalSelector.addGoal(4, new RandomWalkingGoal(this, 1));
 			this.goalSelector.addGoal(5, new LookRandomlyGoal(this));
@@ -239,8 +242,6 @@ public class CultivationSprenEntity extends StormlightModModElements.ModElement 
 		public boolean isBreedingItem(ItemStack stack) {
 			if (stack == null)
 				return false;
-			if (new ItemStack(SprenbladeItem.block, (int) (1)).getItem() == stack.getItem())
-				return true;
 			return false;
 		}
 	}

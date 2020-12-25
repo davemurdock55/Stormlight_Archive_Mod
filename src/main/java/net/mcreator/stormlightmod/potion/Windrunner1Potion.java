@@ -36,7 +36,7 @@ public class Windrunner1Potion extends StormlightModModElements.ModElement {
 	public static class EffectCustom extends Effect {
 		private final ResourceLocation potionIcon;
 		public EffectCustom() {
-			super(EffectType.NEUTRAL, -16763956);
+			super(EffectType.BENEFICIAL, -16763956);
 			setRegistryName("windrunner_1");
 			potionIcon = new ResourceLocation("stormlight_mod:textures/image.png");
 		}
@@ -48,7 +48,7 @@ public class Windrunner1Potion extends StormlightModModElements.ModElement {
 
 		@Override
 		public boolean isBeneficial() {
-			return false;
+			return true;
 		}
 
 		@Override

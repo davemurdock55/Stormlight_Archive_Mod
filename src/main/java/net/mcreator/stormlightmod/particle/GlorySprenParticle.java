@@ -46,14 +46,14 @@ public class GlorySprenParticle extends StormlightModModElements.ModElement {
 		protected CustomParticle(World world, double x, double y, double z, double vx, double vy, double vz, IAnimatedSprite spriteSet) {
 			super(world, x, y, z);
 			this.spriteSet = spriteSet;
-			this.setSize((float) 0.2, (float) 0.2);
+			this.setSize((float) 0.4, (float) 0.4);
 			this.particleScale *= (float) 1;
-			this.maxAge = 7;
+			this.maxAge = (int) Math.max(1, 200 + (this.rand.nextInt(144) - 72));
 			this.particleGravity = (float) -0.3;
 			this.canCollide = true;
-			this.motionX = vx * 1;
-			this.motionY = vy * 1;
-			this.motionZ = vz * 1;
+			this.motionX = vx * 0.5;
+			this.motionY = vy * 0.5;
+			this.motionZ = vz * 0.5;
 			this.selectSpriteRandomly(spriteSet);
 		}
 

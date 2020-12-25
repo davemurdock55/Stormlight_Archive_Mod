@@ -1,0 +1,122 @@
+{
+  "minecraft:adventure/hero_of_the_village": {
+    "criteria": {
+      "hero_of_the_village": "2020-12-25 14:52:05 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/dark_oak_boat": {
+    "criteria": {
+      "in_water": "2020-12-25 14:57:45 -0700"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/root": {
+    "criteria": {
+      "consumed_item": "2020-12-25 15:12:08 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/birch_boat": {
+    "criteria": {
+      "in_water": "2020-12-25 14:57:45 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "minecraft:spider": "2020-12-25 15:00:58 -0700"
+    },
+    "done": true
+  },
+  "stormlight_mod:radiant": {
+    "criteria": {
+      "radiant": "2020-12-25 14:52:12 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "minecraft:spider": "2020-12-25 15:00:58 -0700"
+    },
+    "done": false
+  },
+  "minecraft:end/levitate": {
+    "criteria": {
+      "levitated": "2020-12-25 16:03:06 -0700"
+    },
+    "done": true
+  },
+  "stormlight_mod:becominga_shardbearer": {
+    "criteria": {
+      "becominga_shardbearer": "2020-12-25 16:09:58 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/acacia_boat": {
+    "criteria": {
+      "in_water": "2020-12-25 14:57:45 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_boat": {
+    "criteria": {
+      "in_water": "2020-12-25 14:57:45 -0700"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/balanced_diet": {
+    "criteria": {
+      "enchanted_golden_apple": "2020-12-25 15:12:08 -0700"
+    },
+    "done": false
+  },
+  "stormlight_mod:windrunner": {
+    "criteria": {
+      "windrunner": "2020-12-25 14:52:12 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/mojang_banner_pattern": {
+    "criteria": {
+      "has_enchanted_golden_apple": "2020-12-25 15:12:00 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_by_something": "2020-12-25 14:58:09 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/jungle_boat": {
+    "criteria": {
+      "in_water": "2020-12-25 14:57:45 -0700"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_boat": {
+    "criteria": {
+      "in_water": "2020-12-25 14:57:45 -0700"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:mountains": "2020-12-25 14:51:47 -0700",
+      "minecraft:taiga": "2020-12-25 14:51:44 -0700",
+      "minecraft:taiga_hills": "2020-12-25 14:52:59 -0700",
+      "minecraft:river": "2020-12-25 15:01:40 -0700",
+      "minecraft:wooded_mountains": "2020-12-25 16:04:08 -0700",
+      "minecraft:plains": "2020-12-25 15:01:45 -0700"
+    },
+    "done": false
+  },
+  "minecraft:husbandry/tame_an_animal": {
+    "criteria": {
+      "tamed_animal": "2020-12-25 14:52:12 -0700"
+    },
+    "done": true
+  },
+  "DataVersion": 2230
+}

@@ -115,7 +115,7 @@ public class NightwatcherEntity extends StormlightModModElements.ModElement {
 		protected void registerGoals() {
 			super.registerGoals();
 			this.goalSelector.addGoal(1, new LookRandomlyGoal(this));
-			this.goalSelector.addGoal(2, new LookAtGoal(this, ShardbearerEntity.CustomEntity.class, (float) 6));
+			this.goalSelector.addGoal(2, new LookAtGoal(this, PlayerEntity.class, (float) 6));
 		}
 
 		@Override

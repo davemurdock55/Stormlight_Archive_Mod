@@ -44,6 +44,11 @@ public class Edgedancer1PotionStartedappliedProcedure extends StormlightModModEl
 						new EffectInstance(Effects.SPEED, (int) ((entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new StormlightModModVariables.PlayerVariables())).lastInfusionAmnt), (int) 1));
 			entity.setMotion(((entity.getMotion().getX()) * 2), y, ((entity.getMotion().getZ()) * 2));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.INSTANT_HEALTH,
+						(int) ((entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new StormlightModModVariables.PlayerVariables())).lastInfusionAmnt),
+						(int) 1));
 		}
 	}
 }

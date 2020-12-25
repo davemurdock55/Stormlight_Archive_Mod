@@ -16,6 +16,7 @@ import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.World;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Hand;
@@ -45,19 +46,21 @@ import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.CreatureAttribute;
 import net.minecraft.entity.AgeableEntity;
-import net.minecraft.client.renderer.entity.model.BipedModel;
-import net.minecraft.client.renderer.entity.layers.BipedArmorLayer;
-import net.minecraft.client.renderer.entity.BipedRenderer;
+import net.minecraft.client.renderer.model.ModelRenderer;
+import net.minecraft.client.renderer.entity.model.EntityModel;
+import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.stormlightmod.procedures.InkSprenRightClickedProcedure;
-import net.mcreator.stormlightmod.item.SprenbladeItem;
 import net.mcreator.stormlightmod.StormlightModModElements;
 
 import java.util.Random;
 import java.util.Map;
 import java.util.HashMap;
+
+import com.mojang.blaze3d.vertex.IVertexBuilder;
+import com.mojang.blaze3d.matrix.MatrixStack;
 
 @StormlightModModElements.ModElement.Tag
 public class InkSprenEntity extends StormlightModModElements.ModElement {
@@ -80,6 +83,11 @@ public class InkSprenEntity extends StormlightModModElements.ModElement {
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 		for (Biome biome : ForgeRegistries.BIOMES.getValues()) {
+			boolean biomeCriteria = false;
+			if (ForgeRegistries.BIOMES.getKey(biome).equals(new ResourceLocation("stormlight_mod:shadesmar")))
+				biomeCriteria = true;
+			if (!biomeCriteria)
+				continue;
 			biome.getSpawns(EntityClassification.CREATURE).add(new Biome.SpawnListEntry(entity, 1, 1, 1));
 		}
 		EntitySpawnPlacementRegistry.register(entity, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
@@ -91,14 +99,12 @@ public class InkSprenEntity extends StormlightModModElements.ModElement {
 	@OnlyIn(Dist.CLIENT)
 	public void registerModels(ModelRegistryEvent event) {
 		RenderingRegistry.registerEntityRenderingHandler(entity, renderManager -> {
-			BipedRenderer customRender = new BipedRenderer(renderManager, new BipedModel(0), 0.5f) {
+			return new MobRenderer(renderManager, new Modelarmor_main(), 0.5f) {
 				@Override
 				public ResourceLocation getEntityTexture(Entity entity) {
-					return new ResourceLocation("stormlight_mod:textures/inkspren.png");
+					return new ResourceLocation("stormlight_mod:textures/inkspren2.png");
 				}
 			};
-			customRender.addLayer(new BipedArmorLayer(customRender, new BipedModel(0.5f), new BipedModel(1)));
-			return customRender;
 		});
 	}
 	public static class CustomEntity extends TameableEntity {
@@ -229,8 +235,6 @@ public class InkSprenEntity extends StormlightModModElements.ModElement {
 			Entity entity = this;
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("sourceentity", sourceentity);
 				InkSprenRightClickedProcedure.executeProcedure($_dependencies);
 			}
 			return retval;
@@ -240,17 +244,17 @@ public class InkSprenEntity extends StormlightModModElements.ModElement {
 		protected void registerAttributes() {
 			super.registerAttributes();
 			if (this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED) != null)
-				this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3);
+				this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0);
 			if (this.getAttribute(SharedMonsterAttributes.MAX_HEALTH) != null)
 				this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(1000);
 			if (this.getAttribute(SharedMonsterAttributes.ARMOR) != null)
-				this.getAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(1);
+				this.getAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(1.7000000000000002);
 			if (this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE) == null)
 				this.getAttributes().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 			this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(0);
 			if (this.getAttribute(SharedMonsterAttributes.FLYING_SPEED) == null)
 				this.getAttributes().registerAttribute(SharedMonsterAttributes.FLYING_SPEED);
-			this.getAttribute(SharedMonsterAttributes.FLYING_SPEED).setBaseValue(0.3);
+			this.getAttribute(SharedMonsterAttributes.FLYING_SPEED).setBaseValue(0);
 		}
 
 		@Override
@@ -265,8 +269,6 @@ public class InkSprenEntity extends StormlightModModElements.ModElement {
 		public boolean isBreedingItem(ItemStack stack) {
 			if (stack == null)
 				return false;
-			if (new ItemStack(SprenbladeItem.block, (int) (1)).getItem() == stack.getItem())
-				return true;
 			return false;
 		}
 
@@ -282,6 +284,69 @@ public class InkSprenEntity extends StormlightModModElements.ModElement {
 		public void livingTick() {
 			super.livingTick();
 			this.setNoGravity(true);
+		}
+	}
+
+	// Made with Blockbench 3.7.4
+	// Exported for Minecraft version 1.15
+	// Paste this class into your mod and generate all required imports
+	public static class Modelarmor_main extends EntityModel<Entity> {
+		private final ModelRenderer Head;
+		private final ModelRenderer Body;
+		private final ModelRenderer RightArm;
+		private final ModelRenderer LeftArm;
+		private final ModelRenderer RightLeg;
+		private final ModelRenderer LeftLeg;
+		public Modelarmor_main() {
+			textureWidth = 64;
+			textureHeight = 32;
+			Head = new ModelRenderer(this);
+			Head.setRotationPoint(0.0F, 0.0F, 0.0F);
+			setRotationAngle(Head, -0.1047F, 0.0873F, 0.0F);
+			Head.setTextureOffset(0, 0).addBox(-4.0F, -5.0164F, -3.6864F, 8.0F, 8.0F, 8.0F, -2.0F, false);
+			Body = new ModelRenderer(this);
+			Body.setRotationPoint(0.0F, 0.0F, 0.0F);
+			Body.setTextureOffset(16, 16).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, -1.0F, false);
+			RightArm = new ModelRenderer(this);
+			RightArm.setRotationPoint(-5.0F, 2.0F, 0.0F);
+			setRotationAngle(RightArm, -0.1745F, 0.0F, 0.0F);
+			RightArm.setTextureOffset(40, 16).addBox(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, -1.0F, false);
+			LeftArm = new ModelRenderer(this);
+			LeftArm.setRotationPoint(5.0F, 2.0F, 0.0F);
+			setRotationAngle(LeftArm, 0.2094F, 0.0F, 0.0F);
+			LeftArm.setTextureOffset(40, 16).addBox(-3.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, -1.0F, true);
+			RightLeg = new ModelRenderer(this);
+			RightLeg.setRotationPoint(-1.9F, 12.0F, 0.0F);
+			setRotationAngle(RightLeg, 0.192F, 0.0F, 0.0349F);
+			RightLeg.setTextureOffset(0, 16).addBox(-2.1047F, -2.9431F, -1.4279F, 4.0F, 12.0F, 4.0F, -1.0F, false);
+			LeftLeg = new ModelRenderer(this);
+			LeftLeg.setRotationPoint(1.9F, 12.0F, 0.0F);
+			setRotationAngle(LeftLeg, -0.1745F, 0.0F, -0.0349F);
+			LeftLeg.setTextureOffset(0, 16).addBox(-2.8935F, -3.0557F, -2.5388F, 4.0F, 12.0F, 4.0F, -1.0F, true);
+		}
+
+		@Override
+		public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue,
+				float alpha) {
+			Head.render(matrixStack, buffer, packedLight, packedOverlay);
+			Body.render(matrixStack, buffer, packedLight, packedOverlay);
+			RightArm.render(matrixStack, buffer, packedLight, packedOverlay);
+			LeftArm.render(matrixStack, buffer, packedLight, packedOverlay);
+			RightLeg.render(matrixStack, buffer, packedLight, packedOverlay);
+			LeftLeg.render(matrixStack, buffer, packedLight, packedOverlay);
+		}
+
+		public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+			modelRenderer.rotateAngleX = x;
+			modelRenderer.rotateAngleY = y;
+			modelRenderer.rotateAngleZ = z;
+		}
+
+		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+			this.RightArm.rotateAngleX = MathHelper.cos(f * 0.6662F + (float) Math.PI) * f1;
+			this.LeftLeg.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
+			this.LeftArm.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+			this.RightLeg.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
 		}
 	}
 }
