@@ -39,7 +39,7 @@ public class TruthwatcherkeyKeyBinding extends StormlightModModElements.ModEleme
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
-		keys = new KeyBinding("key.mcreator.truthwatcherkey", GLFW.GLFW_KEY_V, "key.categories.misc");
+		keys = new KeyBinding("key.stormlight_mod.truthwatcherkey", GLFW.GLFW_KEY_V, "key.categories.misc");
 		ClientRegistry.registerKeyBinding(keys);
 		MinecraftForge.EVENT_BUS.register(this);
 	}

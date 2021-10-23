@@ -60,7 +60,9 @@ import java.util.HashMap;
 
 @StormlightModModElements.ModElement.Tag
 public class HighSprenEntity extends StormlightModModElements.ModElement {
-	public static EntityType entity = null;
+	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.CREATURE)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire()
+			.size(0.6f, 1.8f)).build("high_spren").setRegistryName("high_spren");
 	public HighSprenEntity(StormlightModModElements instance) {
 		super(instance, 227);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
@@ -68,9 +70,6 @@ public class HighSprenEntity extends StormlightModModElements.ModElement {
 
 	@Override
 	public void initElements() {
-		entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.CREATURE).setShouldReceiveVelocityUpdates(true)
-				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire().size(0.6f, 1.8f))
-						.build("high_spren").setRegistryName("high_spren");
 		elements.entities.add(() -> entity);
 		elements.items.add(
 				() -> new SpawnEggItem(entity, -16777216, -1, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("high_spren_spawn_egg"));

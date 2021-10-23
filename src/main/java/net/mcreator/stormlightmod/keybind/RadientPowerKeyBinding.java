@@ -40,7 +40,7 @@ public class RadientPowerKeyBinding extends StormlightModModElements.ModElement 
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
-		keys = new KeyBinding("key.mcreator.radient_power", GLFW.GLFW_KEY_R, "key.categories.misc");
+		keys = new KeyBinding("key.stormlight_mod.radient_power", GLFW.GLFW_KEY_R, "key.categories.misc");
 		ClientRegistry.registerKeyBinding(keys);
 		MinecraftForge.EVENT_BUS.register(this);
 	}

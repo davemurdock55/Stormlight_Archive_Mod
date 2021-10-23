@@ -16,10 +16,12 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
+import net.minecraft.block.BlockState;
 
-import net.mcreator.stormlightmod.potion.Skybreaker1Potion;
+import net.mcreator.stormlightmod.potion.Skybreaker1PotionEffect;
 import net.mcreator.stormlightmod.particle.GlorySprenParticle;
 import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -35,27 +37,27 @@ public class ShiftRightClickSkybreakerProcedure extends StormlightModModElements
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure ShiftRightClickSkybreaker!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure ShiftRightClickSkybreaker!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				System.err.println("Failed to load dependency x for procedure ShiftRightClickSkybreaker!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency x for procedure ShiftRightClickSkybreaker!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				System.err.println("Failed to load dependency y for procedure ShiftRightClickSkybreaker!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency y for procedure ShiftRightClickSkybreaker!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				System.err.println("Failed to load dependency z for procedure ShiftRightClickSkybreaker!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency z for procedure ShiftRightClickSkybreaker!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure ShiftRightClickSkybreaker!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency world for procedure ShiftRightClickSkybreaker!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -68,7 +70,7 @@ public class ShiftRightClickSkybreakerProcedure extends StormlightModModElements
 				if (_entity instanceof LivingEntity) {
 					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
 					for (EffectInstance effect : effects) {
-						if (effect.getPotion() == Skybreaker1Potion.potion)
+						if (effect.getPotion() == Skybreaker1PotionEffect.potion)
 							return true;
 					}
 				}
@@ -102,12 +104,15 @@ public class ShiftRightClickSkybreakerProcedure extends StormlightModModElements
 		int j = event.getPos().getY();
 		int k = event.getPos().getZ();
 		World world = event.getWorld();
+		BlockState state = world.getBlockState(event.getPos());
 		Map<String, Object> dependencies = new HashMap<>();
 		dependencies.put("x", i);
 		dependencies.put("y", j);
 		dependencies.put("z", k);
 		dependencies.put("world", world);
 		dependencies.put("entity", entity);
+		dependencies.put("direction", event.getFace());
+		dependencies.put("blockstate", state);
 		dependencies.put("event", event);
 		this.executeProcedure(dependencies);
 	}

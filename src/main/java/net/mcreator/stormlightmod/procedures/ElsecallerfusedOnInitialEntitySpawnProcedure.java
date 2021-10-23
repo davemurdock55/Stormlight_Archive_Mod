@@ -7,6 +7,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 
@@ -19,7 +20,7 @@ public class ElsecallerfusedOnInitialEntitySpawnProcedure extends StormlightModM
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure ElsecallerfusedOnInitialEntitySpawn!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure ElsecallerfusedOnInitialEntitySpawn!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");

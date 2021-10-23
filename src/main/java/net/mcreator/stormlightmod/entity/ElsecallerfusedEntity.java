@@ -60,7 +60,9 @@ import java.util.EnumSet;
 
 @StormlightModModElements.ModElement.Tag
 public class ElsecallerfusedEntity extends StormlightModModElements.ModElement {
-	public static EntityType entity = null;
+	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
+			.size(0.6f, 1.8f)).build("elsecallerfused").setRegistryName("elsecallerfused");
 	public ElsecallerfusedEntity(StormlightModModElements instance) {
 		super(instance, 73);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
@@ -68,9 +70,6 @@ public class ElsecallerfusedEntity extends StormlightModModElements.ModElement {
 
 	@Override
 	public void initElements() {
-		entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER).setShouldReceiveVelocityUpdates(true)
-				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(0.6f, 1.8f)).build("elsecallerfused")
-						.setRegistryName("elsecallerfused");
 		elements.entities.add(() -> entity);
 		elements.items.add(
 				() -> new SpawnEggItem(entity, -1, -1, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("elsecallerfused_spawn_egg"));

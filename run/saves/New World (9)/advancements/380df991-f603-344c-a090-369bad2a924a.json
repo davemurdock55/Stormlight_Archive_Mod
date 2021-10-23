@@ -1,0 +1,27 @@
+{
+  "stormlight_mod:elsecallerlevel_1": {
+    "criteria": {
+      "elsecallerlevel_1": "2021-10-23 11:56:26 -0600"
+    },
+    "done": true
+  },
+  "stormlight_mod:radiant": {
+    "criteria": {
+      "radiant": "2021-10-23 11:56:26 -0600"
+    },
+    "done": true
+  },
+  "stormlight_mod:self_improvement": {
+    "criteria": {
+      "self_improvement": "2021-10-23 11:56:25 -0600"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:desert": "2021-10-23 11:56:08 -0600"
+    },
+    "done": false
+  },
+  "DataVersion": 2230
+}

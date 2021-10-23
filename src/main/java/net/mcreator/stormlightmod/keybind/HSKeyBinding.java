@@ -39,7 +39,7 @@ public class HSKeyBinding extends StormlightModModElements.ModElement {
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
-		keys = new KeyBinding("key.mcreator.hs", GLFW.GLFW_KEY_Z, "key.categories.misc");
+		keys = new KeyBinding("key.stormlight_mod.hs", GLFW.GLFW_KEY_Z, "key.categories.misc");
 		ClientRegistry.registerKeyBinding(keys);
 		MinecraftForge.EVENT_BUS.register(this);
 	}

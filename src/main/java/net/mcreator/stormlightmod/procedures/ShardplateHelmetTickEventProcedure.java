@@ -4,6 +4,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.enchantment.Enchantments;
 
 import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 
@@ -16,7 +17,7 @@ public class ShardplateHelmetTickEventProcedure extends StormlightModModElements
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("itemstack") == null) {
 			if (!dependencies.containsKey("itemstack"))
-				System.err.println("Failed to load dependency itemstack for procedure ShardplateHelmetTickEvent!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency itemstack for procedure ShardplateHelmetTickEvent!");
 			return;
 		}
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");

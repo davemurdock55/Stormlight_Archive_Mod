@@ -40,7 +40,7 @@ public class Radient1Power2KeyBinding extends StormlightModModElements.ModElemen
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
-		keys = new KeyBinding("key.mcreator.radient_1_power_2", GLFW.GLFW_KEY_T, "key.categories.misc");
+		keys = new KeyBinding("key.stormlight_mod.radient_1_power_2", GLFW.GLFW_KEY_T, "key.categories.misc");
 		ClientRegistry.registerKeyBinding(keys);
 		MinecraftForge.EVENT_BUS.register(this);
 	}

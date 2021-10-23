@@ -15,6 +15,7 @@ import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 
 import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -29,7 +30,7 @@ public class ShatteredPlainsRainProcedure extends StormlightModModElements.ModEl
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure ShatteredPlainsRain!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency world for procedure ShatteredPlainsRain!");
 			return;
 		}
 		IWorld world = (IWorld) dependencies.get("world");

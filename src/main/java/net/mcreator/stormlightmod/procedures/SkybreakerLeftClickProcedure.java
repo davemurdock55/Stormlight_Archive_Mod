@@ -10,8 +10,9 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.stormlightmod.potion.Skybreaker1Potion;
+import net.mcreator.stormlightmod.potion.Skybreaker1PotionEffect;
 import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -27,7 +28,7 @@ public class SkybreakerLeftClickProcedure extends StormlightModModElements.ModEl
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure SkybreakerLeftClick!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure SkybreakerLeftClick!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -36,7 +37,7 @@ public class SkybreakerLeftClickProcedure extends StormlightModModElements.ModEl
 				if (_entity instanceof LivingEntity) {
 					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
 					for (EffectInstance effect : effects) {
-						if (effect.getPotion() == Skybreaker1Potion.potion)
+						if (effect.getPotion() == Skybreaker1PotionEffect.potion)
 							return true;
 					}
 				}

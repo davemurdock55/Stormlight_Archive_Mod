@@ -2,15 +2,6 @@
   "id_map": {},
   "mod_elements": [
     {
-      "name": "InfusedDiamondChip",
-      "type": "item",
-      "sortid": 2,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "infused_diamond_chip"
-    },
-    {
       "name": "ShatteredPlains",
       "type": "biome",
       "sortid": 4,
@@ -92,7 +83,7 @@
     },
     {
       "name": "Shardbearer",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 11,
       "compiles": true,
       "locked_code": false,
@@ -113,7 +104,7 @@
     },
     {
       "name": "Nightwatcher",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 13,
       "compiles": true,
       "locked_code": false,
@@ -175,7 +166,7 @@
     },
     {
       "name": "HonorSpren",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 19,
       "compiles": true,
       "locked_code": false,
@@ -189,7 +180,10 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "shadesbeads"
+      "registry_name": "shadesbeads",
+      "metadata": {
+        "gb": true
+      }
     },
     {
       "name": "ShadesmarObsidian",
@@ -216,7 +210,10 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "shadesmar_1"
+      "registry_name": "shadesmar_1",
+      "metadata": {
+        "ep": true
+      }
     },
     {
       "name": "EntitiesShardbearer",
@@ -301,7 +298,7 @@
     },
     {
       "name": "Parshendiarcher",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 32,
       "compiles": true,
       "locked_code": false,
@@ -564,7 +561,7 @@
     },
     {
       "name": "Elsecallerfused",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 73,
       "compiles": true,
       "locked_code": false,
@@ -573,7 +570,7 @@
     },
     {
       "name": "Windrunnerfused",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 74,
       "compiles": true,
       "locked_code": false,
@@ -1265,7 +1262,7 @@
       "registry_name": "radient_1_power_2"
     },
     {
-      "name": "Windrunner1",
+      "name": "Windrunner1PotionItem",
       "type": "potion",
       "sortid": 121,
       "compiles": true,
@@ -1339,7 +1336,7 @@
       "ids": {},
       "registry_name": "moon_chek",
       "metadata": {
-        "return_type": "NUMBER",
+        "return_type": "number",
         "dependencies": [
           {
             "name": "world",
@@ -1560,7 +1557,7 @@
       "registry_name": "amethystore"
     },
     {
-      "name": "Skybreaker1",
+      "name": "Skybreaker1PotionItem",
       "type": "potion",
       "sortid": 154,
       "compiles": true,
@@ -1603,7 +1600,7 @@
       }
     },
     {
-      "name": "Gravitation",
+      "name": "GravitationPotionItem",
       "type": "potion",
       "sortid": 155,
       "compiles": true,
@@ -1758,7 +1755,7 @@
       }
     },
     {
-      "name": "Lightweaver1",
+      "name": "Lightweaver1PotionItem",
       "type": "potion",
       "sortid": 170,
       "compiles": true,
@@ -1767,7 +1764,7 @@
       "registry_name": "lightweaver_1"
     },
     {
-      "name": "Dustbringer1",
+      "name": "Dustbringer1PotionItem",
       "type": "potion",
       "sortid": 171,
       "compiles": true,
@@ -1776,7 +1773,7 @@
       "registry_name": "dustbringer_1"
     },
     {
-      "name": "Edgedancer1",
+      "name": "Edgedancer1PotionItem",
       "type": "potion",
       "sortid": 172,
       "compiles": true,
@@ -1785,7 +1782,7 @@
       "registry_name": "edgedancer_1"
     },
     {
-      "name": "Truthwatcher1",
+      "name": "Truthwatcher1PotionItem",
       "type": "potion",
       "sortid": 173,
       "compiles": true,
@@ -1794,7 +1791,7 @@
       "registry_name": "truthwatcher_1"
     },
     {
-      "name": "Elsecaller1",
+      "name": "Elsecaller1PotionItem",
       "type": "potion",
       "sortid": 174,
       "compiles": true,
@@ -1803,7 +1800,7 @@
       "registry_name": "elsecaller_1"
     },
     {
-      "name": "Willshaper1",
+      "name": "Willshaper1PotionItem",
       "type": "potion",
       "sortid": 175,
       "compiles": true,
@@ -1812,7 +1809,7 @@
       "registry_name": "willshaper_1"
     },
     {
-      "name": "Stoneward1",
+      "name": "Stoneward1PotionItem",
       "type": "potion",
       "sortid": 176,
       "compiles": true,
@@ -1821,7 +1818,7 @@
       "registry_name": "stoneward_1"
     },
     {
-      "name": "Bondsmith1",
+      "name": "Bondsmith1PotionItem",
       "type": "potion",
       "sortid": 177,
       "compiles": true,
@@ -1935,23 +1932,6 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "dustbringerpotioneffect",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "EdgedancerPotionEffect",
-      "type": "procedure",
-      "sortid": 189,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "edgedancer_potion_effect",
       "metadata": {
         "dependencies": [
           {
@@ -2420,7 +2400,7 @@
     },
     {
       "name": "HighSpren",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 227,
       "compiles": true,
       "locked_code": false,
@@ -2450,7 +2430,7 @@
     },
     {
       "name": "TruthwatcherSpren",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 232,
       "compiles": true,
       "locked_code": false,
@@ -2470,17 +2450,13 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       }
     },
     {
       "name": "CultivationSpren",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 236,
       "compiles": true,
       "locked_code": false,
@@ -4400,27 +4376,6 @@
       "registry_name": "oath_gate_key_block"
     },
     {
-      "name": "Edgedancer1PotionStartedapplied",
-      "type": "procedure",
-      "sortid": 384,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "edgedancer_1_potion_startedapplied",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          }
-        ]
-      }
-    },
-    {
       "name": "InkSprenRightClicked",
       "type": "procedure",
       "sortid": 379,
@@ -4443,7 +4398,7 @@
     },
     {
       "name": "InkSpren",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 379,
       "compiles": true,
       "locked_code": false,
@@ -4523,36 +4478,6 @@
       "registry_name": "everstorm"
     },
     {
-      "name": "EdgedancerGrowthings",
-      "type": "keybind",
-      "sortid": 389,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "edgedancer_growthings"
-    },
-    {
-      "name": "EdgedancerRightclick",
-      "type": "procedure",
-      "sortid": 390,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "edgedancer_rightclick",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
       "name": "ElsecallerpowerOnKeyPressed",
       "type": "procedure",
       "sortid": 386,
@@ -4605,7 +4530,7 @@
     },
     {
       "name": "Axehound",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 393,
       "compiles": true,
       "locked_code": false,
@@ -4630,39 +4555,6 @@
       }
     },
     {
-      "name": "EdgedancerGrowthingsOnKeyPressed",
-      "type": "procedure",
-      "sortid": 389,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "edgedancer_growthings_on_key_pressed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
       "name": "SkybreakerLeftClick",
       "type": "procedure",
       "sortid": 387,
@@ -4680,7 +4572,7 @@
       }
     },
     {
-      "name": "Edgedancerlevel1potion",
+      "name": "Edgedancerlevel1potionPotionItem",
       "type": "potion",
       "sortid": 391,
       "compiles": true,
@@ -4762,7 +4654,10 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "urithiru_dimension"
+      "registry_name": "urithiru_dimension",
+      "metadata": {
+        "ep": false
+      }
     },
     {
       "name": "TeleportToUrithiru",
@@ -5055,7 +4950,7 @@
       "ids": {},
       "registry_name": "stormlight_meter_overlay_display_overlay_ingame",
       "metadata": {
-        "return_type": "LOGIC",
+        "return_type": "logic",
         "dependencies": [
           {
             "name": "entity",
@@ -5072,6 +4967,207 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "stormlight_meter_overlay"
+    },
+    {
+      "name": "StormlightScoreboard",
+      "type": "procedure",
+      "sortid": 413,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "stormlight_scoreboard",
+      "metadata": {
+        "dependencies": []
+      }
+    },
+    {
+      "name": "Windrunner1PotionItem",
+      "type": "potion",
+      "sortid": 121,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "windrunner_1"
+    },
+    {
+      "name": "Windrunner1",
+      "type": "potioneffect",
+      "sortid": 414,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "windrunner_1"
+    },
+    {
+      "name": "Skybreaker1PotionItem",
+      "type": "potion",
+      "sortid": 154,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "skybreaker_1"
+    },
+    {
+      "name": "Skybreaker1",
+      "type": "potioneffect",
+      "sortid": 415,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "skybreaker_1"
+    },
+    {
+      "name": "GravitationPotionItem",
+      "type": "potion",
+      "sortid": 155,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gravitation"
+    },
+    {
+      "name": "Gravitation",
+      "type": "potioneffect",
+      "sortid": 416,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gravitation"
+    },
+    {
+      "name": "Lightweaver1PotionItem",
+      "type": "potion",
+      "sortid": 170,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "lightweaver_1"
+    },
+    {
+      "name": "Lightweaver1",
+      "type": "potioneffect",
+      "sortid": 417,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "lightweaver_1"
+    },
+    {
+      "name": "Dustbringer1PotionItem",
+      "type": "potion",
+      "sortid": 171,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dustbringer_1"
+    },
+    {
+      "name": "Dustbringer1",
+      "type": "potioneffect",
+      "sortid": 418,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dustbringer_1"
+    },
+    {
+      "name": "Truthwatcher1PotionItem",
+      "type": "potion",
+      "sortid": 173,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "truthwatcher_1"
+    },
+    {
+      "name": "Truthwatcher1",
+      "type": "potioneffect",
+      "sortid": 420,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "truthwatcher_1"
+    },
+    {
+      "name": "Elsecaller1PotionItem",
+      "type": "potion",
+      "sortid": 174,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "elsecaller_1"
+    },
+    {
+      "name": "Elsecaller1",
+      "type": "potioneffect",
+      "sortid": 421,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "elsecaller_1"
+    },
+    {
+      "name": "Willshaper1PotionItem",
+      "type": "potion",
+      "sortid": 175,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "willshaper_1"
+    },
+    {
+      "name": "Willshaper1",
+      "type": "potioneffect",
+      "sortid": 422,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "willshaper_1"
+    },
+    {
+      "name": "Stoneward1PotionItem",
+      "type": "potion",
+      "sortid": 176,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "stoneward_1"
+    },
+    {
+      "name": "Stoneward1",
+      "type": "potioneffect",
+      "sortid": 423,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "stoneward_1"
+    },
+    {
+      "name": "Bondsmith1PotionItem",
+      "type": "potion",
+      "sortid": 177,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bondsmith_1"
+    },
+    {
+      "name": "Bondsmith1",
+      "type": "potioneffect",
+      "sortid": 424,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bondsmith_1"
+    },
+    {
+      "name": "InfusedDiamondChip",
+      "type": "item",
+      "sortid": 426,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "infused_diamond_chip"
     }
   ],
   "variable_elements": [
@@ -5223,17 +5319,16 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "advancements.skybreakerlevel_1.title": "Skybreaker",
       "item.minecraft.lingering_potion.effect.gravitation": "Lingering Gravitation",
+      "advancements.skybreakerlevel_1.title": "Skybreaker",
       "advancements.into_shadesmar.title": "Into Shadesmar",
-      "item.stormlight_mod.heliodor_gem": "Heliodorgem",
       "block.stormlight_mod.zircon_ore": "Zirconore",
+      "item.stormlight_mod.heliodor_gem": "Heliodorgem",
       "item.stormlight_mod.cultivation_spren_spawn_egg": "Cultivation Spren Spawn Egg",
       "entity.stormlight_mod.ink_spren": "Ink Spren",
       "item.stormlight_mod.dun_amethyst_broam": "Dun Amethyst Broam",
       "item.stormlight_mod.infused_topaz_broam": "Infused Topaz Broam",
       "item.stormlight_mod.windrunnerfused_spawn_egg": "Heavenly Ones Spawn Egg",
-      "item.minecraft.lingering_potion.effect.edgedancerlevel_1potion": "Lingering Edgedancer 1",
       "advancements.edgedancerlevel_1.title": "Edgedancer",
       "item.stormlight_mod.infused_heliodor_broam": "Infused Heliodor Broam",
       "item.minecraft.tipped_arrow.effect.lightweaver_1": "Arrow of Lightweaver 1",
@@ -5241,9 +5336,7 @@
       "item.minecraft.lingering_potion.effect.stoneward_1": "Lingering Skybreaker 1",
       "item.stormlight_mod.infused_ruby_broam": "Infused Ruby Broam",
       "item.stormlight_mod.dun_ruby_chip": "Dun Ruby Chip",
-      "item.minecraft.tipped_arrow.effect.edgedancerlevel_1potion": "Arrow of Edgedancer 1",
       "item.stormlight_mod.small_smokestonerecipe": "Small Smokestonerecipe",
-      "item.minecraft.potion.effect.edgedancerlevel_1potion": "Edgedancer 1",
       "effect.stoneward_1": "Skybreaker 1",
       "item.minecraft.potion.effect.gravitation": "Gravitation",
       "advancements.becominga_shardbearer.title": "Becoming a Shardbearer",
@@ -5253,6 +5346,7 @@
       "advancements.infuse_stormlight_achievement.descr": "Infuse a sphere with stormlight",
       "advancements.stonewardlevel_1.title": "Windrunner",
       "effect.willshaper_1": "Skybreaker 1",
+      "block.stormlight_mod.shadesbeads": "Shadesbeads",
       "item.stormlight_mod.high_spren": "High Spren Spawn Egg",
       "item.minecraft.splash_potion.effect.dustbringer_1": "Splash Skybreaker 1",
       "item.minecraft.splash_potion.effect.skybreaker_1": "Splash Skybreaker 1",
@@ -5268,12 +5362,12 @@
       "item.stormlight_mod.truthwatcher_spren_spawn_egg": "MistSpren Spawn Egg",
       "block.stormlight_mod.amethystore": "Amethystore",
       "advancements.makeabook.descr": "Make a book",
+      "key.stormlight_mod.cultivationsprengui": "Cultivationsprenguikey",
       "advancements.lightweaverlevel_1.descr": "Become a Lightweaver",
       "item.stormlight_mod.infused_diamond_broam": "Infused Diamond Broam",
       "advancements.bond_smithlevel_1.title": "Windrunner",
       "item.stormlight_mod.small_sapphire": "Small Sapphire",
       "item.stormlight_mod.infused_smokestone_mark": "Infused Smokestone Mark",
-      "item.minecraft.potion.effect.edgedancer_1": "Edgedancer 1",
       "item.stormlight_mod.ruby_gem": "RubyGem",
       "item.stormlight_mod.small_amethystgem": "Small Amethystgem",
       "key.mcreator.radient_1_power_2": "Secondary Radiant Power",
@@ -5284,20 +5378,20 @@
       "item.stormlight_mod.shardplate_boots": "Shardplate Boots",
       "item.stormlight_mod.zircon_gem": "Zircongem",
       "advancements.self_improvement.descr": "Have a certain amount of experience",
+      "key.stormlight_mod.elsecaller_gui": "Elsecaller Gui",
       "item.stormlight_mod.dun_sapphire_chip": "Dun Sapphire Chip",
       "item.stormlight_mod.shardblade": "Shardblade",
-      "item.minecraft.tipped_arrow.effect.stoneward_1": "Arrow of Skybreaker 1",
       "item.stormlight_mod.infused_emerald_chip": "Infused Emerald Chip",
+      "item.minecraft.tipped_arrow.effect.stoneward_1": "Arrow of Skybreaker 1",
       "advancements.makeabook.title": "Makeabook",
-      "item.minecraft.splash_potion.effect.edgedancer_1": "Splash Edgedancer 1",
       "item.stormlight_mod.infused_heliodor_chip": "Infused Heliodor Chip",
       "item.stormlight_mod.dun_emerald_broam": "Dun Emerald Broam",
       "key.mcreator.lashing_amount_amplifier": "Lashing Amount 3",
       "item.minecraft.potion.effect.lightweaver_1": "Lightweaver 1",
       "item.stormlight_mod.medium_heliodor_gem": "Medium Heliodorgem",
       "advancements.windrunnerlevel_3.descr": "I will protect even those I hate",
-      "item.minecraft.tipped_arrow.effect.windrunner_1": "Arrow of Windrunner 1",
       "item.minecraft.lingering_potion.effect.elsecaller_1": "Lingering Elsecaller 1",
+      "item.minecraft.tipped_arrow.effect.windrunner_1": "Arrow of Windrunner 1",
       "block.stormlight_mod.sphere_cage": "Sphere Cage",
       "item.minecraft.lingering_potion.effect.willshaper_1": "Lingering Skybreaker 1",
       "item.stormlight_mod.small_topaz_gem": "SmallTopazGem",
@@ -5310,18 +5404,18 @@
       "item.minecraft.tipped_arrow.effect.elsecaller_1": "Arrow of Elsecaller 1",
       "item.stormlight_mod.small_heliodor_gem": "SmallHeliodorgem",
       "advancements.willshaperlevel_1.descr": "Become a Windrunner",
-      "item.minecraft.splash_potion.effect.edgedancerlevel_1potion": "Splash Edgedancer 1",
       "key.mcreator.lashing_amount_1": "Lashing Amount 1",
       "key.mcreator.lashing_amount_2": "Lashing Amount 2",
       "item.stormlight_mod.elsecallerfused_spawn_egg": "Husked Ones Spawn Egg",
+      "key.stormlight_mod.radient_1_power_2": "Secondary Radiant Power",
       "item.stormlight_mod.havah_helmet": "Havah Helmet",
       "item.stormlight_mod.dun_heliodor_broam": "Dun Heliodor Broam",
       "item.stormlight_mod.infused_topaz_mark": "Infused Topaz Mark",
-      "item.minecraft.tipped_arrow.effect.edgedancer_1": "Arrow of Edgedancer 1",
       "advancements.into_shadesmar.descr": "Enter into shadesmar",
       "item.stormlight_mod.medium_emerald_gem": "MediumEmeraldGem",
       "biome.stormlight_mod.shattered_plains": "Shattered Plains",
       "advancements.bond_smithlevel_1.descr": "Become a Windrunner",
+      "key.stormlight_mod.radient_power": "Primary Radient Power",
       "item.stormlight_mod.dun_topaz_broam": "Dun Topaz Broam",
       "item.stormlight_mod.dun_ruby_broam": "Dun Ruby Broam",
       "entity.stormlight_mod.nightwatcher": "Nightwatcher",
@@ -5345,6 +5439,7 @@
       "entity.stormlight_mod.cultivation_spren": "Cultivation Spren",
       "effect.bondsmith_1": "Skybreaker 1",
       "item.minecraft.lingering_potion.effect.skybreaker_1": "Lingering Skybreaker 1",
+      "key.stormlight_mod.skybreakerkey": "Skybreakerkey",
       "item.stormlight_mod.dun_topaz_mark": "Dun Topaz Mark",
       "item.stormlight_mod.honor_spren": "Honor Spren Spawn Egg",
       "item.minecraft.potion.effect.bondsmith_1": "Skybreaker 1",
@@ -5354,7 +5449,6 @@
       "item.stormlight_mod.dun_zircon_mark": "Dun Zircon Mark",
       "item.stormlight_mod.shardbearer_spawn_egg": "Shardbearer Spawn Egg",
       "item.stormlight_mod.dun_smokestone_mark": "Dun Smokestone Mark",
-      "effect.edgedancer_1": "Edgedancer 1",
       "item.minecraft.potion.effect.windrunner_1": "Windrunner 1",
       "item.stormlight_mod.medium_sapphire": "Medium Sapphire",
       "item.stormlight_mod.dun_heliodor_chip": "Dun Heliodor Chip",
@@ -5370,6 +5464,7 @@
       "block.stormlight_mod.oath_gate_key_block": "Oath Gate Key Block",
       "advancements.intothe_shatteredplains.descr": "Go into the Shatteredplains",
       "item.minecraft.splash_potion.effect.willshaper_1": "Splash Skybreaker 1",
+      "key.stormlight_mod.lashing_amount_amplifier": "Lashing Amount 3",
       "item.stormlight_mod.dun_emerald_mark": "Dun Emerald Mark",
       "item.stormlight_mod.small_garnet_gem": "SmallGarnetGem",
       "advancements.windrunnerlevel_2.title": "Windrunner",
@@ -5383,14 +5478,15 @@
       "item.stormlight_mod.dun_smokestone_broam": "Dun Smokestone Broam",
       "item.stormlight_mod.infused_zircon_broam": "Infused Zircon Broam",
       "block.stormlight_mod.smokestoneore": "Amethystore",
+      "key.stormlight_mod.hs": "gui",
       "item.stormlight_mod.medium_topazgem": "MediumTopazGem",
       "item.minecraft.splash_potion.effect.truthwatcher_1": "Splash Skybreaker 1",
       "effect.truthwatcher_1": "Skybreaker 1",
       "item.stormlight_mod.highstorm": "Highstorm",
       "item.stormlight_mod.dun_garnet_broam": "Dun Gartnet Broam",
+      "key.stormlight_mod.truthwatcherkey": "Truthwatcherkey",
       "item.stormlight_mod.curry": "Curry",
       "item.stormlight_mod.infused_zircon_mark": "Infused Zircon Mark",
-      "item.minecraft.lingering_potion.effect.edgedancer_1": "Lingering Edgedancer 1",
       "item.stormlight_mod.medium_amethystgem": "Medium Amethystgem",
       "item.stormlight_mod.dun_diamond_chip": "Dun Diamond Chip",
       "item.stormlight_mod.medium_ruby_gem": "MediumRubyGem",
@@ -5416,6 +5512,7 @@
       "item.stormlight_mod.sphere_pouch": "Sphere Pouch",
       "item.minecraft.lingering_potion.effect.windrunner_1": "Lingering Windrunner 1",
       "advancements.dustbringerlevel_1.descr": "Become a Windrunner",
+      "fluid.stormlight_mod.shadesbeads": "Shadesbeads",
       "item.stormlight_mod.garnet_gem": "Garnetgem",
       "item.stormlight_mod.medium_garnet_gem": "MediumGarnetGem",
       "entity.stormlight_mod.axehound": "Axehound",
@@ -5435,12 +5532,15 @@
       "item.stormlight_mod.shardplate_helmet": "Shardplate Helmet",
       "item.stormlight_mod.dun_ruby_mark": "Dun Ruby Mark",
       "item.stormlight_mod.infused_amethyst_broam": "Infused Amethyst Broam",
+      "key.stormlight_mod.elsecallerpower": "Elsecallerpower",
       "item.stormlight_mod.infused_garnet_broam": "Infused Garnet Broam",
       "entity.stormlight_mod.high_spren": "High Spren",
       "effect.skybreaker_1": "Skybreaker 1",
       "item.stormlight_mod.dun_diamond_broam": "Dun Diamond Broam",
+      "key.stormlight_mod.lashing_amount_2": "Lashing Amount 2",
       "item.minecraft.splash_potion.effect.windrunner_1": "Splash Windrunner 1",
       "item.stormlight_mod.medium_smokestone_gem": "Medium Smokestone Gem",
+      "key.stormlight_mod.lashing_amount_1": "Lashing Amount 1",
       "block.stormlight_mod.sapphire_ore": "Sapphire Ore",
       "advancements.windrunnerlevel_3.title": "Windrunner",
       "item.stormlight_mod.smokestone_gem": "Smokestone Gem",
@@ -5452,7 +5552,6 @@
       "advancements.radiant.descr": "\"Life Before Death...\"",
       "block.stormlight_mod.shadesmar_obsidian": "Shadesmar Obsidian",
       "effect.windrunner_1": "Windrunner 1",
-      "effect.edgedancerlevel_1potion": "Edgedancer 1",
       "item.stormlight_mod.dun_diamond_mark": "Dun Diamond Mark",
       "key.mcreator.radient_power": "Primary Radient Power",
       "item.stormlight_mod.dun_gartnetchip": "Dun Gartnet Chip",
@@ -5492,21 +5591,27 @@
       "item.stormlight_mod.dun_sapphire_broam": "Dun Sapphire Broam"
     }
   },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
   "workspaceSettings": {
     "modid": "stormlight_mod",
     "modName": "Stormlight Mod",
     "version": "1.0.0",
     "author": "davidmurdock, MCreator",
     "websiteURL": "https://mcreator.net",
+    "license": "Not specified",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.15.2",
+    "currentGenerator": "forge-1.16.5",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.stormlightmod",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202000547520
+  "mcreatorVersion": 202100236710
 }

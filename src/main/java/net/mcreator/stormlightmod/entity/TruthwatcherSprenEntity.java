@@ -60,7 +60,9 @@ import java.util.HashMap;
 
 @StormlightModModElements.ModElement.Tag
 public class TruthwatcherSprenEntity extends StormlightModModElements.ModElement {
-	public static EntityType entity = null;
+	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.CREATURE)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire()
+			.size(0.6f, 1.8f)).build("truthwatcher_spren").setRegistryName("truthwatcher_spren");
 	public TruthwatcherSprenEntity(StormlightModModElements instance) {
 		super(instance, 232);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
@@ -68,9 +70,6 @@ public class TruthwatcherSprenEntity extends StormlightModModElements.ModElement
 
 	@Override
 	public void initElements() {
-		entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.CREATURE).setShouldReceiveVelocityUpdates(true)
-				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire().size(0.6f, 1.8f))
-						.build("truthwatcher_spren").setRegistryName("truthwatcher_spren");
 		elements.entities.add(() -> entity);
 		elements.items.add(() -> new SpawnEggItem(entity, -65536, -3407872, new Item.Properties().group(ItemGroup.MISC))
 				.setRegistryName("truthwatcher_spren_spawn_egg"));

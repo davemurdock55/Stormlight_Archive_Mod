@@ -13,6 +13,7 @@ import net.minecraft.entity.Entity;
 
 import net.mcreator.stormlightmod.StormlightModModVariables;
 import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -26,12 +27,12 @@ public class InfusedBroamRightClickedProcedure extends StormlightModModElements.
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure InfusedBroamRightClicked!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure InfusedBroamRightClicked!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure InfusedBroamRightClicked!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency world for procedure InfusedBroamRightClicked!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -43,20 +44,20 @@ public class InfusedBroamRightClickedProcedure extends StormlightModModElements.
 						.isDone()
 				: false)) {
 			{
-				double _setval = (double) (StormlightModModVariables.WorldVariables.get(world).bromeStormlightAmount);
+				double _setval = (double) StormlightModModVariables.WorldVariables.get(world).bromeStormlightAmount;
 				entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.stormlightConsumedAmnt = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			{
-				double _setval = (double) (StormlightModModVariables.WorldVariables.get(world).bromeStormlightAmount);
+				double _setval = (double) StormlightModModVariables.WorldVariables.get(world).bromeStormlightAmount;
 				entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.lastInfusionAmnt = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			entity.getPersistentData().putDouble("stormlightLevel", (StormlightModModVariables.WorldVariables.get(world).bromeStormlightAmount));
+			entity.getPersistentData().putDouble("stormlightLevel", StormlightModModVariables.WorldVariables.get(world).bromeStormlightAmount);
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);

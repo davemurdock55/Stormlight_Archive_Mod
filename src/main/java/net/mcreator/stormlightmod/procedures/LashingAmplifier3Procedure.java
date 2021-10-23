@@ -4,10 +4,11 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.stormlightmod.potion.Windrunner1Potion;
-import net.mcreator.stormlightmod.potion.Skybreaker1Potion;
+import net.mcreator.stormlightmod.potion.Windrunner1PotionEffect;
+import net.mcreator.stormlightmod.potion.Skybreaker1PotionEffect;
 import net.mcreator.stormlightmod.StormlightModModVariables;
 import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 import java.util.Collection;
@@ -21,7 +22,7 @@ public class LashingAmplifier3Procedure extends StormlightModModElements.ModElem
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure LashingAmplifier3!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure LashingAmplifier3!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -32,7 +33,7 @@ public class LashingAmplifier3Procedure extends StormlightModModElements.ModElem
 				if (_entity instanceof LivingEntity) {
 					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
 					for (EffectInstance effect : effects) {
-						if (effect.getPotion() == Windrunner1Potion.potion)
+						if (effect.getPotion() == Windrunner1PotionEffect.potion)
 							return true;
 					}
 				}
@@ -52,7 +53,7 @@ public class LashingAmplifier3Procedure extends StormlightModModElements.ModElem
 				if (_entity instanceof LivingEntity) {
 					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
 					for (EffectInstance effect : effects) {
-						if (effect.getPotion() == Skybreaker1Potion.potion)
+						if (effect.getPotion() == Skybreaker1PotionEffect.potion)
 							return true;
 					}
 				}

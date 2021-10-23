@@ -8,6 +8,7 @@ import net.minecraft.entity.Entity;
 
 import net.mcreator.stormlightmod.entity.TruthwatcherSprenEntity;
 import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.function.Function;
 import java.util.Map;
@@ -22,27 +23,27 @@ public class TruthwatcherSprenOnInitialEntitySpawnProcedure extends StormlightMo
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("sourceentity") == null) {
 			if (!dependencies.containsKey("sourceentity"))
-				System.err.println("Failed to load dependency sourceentity for procedure TruthwatcherSprenOnInitialEntitySpawn!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency sourceentity for procedure TruthwatcherSprenOnInitialEntitySpawn!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				System.err.println("Failed to load dependency x for procedure TruthwatcherSprenOnInitialEntitySpawn!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency x for procedure TruthwatcherSprenOnInitialEntitySpawn!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				System.err.println("Failed to load dependency y for procedure TruthwatcherSprenOnInitialEntitySpawn!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency y for procedure TruthwatcherSprenOnInitialEntitySpawn!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				System.err.println("Failed to load dependency z for procedure TruthwatcherSprenOnInitialEntitySpawn!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency z for procedure TruthwatcherSprenOnInitialEntitySpawn!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure TruthwatcherSprenOnInitialEntitySpawn!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency world for procedure TruthwatcherSprenOnInitialEntitySpawn!");
 			return;
 		}
 		Entity sourceentity = (Entity) dependencies.get("sourceentity");

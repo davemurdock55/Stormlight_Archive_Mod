@@ -53,8 +53,8 @@ public class HavahItem extends StormlightModModElements.ModElement {
 			}
 
 			public Ingredient getRepairMaterial() {
-				return Ingredient.fromStacks(new ItemStack(Blocks.BLUE_WOOL, (int) (1)), new ItemStack(Blocks.WHITE_WOOL, (int) (1)),
-						new ItemStack(Blocks.LIGHT_GRAY_WOOL, (int) (1)));
+				return Ingredient.fromStacks(new ItemStack(Blocks.BLUE_WOOL), new ItemStack(Blocks.WHITE_WOOL),
+						new ItemStack(Blocks.LIGHT_GRAY_WOOL));
 			}
 
 			@OnlyIn(Dist.CLIENT)

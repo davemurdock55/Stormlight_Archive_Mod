@@ -14,6 +14,7 @@ import net.minecraft.entity.Entity;
 
 import net.mcreator.stormlightmod.StormlightModModVariables;
 import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -28,12 +29,12 @@ public class InfuseduringstormProcedure extends StormlightModModElements.ModElem
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure Infuseduringstorm!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure Infuseduringstorm!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure Infuseduringstorm!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency world for procedure Infuseduringstorm!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");

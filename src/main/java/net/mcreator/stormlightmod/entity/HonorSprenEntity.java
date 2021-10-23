@@ -67,7 +67,9 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 
 @StormlightModModElements.ModElement.Tag
 public class HonorSprenEntity extends StormlightModModElements.ModElement {
-	public static EntityType entity = null;
+	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.CREATURE)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire()
+			.size(0.6f, 1.8f)).build("honor_spren").setRegistryName("honor_spren");
 	public HonorSprenEntity(StormlightModModElements instance) {
 		super(instance, 19);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
@@ -75,9 +77,6 @@ public class HonorSprenEntity extends StormlightModModElements.ModElement {
 
 	@Override
 	public void initElements() {
-		entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.CREATURE).setShouldReceiveVelocityUpdates(true)
-				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire().size(0.6f, 1.8f))
-						.build("honor_spren").setRegistryName("honor_spren");
 		elements.entities.add(() -> entity);
 		elements.items.add(() -> new SpawnEggItem(entity, -16711681, -16737844, new Item.Properties().group(ItemGroup.MISC))
 				.setRegistryName("honor_spren_spawn_egg"));

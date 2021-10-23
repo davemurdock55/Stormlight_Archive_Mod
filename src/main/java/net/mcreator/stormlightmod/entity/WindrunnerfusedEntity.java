@@ -1,7 +1,6 @@
 
 package net.mcreator.stormlightmod.entity;
 
-import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.fml.network.NetworkHooks;
 import net.minecraftforge.fml.network.FMLPlayMessages;
@@ -65,9 +64,12 @@ import java.util.EnumSet;
 
 @StormlightModModElements.ModElement.Tag
 public class WindrunnerfusedEntity extends StormlightModModElements.ModElement {
-	public static EntityType entity = null;
-	@ObjectHolder("stormlight_mod:entitybulletwindrunnerfused")
-	public static final EntityType arrow = null;
+	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire()
+			.size(0.6f, 1.8f)).build("windrunnerfused").setRegistryName("windrunnerfused");
+	public static final EntityType arrow = (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
+			.size(0.5f, 0.5f)).build("entitybulletwindrunnerfused").setRegistryName("entitybulletwindrunnerfused");
 	public WindrunnerfusedEntity(StormlightModModElements instance) {
 		super(instance, 74);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
@@ -75,15 +77,10 @@ public class WindrunnerfusedEntity extends StormlightModModElements.ModElement {
 
 	@Override
 	public void initElements() {
-		entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER).setShouldReceiveVelocityUpdates(true)
-				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire().size(0.6f, 1.8f))
-						.build("windrunnerfused").setRegistryName("windrunnerfused");
 		elements.entities.add(() -> entity);
+		elements.entities.add(() -> arrow);
 		elements.items.add(() -> new SpawnEggItem(entity, -1, -3407872, new Item.Properties().group(ItemGroup.MISC))
 				.setRegistryName("windrunnerfused_spawn_egg"));
-		elements.entities.add(() -> (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC)
-				.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
-				.size(0.5f, 0.5f)).build("entitybulletwindrunnerfused").setRegistryName("entitybulletwindrunnerfused"));
 	}
 
 	@Override
@@ -125,7 +122,7 @@ public class WindrunnerfusedEntity extends StormlightModModElements.ModElement {
 			super(type, world);
 			experienceValue = 0;
 			setNoAI(false);
-			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(SpearItem.block, (int) (1)));
+			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(SpearItem.block));
 			this.moveController = new FlyingMovementController(this, 10, true);
 			this.navigator = new FlyingPathNavigator(this, this.world);
 		}
@@ -295,14 +292,20 @@ public class WindrunnerfusedEntity extends StormlightModModElements.ModElement {
 		}
 
 		@Override
+		protected void arrowHit(LivingEntity livingEntity) {
+			super.arrowHit(livingEntity);
+			livingEntity.setArrowCountInEntity(livingEntity.getArrowCountInEntity() - 1);
+		}
+
+		@Override
 		@OnlyIn(Dist.CLIENT)
 		public ItemStack getItem() {
-			return new ItemStack(SpearItem.block, (int) (1));
+			return new ItemStack(SpearItem.block);
 		}
 
 		@Override
 		protected ItemStack getArrowStack() {
-			return new ItemStack(SpearItem.block, (int) (1));
+			return new ItemStack(SpearItem.block);
 		}
 	}
 }

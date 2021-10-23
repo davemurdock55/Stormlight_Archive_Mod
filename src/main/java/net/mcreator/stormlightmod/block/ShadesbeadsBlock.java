@@ -12,6 +12,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.item.Rarity;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
@@ -56,14 +57,17 @@ public class ShadesbeadsBlock extends StormlightModModElements.ModElement {
 	@Override
 	public void initElements() {
 		fluidproperties = new ForgeFlowingFluid.Properties(() -> still, () -> flowing,
-				FluidAttributes.builder(new ResourceLocation("stormlight_mod:blocks/shadesmarbeadsdark"),
-						new ResourceLocation("stormlight_mod:blocks/shadesmarbeadstex1")).luminosity(0).density(2000).viscosity(2000))
-								.bucket(() -> bucket).block(() -> block);
+				FluidAttributes
+						.builder(new ResourceLocation("stormlight_mod:blocks/shadesmarbeadsdark"),
+								new ResourceLocation("stormlight_mod:blocks/shadesmarbeadstex1"))
+						.luminosity(0).density(2000).viscosity(2000).temperature(300).rarity(Rarity.COMMON)).explosionResistance(100f).tickRate(5)
+								.levelDecreasePerBlock(1).slopeFindDistance(4).bucket(() -> bucket).block(() -> block);
 		still = (FlowingFluid) new ForgeFlowingFluid.Source(fluidproperties).setRegistryName("shadesbeads");
 		flowing = (FlowingFluid) new ForgeFlowingFluid.Flowing(fluidproperties).setRegistryName("shadesbeads_flowing");
-		elements.blocks.add(() -> new FlowingFluidBlock(still, Block.Properties.create(Material.WATER)) {
+		elements.blocks.add(() -> new FlowingFluidBlock(still, Block.Properties.create(Material.WATER).hardnessAndResistance(100f).lightValue(0)) {
 		}.setRegistryName("shadesbeads"));
-		elements.items.add(() -> new BucketItem(still, new Item.Properties().containerItem(Items.BUCKET).maxStackSize(1).group(ItemGroup.MISC))
-				.setRegistryName("shadesbeads_bucket"));
+		elements.items.add(() -> new BucketItem(still,
+				new Item.Properties().containerItem(Items.BUCKET).maxStackSize(1).group(ItemGroup.MISC).rarity(Rarity.COMMON))
+						.setRegistryName("shadesbeads_bucket"));
 	}
 }

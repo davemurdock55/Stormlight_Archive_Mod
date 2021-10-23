@@ -1,5 +1,5 @@
 {
-  "_fv": 13,
+  "_fv": 24,
   "_type": "biome",
   "definition": {
     "name": "Shattered Plains",
@@ -8,22 +8,6 @@
     },
     "undergroundBlock": {
       "value": "Blocks.STONE#0"
-    },
-    "treeType": 1,
-    "vanillaTreeType": "Default",
-    "minHeight": 0,
-    "spawnVines": false,
-    "treeVines": {
-      "value": "Blocks.AIR"
-    },
-    "treeStem": {
-      "value": "Blocks.AIR"
-    },
-    "treeBranch": {
-      "value": "Blocks.AIR"
-    },
-    "treeFruits": {
-      "value": "Blocks.AIR"
     },
     "grassColor": {
       "value": -5195161,
@@ -41,26 +25,55 @@
       "value": -16737895,
       "falpha": 0.0
     },
-    "treesPerChunk": 0,
+    "moodSoundDelay": 0,
+    "spawnParticles": false,
+    "particlesProbability": 0.0,
+    "biomeCategory": "PLAINS",
+    "parent": {
+      "value": "CUSTOM:ShatteredPlains"
+    },
+    "rainingPossibility": 1.0,
+    "temperature": 1.0,
+    "baseHeight": 1.0,
+    "heightVariation": 0.16,
+    "biomeType": "WARM",
+    "spawnBiome": true,
+    "biomeWeight": 20,
+    "biomeDictionaryTypes": [
+      "MODIFIED",
+      "PLATEAU",
+      "WASTELAND",
+      "WET",
+      "SPARSE",
+      "DEAD",
+      "HOT",
+      "MODIFIED"
+    ],
     "grassPerChunk": 4,
     "seagrassPerChunk": 0,
     "flowersPerChunk": 0,
     "mushroomsPerChunk": 0,
     "bigMushroomsChunk": 0,
-    "sandPathcesPerChunk": 1,
+    "sandPatchesPerChunk": 0,
     "gravelPatchesPerChunk": 1,
     "reedsPerChunk": 0,
     "cactiPerChunk": 0,
-    "rainingPossibility": 1.0,
-    "temperature": 1.0,
-    "baseHeight": 1.0,
-    "heightVariation": 0.16,
-    "spawnBiome": true,
-    "biomeWeight": 20,
-    "biomeType": "WARM",
-    "biomeCategory": "PLAINS",
-    "parent": {
-      "value": "CUSTOM:ShatteredPlains"
+    "treesPerChunk": 0,
+    "vanillaTreeType": "Default",
+    "treeType": 1,
+    "minHeight": 0,
+    "maxWaterDepth": 0,
+    "treeStem": {
+      "value": "Blocks.AIR"
+    },
+    "treeBranch": {
+      "value": "Blocks.AIR"
+    },
+    "treeVines": {
+      "value": "Blocks.AIR"
+    },
+    "treeFruits": {
+      "value": "Blocks.AIR"
     },
     "spawnStronghold": true,
     "spawnMineshaft": true,
@@ -73,22 +86,13 @@
     "spawnOceanMonument": false,
     "spawnShipwreck": false,
     "oceanRuinType": "NONE",
-    "biomeDictionaryTypes": [
-      "MODIFIED",
-      "PLATEAU",
-      "WASTELAND",
-      "WET",
-      "SPARSE",
-      "DEAD",
-      "HOT",
-      "MODIFIED"
-    ],
     "defaultFeatures": [
       "Caves",
       "MonsterRooms",
       "Structures",
       "Ores",
-      "Lakes"
+      "Lakes",
+      "FrozenTopLayer"
     ],
     "spawnEntries": [
       {

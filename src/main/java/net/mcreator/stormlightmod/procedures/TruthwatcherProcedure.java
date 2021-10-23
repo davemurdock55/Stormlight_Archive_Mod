@@ -25,6 +25,7 @@ import net.minecraft.advancements.Advancement;
 import net.mcreator.stormlightmod.entity.TruthwatcherSprenEntity;
 import net.mcreator.stormlightmod.StormlightModModVariables;
 import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.function.Function;
 import java.util.Map;
@@ -40,27 +41,27 @@ public class TruthwatcherProcedure extends StormlightModModElements.ModElement {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure Truthwatcher!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure Truthwatcher!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				System.err.println("Failed to load dependency x for procedure Truthwatcher!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency x for procedure Truthwatcher!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				System.err.println("Failed to load dependency y for procedure Truthwatcher!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency y for procedure Truthwatcher!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				System.err.println("Failed to load dependency z for procedure Truthwatcher!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency z for procedure Truthwatcher!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure Truthwatcher!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency world for procedure Truthwatcher!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");

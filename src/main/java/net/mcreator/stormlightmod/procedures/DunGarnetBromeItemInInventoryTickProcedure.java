@@ -10,6 +10,7 @@ import net.minecraft.entity.Entity;
 import net.mcreator.stormlightmod.item.InfusedGarnetBroamItem;
 import net.mcreator.stormlightmod.item.DunGarnetBroamItem;
 import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 
@@ -22,23 +23,23 @@ public class DunGarnetBromeItemInInventoryTickProcedure extends StormlightModMod
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure DunGarnetBromeItemInInventoryTick!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure DunGarnetBromeItemInInventoryTick!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure DunGarnetBromeItemInInventoryTick!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency world for procedure DunGarnetBromeItemInInventoryTick!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		IWorld world = (IWorld) dependencies.get("world");
 		if ((world.getWorld().isRaining())) {
 			if (entity instanceof PlayerEntity) {
-				ItemStack _stktoremove = new ItemStack(DunGarnetBroamItem.block, (int) (1));
+				ItemStack _stktoremove = new ItemStack(DunGarnetBroamItem.block);
 				((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
 			}
 			if (entity instanceof PlayerEntity) {
-				ItemStack _setstack = new ItemStack(InfusedGarnetBroamItem.block, (int) (1));
+				ItemStack _setstack = new ItemStack(InfusedGarnetBroamItem.block);
 				_setstack.setCount((int) 1);
 				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
 			}

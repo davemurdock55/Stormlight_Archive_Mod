@@ -1,0 +1,21 @@
+{
+  "_fv": 24,
+  "_type": "potion",
+  "definition": {
+    "potionName": "Windrunner 1",
+    "splashName": "Splash Windrunner 1",
+    "lingeringName": "Lingering Windrunner 1",
+    "arrowName": "Arrow of Windrunner 1",
+    "effects": [
+      {
+        "effect": {
+          "value": "CUSTOM:Windrunner1"
+        },
+        "duration": 3600,
+        "amplifier": 0,
+        "ambient": false,
+        "showParticles": true
+      }
+    ]
+  }
+}

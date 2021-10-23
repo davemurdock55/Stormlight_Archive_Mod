@@ -1,9 +1,0 @@
-{
-  "group": "stormlight_mod",
-  "type": "minecraft:stonecutting",
-  "count": 5,
-  "ingredient": {
-    "item": "minecraft:diamond"
-  },
-  "result": "stormlight_mod:medium_diamond_gem"
-}

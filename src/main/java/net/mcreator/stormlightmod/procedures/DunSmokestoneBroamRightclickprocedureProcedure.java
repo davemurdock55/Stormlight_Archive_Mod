@@ -10,6 +10,7 @@ import net.minecraft.entity.Entity;
 import net.mcreator.stormlightmod.item.InfusedSmokestoneBroamItem;
 import net.mcreator.stormlightmod.item.DunSmokestoneBroamItem;
 import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 
@@ -22,23 +23,23 @@ public class DunSmokestoneBroamRightclickprocedureProcedure extends StormlightMo
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure DunSmokestoneBroamRightclickprocedure!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure DunSmokestoneBroamRightclickprocedure!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure DunSmokestoneBroamRightclickprocedure!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency world for procedure DunSmokestoneBroamRightclickprocedure!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		IWorld world = (IWorld) dependencies.get("world");
 		if ((world.getWorld().isRaining())) {
 			if (entity instanceof PlayerEntity) {
-				ItemStack _stktoremove = new ItemStack(DunSmokestoneBroamItem.block, (int) (1));
+				ItemStack _stktoremove = new ItemStack(DunSmokestoneBroamItem.block);
 				((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
 			}
 			if (entity instanceof PlayerEntity) {
-				ItemStack _setstack = new ItemStack(InfusedSmokestoneBroamItem.block, (int) (1));
+				ItemStack _setstack = new ItemStack(InfusedSmokestoneBroamItem.block);
 				_setstack.setCount((int) 1);
 				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
 			}

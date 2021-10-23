@@ -55,7 +55,9 @@ import java.util.HashMap;
 
 @StormlightModModElements.ModElement.Tag
 public class CultivationSprenEntity extends StormlightModModElements.ModElement {
-	public static EntityType entity = null;
+	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.CREATURE)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire()
+			.size(0.4f, 0.3f)).build("cultivation_spren").setRegistryName("cultivation_spren");
 	public CultivationSprenEntity(StormlightModModElements instance) {
 		super(instance, 236);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
@@ -63,9 +65,6 @@ public class CultivationSprenEntity extends StormlightModModElements.ModElement 
 
 	@Override
 	public void initElements() {
-		entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.CREATURE).setShouldReceiveVelocityUpdates(true)
-				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire().size(0.4f, 0.3f))
-						.build("cultivation_spren").setRegistryName("cultivation_spren");
 		elements.entities.add(() -> entity);
 		elements.items.add(() -> new SpawnEggItem(entity, -13369549, -13382656, new Item.Properties().group(ItemGroup.MISC))
 				.setRegistryName("cultivation_spren_spawn_egg"));

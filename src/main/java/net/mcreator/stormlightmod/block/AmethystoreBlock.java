@@ -17,6 +17,7 @@ import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.IWorld;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
@@ -57,6 +58,11 @@ public class AmethystoreBlock extends StormlightModModElements.ModElement {
 		}
 
 		@Override
+		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+			return 15;
+		}
+
+		@Override
 		public int tickRate(IWorldReader world) {
 			return 8;
 		}
@@ -66,7 +72,7 @@ public class AmethystoreBlock extends StormlightModModElements.ModElement {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(AmethystgemItem.block, (int) (1)));
+			return Collections.singletonList(new ItemStack(AmethystgemItem.block));
 		}
 	}
 	@Override
@@ -85,7 +91,7 @@ public class AmethystoreBlock extends StormlightModModElements.ModElement {
 				}
 			}.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.create("amethystore", "amethystore", blockAt -> {
 				boolean blockCriteria = false;
-				if (blockAt.getBlock() == Blocks.STONE.getDefaultState().getBlock())
+				if (blockAt.getBlock() == Blocks.STONE)
 					blockCriteria = true;
 				return blockCriteria;
 			}), block.getDefaultState(), 8)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(5, 5, 5, 16))));

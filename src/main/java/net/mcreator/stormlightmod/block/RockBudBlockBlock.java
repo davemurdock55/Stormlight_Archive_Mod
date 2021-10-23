@@ -4,6 +4,8 @@ package net.mcreator.stormlightmod.block;
 import net.minecraftforge.registries.ObjectHolder;
 
 import net.minecraft.world.storage.loot.LootContext;
+import net.minecraft.world.IBlockReader;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
@@ -37,6 +39,11 @@ public class RockBudBlockBlock extends StormlightModModElements.ModElement {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.LEAVES).sound(SoundType.GROUND).hardnessAndResistance(1f, 10f).lightValue(0).notSolid());
 			setRegistryName("rock_bud_block");
+		}
+
+		@Override
+		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+			return 1;
 		}
 
 		@Override

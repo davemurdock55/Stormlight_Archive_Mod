@@ -106,7 +106,7 @@ public class UrithiruDimensionDimension extends StormlightModModElements.ModElem
 
 		@Override
 		@OnlyIn(Dist.CLIENT)
-		public Vec3d getFogColor(float cangle, float ticks) {
+		public Vec3d getFogColor(float celestialAngle, float partialTicks) {
 			return new Vec3d(0.752941176471, 0.847058823529, 1);
 		}
 
@@ -201,8 +201,7 @@ public class UrithiruDimensionDimension extends StormlightModModElements.ModElem
 				for (Biome biome : this.biomes) {
 					biome.addCarver(GenerationStage.Carving.AIR, Biome.createCarver(new CaveWorldCarver(ProbabilityConfig::deserialize, 256) {
 						{
-							carvableBlocks = ImmutableSet.of(Blocks.STONE.getDefaultState().getBlock(),
-									biome.getSurfaceBuilder().getConfig().getTop().getBlock(),
+							carvableBlocks = ImmutableSet.of(Blocks.STONE, biome.getSurfaceBuilder().getConfig().getTop().getBlock(),
 									biome.getSurfaceBuilder().getConfig().getUnder().getBlock());
 						}
 					}, new ProbabilityConfig(0.14285715f)));

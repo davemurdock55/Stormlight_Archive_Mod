@@ -8,6 +8,7 @@ import net.mcreator.stormlightmod.item.InfusedDiamondChipItem;
 import net.mcreator.stormlightmod.item.DunDiamondChipItem;
 import net.mcreator.stormlightmod.StormlightModModVariables;
 import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -21,25 +22,25 @@ public class InfusedDiamondChipRightClickedProcedure extends StormlightModModEle
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure InfusedDiamondChipRightClicked!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure InfusedDiamondChipRightClicked!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure InfusedDiamondChipRightClicked!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency world for procedure InfusedDiamondChipRightClicked!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		IWorld world = (IWorld) dependencies.get("world");
 		{
-			ItemStack _setval = new ItemStack(InfusedDiamondChipItem.block, (int) (1));
+			ItemStack _setval = new ItemStack(InfusedDiamondChipItem.block);
 			entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.sphereTypeInfused = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}
 		{
-			ItemStack _setval = new ItemStack(DunDiamondChipItem.block, (int) (1));
+			ItemStack _setval = new ItemStack(DunDiamondChipItem.block);
 			entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.sphereTypeDun = _setval;
 				capability.syncPlayerVariables(entity);

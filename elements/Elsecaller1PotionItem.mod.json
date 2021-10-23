@@ -1,0 +1,21 @@
+{
+  "_fv": 24,
+  "_type": "potion",
+  "definition": {
+    "potionName": "Elsecaller 1",
+    "splashName": "Splash Elsecaller 1",
+    "lingeringName": "Lingering Elsecaller 1",
+    "arrowName": "Arrow of Elsecaller 1",
+    "effects": [
+      {
+        "effect": {
+          "value": "CUSTOM:Elsecaller1"
+        },
+        "duration": 3600,
+        "amplifier": 0,
+        "ambient": false,
+        "showParticles": true
+      }
+    ]
+  }
+}

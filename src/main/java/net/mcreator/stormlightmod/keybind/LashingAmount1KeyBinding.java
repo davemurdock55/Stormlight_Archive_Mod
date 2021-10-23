@@ -40,7 +40,7 @@ public class LashingAmount1KeyBinding extends StormlightModModElements.ModElemen
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
-		keys = new KeyBinding("key.mcreator.lashing_amount_1", GLFW.GLFW_KEY_1, "key.categories.misc");
+		keys = new KeyBinding("key.stormlight_mod.lashing_amount_1", GLFW.GLFW_KEY_1, "key.categories.misc");
 		ClientRegistry.registerKeyBinding(keys);
 		MinecraftForge.EVENT_BUS.register(this);
 	}

@@ -13,6 +13,7 @@ import net.minecraft.entity.Entity;
 
 import net.mcreator.stormlightmod.StormlightModModVariables;
 import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -26,12 +27,12 @@ public class InfusedChipRightClickedProcedure extends StormlightModModElements.M
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure InfusedChipRightClicked!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure InfusedChipRightClicked!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure InfusedChipRightClicked!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency world for procedure InfusedChipRightClicked!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -43,20 +44,20 @@ public class InfusedChipRightClickedProcedure extends StormlightModModElements.M
 						.isDone()
 				: false)) {
 			{
-				double _setval = (double) (StormlightModModVariables.WorldVariables.get(world).chipStormlightAmount);
+				double _setval = (double) StormlightModModVariables.WorldVariables.get(world).chipStormlightAmount;
 				entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.stormlightConsumedAmnt = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			{
-				double _setval = (double) (StormlightModModVariables.WorldVariables.get(world).chipStormlightAmount);
+				double _setval = (double) StormlightModModVariables.WorldVariables.get(world).chipStormlightAmount;
 				entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.lastInfusionAmnt = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			entity.getPersistentData().putDouble("stormlightLevel", (StormlightModModVariables.WorldVariables.get(world).chipStormlightAmount));
+			entity.getPersistentData().putDouble("stormlightLevel", StormlightModModVariables.WorldVariables.get(world).chipStormlightAmount);
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);

@@ -52,7 +52,9 @@ import java.util.HashMap;
 
 @StormlightModModElements.ModElement.Tag
 public class NightwatcherEntity extends StormlightModModElements.ModElement {
-	public static EntityType entity = null;
+	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire()
+			.size(1f, 1f)).build("nightwatcher").setRegistryName("nightwatcher");
 	public NightwatcherEntity(StormlightModModElements instance) {
 		super(instance, 13);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
@@ -60,9 +62,6 @@ public class NightwatcherEntity extends StormlightModModElements.ModElement {
 
 	@Override
 	public void initElements() {
-		entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER).setShouldReceiveVelocityUpdates(true)
-				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire().size(1f, 1f))
-						.build("nightwatcher").setRegistryName("nightwatcher");
 		elements.entities.add(() -> entity);
 		elements.items.add(() -> new SpawnEggItem(entity, -16777216, -10066330, new Item.Properties().group(ItemGroup.MISC))
 				.setRegistryName("nightwatcher_spawn_egg"));
@@ -200,8 +199,16 @@ public class NightwatcherEntity extends StormlightModModElements.ModElement {
 		}
 
 		@Override
-		public boolean canBeCollidedWith() {
+		public boolean canBePushed() {
 			return false;
+		}
+
+		@Override
+		protected void collideWithEntity(Entity entityIn) {
+		}
+
+		@Override
+		protected void collideWithNearbyEntities() {
 		}
 
 		public void livingTick() {

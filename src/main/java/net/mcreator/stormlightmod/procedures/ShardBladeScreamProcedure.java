@@ -11,6 +11,7 @@ import net.minecraft.entity.Entity;
 
 import net.mcreator.stormlightmod.item.ShardbladeItem;
 import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 
@@ -23,7 +24,7 @@ public class ShardBladeScreamProcedure extends StormlightModModElements.ModEleme
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure ShardBladeScream!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure ShardBladeScream!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -34,7 +35,7 @@ public class ShardBladeScreamProcedure extends StormlightModModElements.ModEleme
 						.isDone()
 				: false)
 				&& ((entity instanceof PlayerEntity)
-						? ((PlayerEntity) entity).inventory.hasItemStack(new ItemStack(ShardbladeItem.block, (int) (1)))
+						? ((PlayerEntity) entity).inventory.hasItemStack(new ItemStack(ShardbladeItem.block))
 						: false))) {
 			if (entity instanceof PlayerEntity && !entity.world.isRemote) {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Aaaaaaaaaaaaaaaaaaaahhhhhhh"), (false));

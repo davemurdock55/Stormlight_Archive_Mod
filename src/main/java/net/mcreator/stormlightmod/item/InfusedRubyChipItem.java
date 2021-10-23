@@ -8,11 +8,13 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.world.World;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.Hand;
+import net.minecraft.util.ActionResult;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
-import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.block.BlockState;
 
@@ -66,12 +68,13 @@ public class InfusedRubyChipItem extends StormlightModModElements.ModElement {
 		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
 			list.add(new StringTextComponent(
-					"A small, glass sphere with a small  piece of Ruby set inside of it.The gem glows brightly with the light of a tiny storm"));
+					"A small, glass sphere with a small piece of Ruby set inside of it.The gem glows brightly with the light of a tiny storm"));
 		}
 
 		@Override
-		public void inventoryTick(ItemStack itemstack, World world, Entity entity, int slot, boolean selected) {
-			super.inventoryTick(itemstack, world, entity, slot, selected);
+		public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity entity, Hand hand) {
+			ActionResult<ItemStack> ar = super.onItemRightClick(world, entity, hand);
+			ItemStack itemstack = ar.getResult();
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
@@ -81,6 +84,7 @@ public class InfusedRubyChipItem extends StormlightModModElements.ModElement {
 				$_dependencies.put("world", world);
 				InfusedRubyChipRightClickedProcedure.executeProcedure($_dependencies);
 			}
+			return ar;
 		}
 	}
 }

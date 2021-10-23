@@ -1,24 +1,7 @@
 {
-  "_fv": 13,
+  "_fv": 24,
   "_type": "dimension",
   "definition": {
-    "portalFrame": {
-      "value": ""
-    },
-    "portalParticles": {
-      "value": "EXPLOSION_NORMAL"
-    },
-    "portalLuminance": 0.0,
-    "portalSound": {
-      "value": "block.portal.ambient"
-    },
-    "igniterName": "Urithiru Dimension Portal Igniter",
-    "igniterTab": {
-      "value": "TOOLS"
-    },
-    "texture": "",
-    "portalTexture": "",
-    "enablePortal": false,
     "biomesInDimension": [
       {
         "value": "mountains"
@@ -59,11 +42,27 @@
     },
     "canRespawnHere": true,
     "hasFog": false,
-    "hasWeather": true,
     "isDark": false,
     "doesWaterVaporize": false,
     "sleepResult": "ALLOW",
     "hasSkyLight": true,
-    "imitateOverworldBehaviour": true
+    "imitateOverworldBehaviour": true,
+    "portalFrame": {
+      "value": ""
+    },
+    "portalParticles": {
+      "value": "EXPLOSION_NORMAL"
+    },
+    "portalLuminance": 0,
+    "portalSound": {
+      "value": "block.portal.ambient"
+    },
+    "igniterName": "Urithiru Dimension Portal Igniter",
+    "igniterTab": {
+      "value": "TOOLS"
+    },
+    "texture": "",
+    "portalTexture": "",
+    "enablePortal": false
   }
 }

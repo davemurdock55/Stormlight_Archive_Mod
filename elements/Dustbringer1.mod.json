@@ -1,8 +1,7 @@
 {
-  "_fv": 13,
-  "_type": "potion",
+  "_fv": 24,
+  "_type": "potioneffect",
   "definition": {
-    "name": "Skybreaker 1",
     "effectName": "Skybreaker 1",
     "icon": "image_1.png",
     "color": {
@@ -12,7 +11,6 @@
     "isInstant": true,
     "isBad": false,
     "isBenefitical": true,
-    "registerPotionType": true,
     "renderStatusInInventory": true,
     "renderStatusInHUD": true
   }

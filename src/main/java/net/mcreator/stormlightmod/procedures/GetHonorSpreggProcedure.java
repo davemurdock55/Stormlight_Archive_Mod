@@ -26,6 +26,7 @@ import net.mcreator.stormlightmod.particle.GlorySprenParticle;
 import net.mcreator.stormlightmod.entity.HonorSprenEntity;
 import net.mcreator.stormlightmod.StormlightModModVariables;
 import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.function.Function;
 import java.util.Map;
@@ -41,27 +42,27 @@ public class GetHonorSpreggProcedure extends StormlightModModElements.ModElement
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure GetHonorSpregg!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure GetHonorSpregg!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				System.err.println("Failed to load dependency x for procedure GetHonorSpregg!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency x for procedure GetHonorSpregg!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				System.err.println("Failed to load dependency y for procedure GetHonorSpregg!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency y for procedure GetHonorSpregg!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				System.err.println("Failed to load dependency z for procedure GetHonorSpregg!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency z for procedure GetHonorSpregg!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure GetHonorSpregg!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency world for procedure GetHonorSpregg!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");

@@ -39,7 +39,7 @@ public class CultivationsprenguiKeyBinding extends StormlightModModElements.ModE
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
-		keys = new KeyBinding("key.mcreator.cultivationsprengui", GLFW.GLFW_KEY_C, "key.categories.misc");
+		keys = new KeyBinding("key.stormlight_mod.cultivationsprengui", GLFW.GLFW_KEY_C, "key.categories.misc");
 		ClientRegistry.registerKeyBinding(keys);
 		MinecraftForge.EVENT_BUS.register(this);
 	}

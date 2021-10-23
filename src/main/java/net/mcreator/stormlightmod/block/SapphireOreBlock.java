@@ -64,6 +64,11 @@ public class SapphireOreBlock extends StormlightModModElements.ModElement {
 		}
 
 		@Override
+		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+			return 0;
+		}
+
+		@Override
 		public int tickRate(IWorldReader world) {
 			return 8;
 		}
@@ -78,7 +83,7 @@ public class SapphireOreBlock extends StormlightModModElements.ModElement {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(SapphireGemItem.block, (int) (1)));
+			return Collections.singletonList(new ItemStack(SapphireGemItem.block));
 		}
 	}
 	@Override
@@ -97,7 +102,7 @@ public class SapphireOreBlock extends StormlightModModElements.ModElement {
 				}
 			}.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.create("sapphire_ore", "sapphire_ore", blockAt -> {
 				boolean blockCriteria = false;
-				if (blockAt.getBlock() == Blocks.STONE.getDefaultState().getBlock())
+				if (blockAt.getBlock() == Blocks.STONE)
 					blockCriteria = true;
 				return blockCriteria;
 			}), block.getDefaultState(), 8)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(5, 5, 5, 16))));

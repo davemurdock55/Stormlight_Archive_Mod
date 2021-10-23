@@ -59,7 +59,9 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 
 @StormlightModModElements.ModElement.Tag
 public class AxehoundEntity extends StormlightModModElements.ModElement {
-	public static EntityType entity = null;
+	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
+			.size(0.6f, 1.8f)).build("axehound").setRegistryName("axehound");
 	public AxehoundEntity(StormlightModModElements instance) {
 		super(instance, 393);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
@@ -67,9 +69,6 @@ public class AxehoundEntity extends StormlightModModElements.ModElement {
 
 	@Override
 	public void initElements() {
-		entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER).setShouldReceiveVelocityUpdates(true)
-				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(0.6f, 1.8f)).build("axehound")
-						.setRegistryName("axehound");
 		elements.entities.add(() -> entity);
 		elements.items
 				.add(() -> new SpawnEggItem(entity, -26368, -1, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("axehound_spawn_egg"));
@@ -181,10 +180,6 @@ public class AxehoundEntity extends StormlightModModElements.ModElement {
 						this.enablePersistence();
 				}
 			}
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Entity entity = this;
 			return retval;
 		}
 
@@ -214,13 +209,13 @@ public class AxehoundEntity extends StormlightModModElements.ModElement {
 		public boolean isBreedingItem(ItemStack stack) {
 			if (stack == null)
 				return false;
-			if (new ItemStack(Items.BEEF, (int) (1)).getItem() == stack.getItem())
+			if (Items.BEEF == stack.getItem())
 				return true;
-			if (new ItemStack(Items.MUTTON, (int) (1)).getItem() == stack.getItem())
+			if (Items.MUTTON == stack.getItem())
 				return true;
-			if (new ItemStack(Items.CHICKEN, (int) (1)).getItem() == stack.getItem())
+			if (Items.CHICKEN == stack.getItem())
 				return true;
-			if (new ItemStack(Items.RABBIT, (int) (1)).getItem() == stack.getItem())
+			if (Items.RABBIT == stack.getItem())
 				return true;
 			return false;
 		}

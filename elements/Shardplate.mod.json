@@ -1,5 +1,5 @@
 {
-  "_fv": 13,
+  "_fv": 24,
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
@@ -50,6 +50,10 @@
     "bootsModelPartL": "Boots L",
     "bootsModelPartR": "Boots R",
     "bootsModelTexture": "From armor",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
     "maxDamage": 25,
     "damageValueHelmet": 17,
     "damageValueBody": 20,
@@ -57,6 +61,7 @@
     "damageValueBoots": 20,
     "enchantability": 10,
     "toughness": 5.0,
+    "knockbackResistance": 0.0,
     "equipSound": {
       "value": "block.anvil.place"
     },

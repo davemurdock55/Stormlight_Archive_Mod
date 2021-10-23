@@ -1,5 +1,5 @@
 {
-  "_fv": 13,
+  "_fv": 24,
   "_type": "item",
   "definition": {
     "renderType": 0,
@@ -16,6 +16,7 @@
     "toolType": 1.0,
     "damageCount": 0,
     "destroyAnyBlock": false,
+    "immuneToFire": false,
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "enableMeleeDamage": false,
@@ -32,6 +33,7 @@
     },
     "onItemInInventoryTick": {
       "name": "DunZirconChipItemInInventoryTick"
-    }
+    },
+    "hasDispenseBehavior": false
   }
 }

@@ -69,7 +69,9 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 
 @StormlightModModElements.ModElement.Tag
 public class ShardbearerEntity extends StormlightModModElements.ModElement {
-	public static EntityType entity = null;
+	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.CREATURE)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire()
+			.size(0.83f, 2.5f)).build("shardbearer").setRegistryName("shardbearer");
 	public ShardbearerEntity(StormlightModModElements instance) {
 		super(instance, 11);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
@@ -77,9 +79,6 @@ public class ShardbearerEntity extends StormlightModModElements.ModElement {
 
 	@Override
 	public void initElements() {
-		entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.CREATURE).setShouldReceiveVelocityUpdates(true)
-				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire().size(0.83f, 2.5f))
-						.build("shardbearer").setRegistryName("shardbearer");
 		elements.entities.add(() -> entity);
 		elements.items.add(() -> new SpawnEggItem(entity, -13421824, -6750208, new Item.Properties().group(ItemGroup.MISC))
 				.setRegistryName("shardbearer_spawn_egg"));
@@ -127,11 +126,11 @@ public class ShardbearerEntity extends StormlightModModElements.ModElement {
 			setNoAI(false);
 			setCustomName(new StringTextComponent("Shard Bearer"));
 			setCustomNameVisible(true);
-			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(ShardbladeItem.block, (int) (1)));
-			this.setItemStackToSlot(EquipmentSlotType.HEAD, new ItemStack(ShardplateItem.helmet, (int) (1)));
-			this.setItemStackToSlot(EquipmentSlotType.CHEST, new ItemStack(ShardplateItem.body, (int) (1)));
-			this.setItemStackToSlot(EquipmentSlotType.LEGS, new ItemStack(ShardplateItem.legs, (int) (1)));
-			this.setItemStackToSlot(EquipmentSlotType.FEET, new ItemStack(ShardplateItem.boots, (int) (1)));
+			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(ShardbladeItem.block));
+			this.setItemStackToSlot(EquipmentSlotType.HEAD, new ItemStack(ShardplateItem.helmet));
+			this.setItemStackToSlot(EquipmentSlotType.CHEST, new ItemStack(ShardplateItem.body));
+			this.setItemStackToSlot(EquipmentSlotType.LEGS, new ItemStack(ShardplateItem.legs));
+			this.setItemStackToSlot(EquipmentSlotType.FEET, new ItemStack(ShardplateItem.boots));
 		}
 
 		@Override

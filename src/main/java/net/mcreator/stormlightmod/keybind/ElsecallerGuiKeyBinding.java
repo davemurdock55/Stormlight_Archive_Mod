@@ -39,7 +39,7 @@ public class ElsecallerGuiKeyBinding extends StormlightModModElements.ModElement
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
-		keys = new KeyBinding("key.mcreator.elsecaller_gui", GLFW.GLFW_KEY_V, "key.categories.misc");
+		keys = new KeyBinding("key.stormlight_mod.elsecaller_gui", GLFW.GLFW_KEY_V, "key.categories.misc");
 		ClientRegistry.registerKeyBinding(keys);
 		MinecraftForge.EVENT_BUS.register(this);
 	}

@@ -15,6 +15,7 @@ import net.minecraft.entity.Entity;
 import net.mcreator.stormlightmod.item.InfusedDiamondChipItem;
 import net.mcreator.stormlightmod.item.DunDiamondChipItem;
 import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.function.Supplier;
 import java.util.Map;
@@ -28,22 +29,22 @@ public class SphereCageUpdateTickInfuseSpheresProcedure extends StormlightModMod
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure SphereCageUpdateTickInfuseSpheres!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure SphereCageUpdateTickInfuseSpheres!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				System.err.println("Failed to load dependency x for procedure SphereCageUpdateTickInfuseSpheres!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency x for procedure SphereCageUpdateTickInfuseSpheres!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				System.err.println("Failed to load dependency z for procedure SphereCageUpdateTickInfuseSpheres!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency z for procedure SphereCageUpdateTickInfuseSpheres!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure SphereCageUpdateTickInfuseSpheres!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency world for procedure SphereCageUpdateTickInfuseSpheres!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -64,7 +65,7 @@ public class SphereCageUpdateTickInfuseSpheresProcedure extends StormlightModMod
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (0))).getItem() == new ItemStack(DunDiamondChipItem.block, (int) (1)).getItem()))) {
+		}.getItemStack((int) (0))).getItem() == DunDiamondChipItem.block))) {
 			{
 				TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) (-1), (int) z));
 				if (_ent != null) {
@@ -83,7 +84,7 @@ public class SphereCageUpdateTickInfuseSpheresProcedure extends StormlightModMod
 				TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) (-1), (int) z));
 				if (_ent != null) {
 					final int _sltid = (int) (1);
-					final ItemStack _setstack = new ItemStack(InfusedDiamondChipItem.block, (int) (1));
+					final ItemStack _setstack = new ItemStack(InfusedDiamondChipItem.block);
 					_setstack.setCount((int) 1);
 					_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 						if (capability instanceof IItemHandlerModifiable) {

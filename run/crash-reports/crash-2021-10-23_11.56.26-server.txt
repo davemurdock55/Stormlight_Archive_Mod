@@ -1,0 +1,105 @@
+---- Minecraft Crash Report ----
+// Don't be sad, have a hug! <3
+
+Time: 10/23/21, 11:56 AM
+Description: Ticking player
+
+java.lang.NullPointerException: Ticking player
+	at net.minecraft.advancements.PlayerAdvancements.startProgress(PlayerAdvancements.java:324) ~[forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar:?] {re:classloading}
+	at net.minecraft.advancements.PlayerAdvancements.getProgress(PlayerAdvancements.java:317) ~[forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar:?] {re:classloading}
+	at net.mcreator.stormlightmod.procedures.UseRadientPowersProcedure.executeProcedure(UseRadientPowersProcedure.java:81) ~[main/:?] {re:classloading}
+	at net.mcreator.stormlightmod.procedures.InfuseduringstormProcedure.executeProcedure(InfuseduringstormProcedure.java:58) ~[main/:?] {re:classloading}
+	at net.mcreator.stormlightmod.procedures.InfuseduringstormProcedure.onPlayerTick(InfuseduringstormProcedure.java:78) ~[main/:?] {re:classloading}
+	at net.minecraftforge.eventbus.ASMEventHandler_3_InfuseduringstormProcedure_onPlayerTick_PlayerTickEvent.invoke(.dynamic) ~[?:?] {}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:80) ~[eventbus-2.2.0-service.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:258) ~[eventbus-2.2.0-service.jar:?] {}
+	at net.minecraftforge.fml.hooks.BasicEventHooks.onPlayerPostTick(BasicEventHooks.java:89) ~[?:?] {re:classloading}
+	at net.minecraft.entity.player.PlayerEntity.tick(PlayerEntity.java:284) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.entity.player.ServerPlayerEntity.playerTick(ServerPlayerEntity.java:379) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.network.play.ServerPlayNetHandler.tick(ServerPlayNetHandler.java:188) ~[?:?] {re:classloading}
+	at net.minecraft.network.NetworkManager.tick(NetworkManager.java:250) ~[?:?] {re:classloading}
+	at net.minecraft.network.NetworkSystem.tick(NetworkSystem.java:152) ~[?:?] {re:classloading}
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:903) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:821) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:120) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:662) [?:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:829) [?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraft.advancements.PlayerAdvancements.startProgress(PlayerAdvancements.java:324)
+	at net.minecraft.advancements.PlayerAdvancements.getProgress(PlayerAdvancements.java:317)
+	at net.mcreator.stormlightmod.procedures.UseRadientPowersProcedure.executeProcedure(UseRadientPowersProcedure.java:81)
+	at net.mcreator.stormlightmod.procedures.InfuseduringstormProcedure.executeProcedure(InfuseduringstormProcedure.java:58)
+	at net.mcreator.stormlightmod.procedures.InfuseduringstormProcedure.onPlayerTick(InfuseduringstormProcedure.java:78)
+	at net.minecraftforge.eventbus.ASMEventHandler_3_InfuseduringstormProcedure_onPlayerTick_PlayerTickEvent.invoke(.dynamic)
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:80)
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:258)
+	at net.minecraftforge.fml.hooks.BasicEventHooks.onPlayerPostTick(BasicEventHooks.java:89)
+	at net.minecraft.entity.player.PlayerEntity.tick(PlayerEntity.java:284)
+
+-- Player being ticked --
+Details:
+	Entity Type: minecraft:player (net.minecraft.entity.player.ServerPlayerEntity)
+	Entity ID: 2282
+	Entity Name: Dev
+	Entity's Exact location: 6.54, 63.00, 6.54
+	Entity's Block location: World: (6,63,6), Chunk: (at 6,3,6 in 0,0; contains blocks 0,0,0 to 15,255,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Entity's Momentum: 0.06, -0.08, 0.06
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.entity.player.ServerPlayerEntity.playerTick(ServerPlayerEntity.java:379)
+	at net.minecraft.network.play.ServerPlayNetHandler.tick(ServerPlayNetHandler.java:188)
+	at net.minecraft.network.NetworkManager.tick(NetworkManager.java:250)
+
+-- Ticking connection --
+Details:
+	Connection: net.minecraft.network.NetworkManager@54f6b77c
+Stacktrace:
+	at net.minecraft.network.NetworkSystem.tick(NetworkSystem.java:152)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:903)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:821)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:120)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:662)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.15.2
+	Minecraft Version ID: 1.15.2
+	Operating System: Mac OS X (x86_64) version 11.5
+	Java Version: 11.0.11, AdoptOpenJDK
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), AdoptOpenJDK
+	Memory: 506460160 bytes (482 MB) / 1262485504 bytes (1204 MB) up to 4294967296 bytes (4096 MB)
+	CPUs: 8
+	JVM Flags: 1 total; -Xss1M
+	ModLauncher: 5.1.2+70+master.2845bb9
+	ModLauncher launch target: fmluserdevclient
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		/eventbus-2.2.0-service.jar eventbus PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar runtime_enum_extender PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar capability_inject_definalize PLUGINSERVICE 
+		/accesstransformers-2.1.1-shadowed.jar accesstransformer PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar runtimedistcleaner PLUGINSERVICE 
+		/forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-launcher.jar fml TRANSFORMATIONSERVICE 
+	FML: 31.2
+	Forge: net.minecraftforge:31.2.0
+	FML Language Providers: 
+		javafml@31.2
+		minecraft@1
+	Mod List: 
+		client-extra.jar Minecraft {minecraft@1.15.2 DONE}
+		forge-1.15.2-31.2.0_mapped_snapshot_20200514-1.15.1-recomp.jar Forge {forge@31.2.0 DONE}
+		main Stormlight Mod {stormlight_mod@1.0.0 DONE}
+	Player Count: 1 / 8; [ServerPlayerEntity['Dev'/2282, l='New World', x=6.54, y=63.00, z=6.54]]
+	Data Packs: vanilla, mod:forge (incompatible), mod:stormlight_mod
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'

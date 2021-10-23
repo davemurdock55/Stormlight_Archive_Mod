@@ -8,6 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.enchantment.Enchantments;
 
 import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 
@@ -20,12 +21,12 @@ public class ShardplateBootsTickEventProcedure extends StormlightModModElements.
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure ShardplateBootsTickEvent!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure ShardplateBootsTickEvent!");
 			return;
 		}
 		if (dependencies.get("itemstack") == null) {
 			if (!dependencies.containsKey("itemstack"))
-				System.err.println("Failed to load dependency itemstack for procedure ShardplateBootsTickEvent!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency itemstack for procedure ShardplateBootsTickEvent!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");

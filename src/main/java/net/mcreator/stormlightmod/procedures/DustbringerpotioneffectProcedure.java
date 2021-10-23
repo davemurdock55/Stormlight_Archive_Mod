@@ -9,9 +9,10 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.stormlightmod.potion.GravitationPotion;
+import net.mcreator.stormlightmod.potion.GravitationPotionEffect;
 import net.mcreator.stormlightmod.StormlightModModVariables;
 import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 
@@ -24,7 +25,7 @@ public class DustbringerpotioneffectProcedure extends StormlightModModElements.M
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure Dustbringerpotioneffect!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure Dustbringerpotioneffect!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -40,7 +41,7 @@ public class DustbringerpotioneffectProcedure extends StormlightModModElements.M
 								.orElse(new StormlightModModVariables.PlayerVariables())).stormlightConsumedAmnt),
 						(int) 1));
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(GravitationPotion.potion,
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(GravitationPotionEffect.potion,
 						(int) ((entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new StormlightModModVariables.PlayerVariables())).stormlightConsumedAmnt),
 						(int) 1));

@@ -45,6 +45,11 @@ public class RockBudGroundBlock extends StormlightModModElements.ModElement {
 		}
 
 		@Override
+		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+			return 15;
+		}
+
+		@Override
 		public boolean canSustainPlant(BlockState state, IBlockReader world, BlockPos pos, Direction direction, IPlantable plantable) {
 			return true;
 		}
@@ -54,7 +59,7 @@ public class RockBudGroundBlock extends StormlightModModElements.ModElement {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(ShatteredPlainRockBlock.block, (int) (1)));
+			return Collections.singletonList(new ItemStack(ShatteredPlainRockBlock.block));
 		}
 	}
 }

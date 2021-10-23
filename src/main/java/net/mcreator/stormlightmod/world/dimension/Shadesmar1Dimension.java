@@ -327,13 +327,13 @@ public class Shadesmar1Dimension extends StormlightModModElements.ModElement {
 				int i;
 				for (i = 0; i < 22; ++i) {
 					BlockPos blockpos = pos.offset(directionIn, i);
-					if (!this.func_196900_a(this.world.getBlockState(blockpos)) || !(this.world.getBlockState(blockpos.down())
-							.getBlock() == Blocks.BLACK_STAINED_GLASS_PANE.getDefaultState().getBlock())) {
+					if (!this.func_196900_a(this.world.getBlockState(blockpos))
+							|| !(this.world.getBlockState(blockpos.down()).getBlock() == Blocks.BLACK_STAINED_GLASS_PANE)) {
 						break;
 					}
 				}
 				BlockPos framePos = pos.offset(directionIn, i);
-				return (this.world.getBlockState(framePos).getBlock() == Blocks.BLACK_STAINED_GLASS_PANE.getDefaultState().getBlock()) ? i : 0;
+				return (this.world.getBlockState(framePos).getBlock() == Blocks.BLACK_STAINED_GLASS_PANE) ? i : 0;
 			}
 
 			public int getHeight() {
@@ -358,12 +358,12 @@ public class Shadesmar1Dimension extends StormlightModModElements.ModElement {
 						}
 						if (i == 0) {
 							BlockPos framePos = blockpos.offset(this.leftDir);
-							if (!(this.world.getBlockState(framePos).getBlock() == Blocks.BLACK_STAINED_GLASS_PANE.getDefaultState().getBlock())) {
+							if (!(this.world.getBlockState(framePos).getBlock() == Blocks.BLACK_STAINED_GLASS_PANE)) {
 								break label56;
 							}
 						} else if (i == this.width - 1) {
 							BlockPos framePos = blockpos.offset(this.rightDir);
-							if (!(this.world.getBlockState(framePos).getBlock() == Blocks.BLACK_STAINED_GLASS_PANE.getDefaultState().getBlock())) {
+							if (!(this.world.getBlockState(framePos).getBlock() == Blocks.BLACK_STAINED_GLASS_PANE)) {
 								break label56;
 							}
 						}
@@ -371,7 +371,7 @@ public class Shadesmar1Dimension extends StormlightModModElements.ModElement {
 				}
 				for (int j = 0; j < this.width; ++j) {
 					BlockPos framePos = this.bottomLeft.offset(this.rightDir, j).up(this.height);
-					if (!(this.world.getBlockState(framePos).getBlock() == Blocks.BLACK_STAINED_GLASS_PANE.getDefaultState().getBlock())) {
+					if (!(this.world.getBlockState(framePos).getBlock() == Blocks.BLACK_STAINED_GLASS_PANE)) {
 						this.height = 0;
 						break;
 					}
@@ -596,9 +596,7 @@ public class Shadesmar1Dimension extends StormlightModModElements.ModElement {
 							boolean flag = i9 < 0;
 							blockpos$mutable.setPos(l9, j10, l10);
 							this.world.setBlockState(blockpos$mutable,
-									flag
-											? Blocks.BLACK_STAINED_GLASS_PANE.getDefaultState().getBlock().getDefaultState()
-											: Blocks.AIR.getDefaultState());
+									flag ? Blocks.BLACK_STAINED_GLASS_PANE.getDefaultState() : Blocks.AIR.getDefaultState());
 						}
 					}
 				}
@@ -607,7 +605,7 @@ public class Shadesmar1Dimension extends StormlightModModElements.ModElement {
 				for (int j8 = -1; j8 < 4; ++j8) {
 					if (k7 == -1 || k7 == 2 || j8 == -1 || j8 == 3) {
 						blockpos$mutable.setPos(i6 + k7 * l6, k2 + j8, k6 + k7 * i3);
-						this.world.setBlockState(blockpos$mutable, Blocks.BLACK_STAINED_GLASS_PANE.getDefaultState().getBlock().getDefaultState(), 3);
+						this.world.setBlockState(blockpos$mutable, Blocks.BLACK_STAINED_GLASS_PANE.getDefaultState(), 3);
 					}
 				}
 			}
@@ -695,7 +693,7 @@ public class Shadesmar1Dimension extends StormlightModModElements.ModElement {
 
 		@Override
 		@OnlyIn(Dist.CLIENT)
-		public Vec3d getFogColor(float cangle, float ticks) {
+		public Vec3d getFogColor(float celestialAngle, float partialTicks) {
 			return new Vec3d(0.050980392157, 0.050980392157, 0.054901960784);
 		}
 
@@ -790,8 +788,7 @@ public class Shadesmar1Dimension extends StormlightModModElements.ModElement {
 				for (Biome biome : this.biomes) {
 					biome.addCarver(GenerationStage.Carving.AIR, Biome.createCarver(new CaveWorldCarver(ProbabilityConfig::deserialize, 256) {
 						{
-							carvableBlocks = ImmutableSet.of(ShadesmarObsidianBlock.block.getDefaultState().getBlock(),
-									biome.getSurfaceBuilder().getConfig().getTop().getBlock(),
+							carvableBlocks = ImmutableSet.of(ShadesmarObsidianBlock.block, biome.getSurfaceBuilder().getConfig().getTop().getBlock(),
 									biome.getSurfaceBuilder().getConfig().getUnder().getBlock());
 						}
 					}, new ProbabilityConfig(0.14285715f)));
