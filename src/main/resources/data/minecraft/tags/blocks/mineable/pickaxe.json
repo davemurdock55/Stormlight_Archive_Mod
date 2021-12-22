@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "stormlight_mod:shattered_plain_rock",
+    "stormlight_mod:rock_bud_ground",
+    "stormlight_mod:shadesmar_obsidian",
+    "stormlight_mod:sapphire_ore",
+    "stormlight_mod:amethystore",
+    "stormlight_mod:smokestoneore",
+    "stormlight_mod:heliodorore",
+    "stormlight_mod:ruby_gemore",
+    "stormlight_mod:garnet_ore",
+    "stormlight_mod:zircon_ore",
+    "stormlight_mod:topaz_ore"
+  ]
+}
