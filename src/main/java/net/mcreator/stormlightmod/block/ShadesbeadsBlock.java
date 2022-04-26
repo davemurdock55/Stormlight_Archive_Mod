@@ -12,6 +12,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.item.Rarity;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
@@ -35,15 +36,18 @@ public class ShadesbeadsBlock extends StormlightModModElements.ModElement {
 	public static FlowingFluid flowing = null;
 	public static FlowingFluid still = null;
 	private ForgeFlowingFluid.Properties fluidproperties = null;
+
 	public ShadesbeadsBlock(StormlightModModElements instance) {
 		super(instance, 20);
-		FMLJavaModLoadingContext.get().getModEventBus().register(this);
+		FMLJavaModLoadingContext.get().getModEventBus().register(new FluidRegisterHandler());
 	}
 
-	@SubscribeEvent
-	public void registerFluids(RegistryEvent.Register<Fluid> event) {
-		event.getRegistry().register(still);
-		event.getRegistry().register(flowing);
+	private static class FluidRegisterHandler {
+		@SubscribeEvent
+		public void registerFluids(RegistryEvent.Register<Fluid> event) {
+			event.getRegistry().register(still);
+			event.getRegistry().register(flowing);
+		}
 	}
 
 	@Override
@@ -55,15 +59,21 @@ public class ShadesbeadsBlock extends StormlightModModElements.ModElement {
 
 	@Override
 	public void initElements() {
-		fluidproperties = new ForgeFlowingFluid.Properties(() -> still, () -> flowing,
-				FluidAttributes.builder(new ResourceLocation("stormlight_mod:blocks/shadesmarbeadsdark"),
-						new ResourceLocation("stormlight_mod:blocks/shadesmarbeadstex1")).luminosity(0).density(2000).viscosity(2000))
-								.bucket(() -> bucket).block(() -> block);
+		fluidproperties = new ForgeFlowingFluid.Properties(() -> still, () -> flowing, FluidAttributes
+				.builder(new ResourceLocation("stormlight_mod:blocks/shadesmarbeadsdark"),
+						new ResourceLocation("stormlight_mod:blocks/shadesmarbeadstex1"))
+				.luminosity(0).density(2000).viscosity(2000).temperature(300)
+
+				.rarity(Rarity.COMMON)).explosionResistance(100f)
+
+						.tickRate(5).levelDecreasePerBlock(1).slopeFindDistance(4).bucket(() -> bucket).block(() -> block);
 		still = (FlowingFluid) new ForgeFlowingFluid.Source(fluidproperties).setRegistryName("shadesbeads");
 		flowing = (FlowingFluid) new ForgeFlowingFluid.Flowing(fluidproperties).setRegistryName("shadesbeads_flowing");
-		elements.blocks.add(() -> new FlowingFluidBlock(still, Block.Properties.create(Material.WATER)) {
-		}.setRegistryName("shadesbeads"));
-		elements.items.add(() -> new BucketItem(still, new Item.Properties().containerItem(Items.BUCKET).maxStackSize(1).group(ItemGroup.MISC))
-				.setRegistryName("shadesbeads_bucket"));
+		elements.blocks
+				.add(() -> new FlowingFluidBlock(still, Block.Properties.create(Material.WATER).hardnessAndResistance(100f).setLightLevel(s -> 0)) {
+				}.setRegistryName("shadesbeads"));
+		elements.items.add(() -> new BucketItem(still,
+				new Item.Properties().containerItem(Items.BUCKET).maxStackSize(1).group(ItemGroup.MISC).rarity(Rarity.COMMON))
+						.setRegistryName("shadesbeads_bucket"));
 	}
 }

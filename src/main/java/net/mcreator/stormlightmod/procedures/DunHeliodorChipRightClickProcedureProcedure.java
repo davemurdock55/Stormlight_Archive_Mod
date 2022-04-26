@@ -9,36 +9,33 @@ import net.minecraft.entity.Entity;
 
 import net.mcreator.stormlightmod.item.InfusedHeliodorChipItem;
 import net.mcreator.stormlightmod.item.DunHeliodorChipItem;
-import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 
-@StormlightModModElements.ModElement.Tag
-public class DunHeliodorChipRightClickProcedureProcedure extends StormlightModModElements.ModElement {
-	public DunHeliodorChipRightClickProcedureProcedure(StormlightModModElements instance) {
-		super(instance, 251);
-	}
+public class DunHeliodorChipRightClickProcedureProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure DunHeliodorChipRightClickProcedure!");
-			return;
-		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure DunHeliodorChipRightClickProcedure!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency world for procedure DunHeliodorChipRightClickProcedure!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure DunHeliodorChipRightClickProcedure!");
+			return;
+		}
 		IWorld world = (IWorld) dependencies.get("world");
-		if ((world.getWorld().isRaining())) {
+		Entity entity = (Entity) dependencies.get("entity");
+		if (world.getWorldInfo().isRaining()) {
 			if (entity instanceof PlayerEntity) {
-				ItemStack _stktoremove = new ItemStack(DunHeliodorChipItem.block, (int) (1));
-				((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+				ItemStack _stktoremove = new ItemStack(DunHeliodorChipItem.block);
+				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
+						((PlayerEntity) entity).container.func_234641_j_());
 			}
 			if (entity instanceof PlayerEntity) {
-				ItemStack _setstack = new ItemStack(InfusedHeliodorChipItem.block, (int) (1));
+				ItemStack _setstack = new ItemStack(InfusedHeliodorChipItem.block);
 				_setstack.setCount((int) 1);
 				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
 			}

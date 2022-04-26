@@ -21,6 +21,7 @@ import java.util.List;
 public class DunRubyMarkItem extends StormlightModModElements.ModElement {
 	@ObjectHolder("stormlight_mod:dun_ruby_mark")
 	public static final Item block = null;
+
 	public DunRubyMarkItem(StormlightModModElements instance) {
 		super(instance, 50);
 	}
@@ -29,6 +30,7 @@ public class DunRubyMarkItem extends StormlightModModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64).rarity(Rarity.COMMON));

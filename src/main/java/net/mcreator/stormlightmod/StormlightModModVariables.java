@@ -16,8 +16,9 @@ import net.minecraftforge.common.capabilities.Capability;
 
 import net.minecraft.world.storage.WorldSavedData;
 import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.World;
 import net.minecraft.world.IWorld;
+import net.minecraft.world.IServerWorld;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Direction;
 import net.minecraft.network.PacketBuffer;
@@ -46,7 +47,7 @@ public class StormlightModModVariables {
 
 	@SubscribeEvent
 	public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
-		if (!event.getPlayer().world.isRemote) {
+		if (!event.getPlayer().world.isRemote()) {
 			WorldSavedData mapdata = MapVariables.get(event.getPlayer().world);
 			WorldSavedData worlddata = WorldVariables.get(event.getPlayer().world);
 			if (mapdata != null)
@@ -60,18 +61,20 @@ public class StormlightModModVariables {
 
 	@SubscribeEvent
 	public void onPlayerChangedDimension(PlayerEvent.PlayerChangedDimensionEvent event) {
-		if (!event.getPlayer().world.isRemote) {
+		if (!event.getPlayer().world.isRemote()) {
 			WorldSavedData worlddata = WorldVariables.get(event.getPlayer().world);
 			if (worlddata != null)
 				StormlightModMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) event.getPlayer()),
 						new WorldSavedDataSyncMessage(1, worlddata));
 		}
 	}
+
 	public static class WorldVariables extends WorldSavedData {
 		public static final String DATA_NAME = "stormlight_mod_worldvars";
 		public double bromeStormlightAmount = 6000.0;
 		public double markStormlightAmount = 3000.0;
 		public double chipStormlightAmount = 1500.0;
+
 		public WorldVariables() {
 			super(DATA_NAME);
 		}
@@ -97,14 +100,16 @@ public class StormlightModModVariables {
 
 		public void syncData(IWorld world) {
 			this.markDirty();
-			if (!world.getWorld().isRemote)
-				StormlightModMod.PACKET_HANDLER.send(PacketDistributor.DIMENSION.with(world.getWorld().dimension::getType),
+			if (world instanceof World && !world.isRemote())
+				StormlightModMod.PACKET_HANDLER.send(PacketDistributor.DIMENSION.with(((World) world)::getDimensionKey),
 						new WorldSavedDataSyncMessage(1, this));
 		}
+
 		static WorldVariables clientSide = new WorldVariables();
+
 		public static WorldVariables get(IWorld world) {
-			if (world.getWorld() instanceof ServerWorld) {
-				return ((ServerWorld) world.getWorld()).getSavedData().getOrCreate(WorldVariables::new, DATA_NAME);
+			if (world instanceof ServerWorld) {
+				return ((ServerWorld) world).getSavedData().getOrCreate(WorldVariables::new, DATA_NAME);
 			} else {
 				return clientSide;
 			}
@@ -113,6 +118,7 @@ public class StormlightModModVariables {
 
 	public static class MapVariables extends WorldSavedData {
 		public static final String DATA_NAME = "stormlight_mod_mapvars";
+
 		public MapVariables() {
 			super(DATA_NAME);
 		}
@@ -132,13 +138,16 @@ public class StormlightModModVariables {
 
 		public void syncData(IWorld world) {
 			this.markDirty();
-			if (!world.getWorld().isRemote)
+			if (world instanceof World && !world.isRemote())
 				StormlightModMod.PACKET_HANDLER.send(PacketDistributor.ALL.noArg(), new WorldSavedDataSyncMessage(0, this));
 		}
+
 		static MapVariables clientSide = new MapVariables();
+
 		public static MapVariables get(IWorld world) {
-			if (world.getWorld() instanceof ServerWorld) {
-				return world.getWorld().getServer().getWorld(DimensionType.OVERWORLD).getSavedData().getOrCreate(MapVariables::new, DATA_NAME);
+			if (world instanceof IServerWorld) {
+				return ((IServerWorld) world).getWorld().getServer().getWorld(World.OVERWORLD).getSavedData().getOrCreate(MapVariables::new,
+						DATA_NAME);
 			} else {
 				return clientSide;
 			}
@@ -148,6 +157,7 @@ public class StormlightModModVariables {
 	public static class WorldSavedDataSyncMessage {
 		public int type;
 		public WorldSavedData data;
+
 		public WorldSavedDataSyncMessage(PacketBuffer buffer) {
 			this.type = buffer.readInt();
 			this.data = this.type == 0 ? new MapVariables() : new WorldVariables();
@@ -177,15 +187,19 @@ public class StormlightModModVariables {
 			context.setPacketHandled(true);
 		}
 	}
+
 	@CapabilityInject(PlayerVariables.class)
 	public static Capability<PlayerVariables> PLAYER_VARIABLES_CAPABILITY = null;
+
 	@SubscribeEvent
 	public void onAttachCapabilities(AttachCapabilitiesEvent<Entity> event) {
 		if (event.getObject() instanceof PlayerEntity && !(event.getObject() instanceof FakePlayer))
 			event.addCapability(new ResourceLocation("stormlight_mod", "player_variables"), new PlayerVariablesProvider());
 	}
+
 	private static class PlayerVariablesProvider implements ICapabilitySerializable<INBT> {
 		private final LazyOptional<PlayerVariables> instance = LazyOptional.of(PLAYER_VARIABLES_CAPABILITY::getDefaultInstance);
+
 		@Override
 		public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
 			return cap == PLAYER_VARIABLES_CAPABILITY ? instance.cast() : LazyOptional.empty();
@@ -281,29 +295,31 @@ public class StormlightModModVariables {
 		public double radiant2Level = 0;
 		public boolean receivedSprenblade = false;
 		public double lastInfusionAmnt = 0;
+
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
 				StormlightModMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity),
 						new PlayerVariablesSyncMessage(this));
 		}
 	}
+
 	@SubscribeEvent
 	public void onPlayerLoggedInSyncPlayerVariables(PlayerEvent.PlayerLoggedInEvent event) {
-		if (!event.getPlayer().world.isRemote)
+		if (!event.getPlayer().world.isRemote())
 			((PlayerVariables) event.getPlayer().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()))
 					.syncPlayerVariables(event.getPlayer());
 	}
 
 	@SubscribeEvent
 	public void onPlayerRespawnedSyncPlayerVariables(PlayerEvent.PlayerRespawnEvent event) {
-		if (!event.getPlayer().world.isRemote)
+		if (!event.getPlayer().world.isRemote())
 			((PlayerVariables) event.getPlayer().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()))
 					.syncPlayerVariables(event.getPlayer());
 	}
 
 	@SubscribeEvent
 	public void onPlayerChangedDimensionSyncPlayerVariables(PlayerEvent.PlayerChangedDimensionEvent event) {
-		if (!event.getPlayer().world.isRemote)
+		if (!event.getPlayer().world.isRemote())
 			((PlayerVariables) event.getPlayer().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()))
 					.syncPlayerVariables(event.getPlayer());
 	}
@@ -337,8 +353,10 @@ public class StormlightModModVariables {
 		if (!event.isWasDeath()) {
 		}
 	}
+
 	public static class PlayerVariablesSyncMessage {
 		public PlayerVariables data;
+
 		public PlayerVariablesSyncMessage(PacketBuffer buffer) {
 			this.data = new PlayerVariables();
 			new PlayerVariablesStorage().readNBT(null, this.data, null, buffer.readCompoundTag());

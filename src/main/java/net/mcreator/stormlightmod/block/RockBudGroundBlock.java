@@ -5,10 +5,10 @@ import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.common.IPlantable;
 
-import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
+import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
@@ -27,6 +27,7 @@ import java.util.Collections;
 public class RockBudGroundBlock extends StormlightModModElements.ModElement {
 	@ObjectHolder("stormlight_mod:rock_bud_ground")
 	public static final Block block = null;
+
 	public RockBudGroundBlock(StormlightModModElements instance) {
 		super(instance, 18);
 	}
@@ -37,11 +38,17 @@ public class RockBudGroundBlock extends StormlightModModElements.ModElement {
 		elements.items
 				.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.ORGANIC).sound(SoundType.GROUND).hardnessAndResistance(0.5f, 5f).lightValue(0).harvestLevel(1)
-					.harvestTool(ToolType.PICKAXE).slipperiness(0.7f));
+			super(Block.Properties.create(Material.ORGANIC).sound(SoundType.GROUND).hardnessAndResistance(0.5f, 5f).setLightLevel(s -> 0)
+					.harvestLevel(1).harvestTool(ToolType.PICKAXE).setRequiresTool().slipperiness(0.7f));
 			setRegistryName("rock_bud_ground");
+		}
+
+		@Override
+		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+			return 15;
 		}
 
 		@Override
@@ -54,7 +61,7 @@ public class RockBudGroundBlock extends StormlightModModElements.ModElement {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(ShatteredPlainRockBlock.block, (int) (1)));
+			return Collections.singletonList(new ItemStack(ShatteredPlainRockBlock.block));
 		}
 	}
 }

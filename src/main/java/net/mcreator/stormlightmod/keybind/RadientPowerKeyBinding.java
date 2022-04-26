@@ -22,15 +22,18 @@ import net.mcreator.stormlightmod.procedures.LashingProcedure;
 import net.mcreator.stormlightmod.StormlightModModElements;
 import net.mcreator.stormlightmod.StormlightModMod;
 
+import java.util.stream.Stream;
 import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @StormlightModModElements.ModElement.Tag
 public class RadientPowerKeyBinding extends StormlightModModElements.ModElement {
 	@OnlyIn(Dist.CLIENT)
 	private KeyBinding keys;
 	private long lastpress = 0;
+
 	public RadientPowerKeyBinding(StormlightModModElements instance) {
 		super(instance, 119);
 		elements.addNetworkMessage(KeyBindingPressedMessage.class, KeyBindingPressedMessage::buffer, KeyBindingPressedMessage::new,
@@ -40,7 +43,7 @@ public class RadientPowerKeyBinding extends StormlightModModElements.ModElement 
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
-		keys = new KeyBinding("key.mcreator.radient_power", GLFW.GLFW_KEY_R, "key.categories.misc");
+		keys = new KeyBinding("key.stormlight_mod.radient_power", GLFW.GLFW_KEY_R, "key.categories.misc");
 		ClientRegistry.registerKeyBinding(keys);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
@@ -60,8 +63,10 @@ public class RadientPowerKeyBinding extends StormlightModModElements.ModElement 
 			}
 		}
 	}
+
 	public static class KeyBindingPressedMessage {
 		int type, pressedms;
+
 		public KeyBindingPressedMessage(int type, int pressedms) {
 			this.type = type;
 			this.pressedms = pressedms;
@@ -85,6 +90,7 @@ public class RadientPowerKeyBinding extends StormlightModModElements.ModElement 
 			context.setPacketHandled(true);
 		}
 	}
+
 	private static void pressAction(PlayerEntity entity, int type, int pressedms) {
 		World world = entity.world;
 		double x = entity.getPosX();
@@ -94,11 +100,9 @@ public class RadientPowerKeyBinding extends StormlightModModElements.ModElement 
 		if (!world.isBlockLoaded(new BlockPos(x, y, z)))
 			return;
 		if (type == 1) {
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				LashingProcedure.executeProcedure($_dependencies);
-			}
+
+			LashingProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

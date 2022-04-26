@@ -9,36 +9,33 @@ import net.minecraft.entity.Entity;
 
 import net.mcreator.stormlightmod.item.InfusedSapphireMarkItem;
 import net.mcreator.stormlightmod.item.DunSapphireMarkItem;
-import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 
-@StormlightModModElements.ModElement.Tag
-public class DunSapphireMarkItemInInventoryTickProcedure extends StormlightModModElements.ModElement {
-	public DunSapphireMarkItemInInventoryTickProcedure(StormlightModModElements instance) {
-		super(instance, 113);
-	}
+public class DunSapphireMarkItemInInventoryTickProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure DunSapphireMarkItemInInventoryTick!");
-			return;
-		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure DunSapphireMarkItemInInventoryTick!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency world for procedure DunSapphireMarkItemInInventoryTick!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure DunSapphireMarkItemInInventoryTick!");
+			return;
+		}
 		IWorld world = (IWorld) dependencies.get("world");
-		if ((world.getWorld().isRaining())) {
+		Entity entity = (Entity) dependencies.get("entity");
+		if (world.getWorldInfo().isRaining()) {
 			if (entity instanceof PlayerEntity) {
-				ItemStack _stktoremove = new ItemStack(DunSapphireMarkItem.block, (int) (1));
-				((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+				ItemStack _stktoremove = new ItemStack(DunSapphireMarkItem.block);
+				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
+						((PlayerEntity) entity).container.func_234641_j_());
 			}
 			if (entity instanceof PlayerEntity) {
-				ItemStack _setstack = new ItemStack(InfusedSapphireMarkItem.block, (int) (1));
+				ItemStack _setstack = new ItemStack(InfusedSapphireMarkItem.block);
 				_setstack.setCount((int) 1);
 				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
 			}

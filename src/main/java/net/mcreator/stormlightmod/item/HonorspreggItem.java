@@ -20,13 +20,16 @@ import net.minecraft.block.BlockState;
 import net.mcreator.stormlightmod.procedures.HonorspreggRightClickedInAirProcedure;
 import net.mcreator.stormlightmod.StormlightModModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @StormlightModModElements.ModElement.Tag
 public class HonorspreggItem extends StormlightModModElements.ModElement {
 	@ObjectHolder("stormlight_mod:honorspregg")
 	public static final Item block = null;
+
 	public HonorspreggItem(StormlightModModElements instance) {
 		super(instance, 292);
 	}
@@ -35,6 +38,7 @@ public class HonorspreggItem extends StormlightModModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64).rarity(Rarity.COMMON));
@@ -63,15 +67,11 @@ public class HonorspreggItem extends StormlightModModElements.ModElement {
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				HonorspreggRightClickedInAirProcedure.executeProcedure($_dependencies);
-			}
+
+			HonorspreggRightClickedInAirProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return ar;
 		}
 
@@ -82,19 +82,16 @@ public class HonorspreggItem extends StormlightModModElements.ModElement {
 			BlockPos pos = context.getPos();
 			PlayerEntity entity = context.getPlayer();
 			Direction direction = context.getFace();
+			BlockState blockstate = world.getBlockState(pos);
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
 			ItemStack itemstack = context.getItem();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				HonorspreggRightClickedInAirProcedure.executeProcedure($_dependencies);
-			}
+
+			HonorspreggRightClickedInAirProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return retval;
 		}
 	}

@@ -12,33 +12,29 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
-import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 import java.util.Iterator;
 
-@StormlightModModElements.ModElement.Tag
-public class ShardplateBodyTickEventProcedure extends StormlightModModElements.ModElement {
-	public ShardplateBodyTickEventProcedure(StormlightModModElements instance) {
-		super(instance, 76);
-	}
+public class ShardplateBodyTickEventProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure ShardplateBodyTickEvent!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure ShardplateBodyTickEvent!");
 			return;
 		}
 		if (dependencies.get("itemstack") == null) {
 			if (!dependencies.containsKey("itemstack"))
-				System.err.println("Failed to load dependency itemstack for procedure ShardplateBodyTickEvent!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency itemstack for procedure ShardplateBodyTickEvent!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
-		((itemstack)).addEnchantment(Enchantments.PROTECTION, (int) 10);
-		((itemstack)).addEnchantment(Enchantments.UNBREAKING, (int) 10);
-		((itemstack)).addEnchantment(Enchantments.THORNS, (int) 10);
+		(itemstack).addEnchantment(Enchantments.PROTECTION, (int) 10);
+		(itemstack).addEnchantment(Enchantments.UNBREAKING, (int) 10);
+		(itemstack).addEnchantment(Enchantments.THORNS, (int) 10);
 		if (entity instanceof LivingEntity)
 			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 60, (int) 0, (true), (false)));
 		if (entity instanceof ServerPlayerEntity) {

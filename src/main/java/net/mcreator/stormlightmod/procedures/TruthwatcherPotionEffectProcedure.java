@@ -10,29 +10,25 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.stormlightmod.StormlightModModVariables;
-import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 
-@StormlightModModElements.ModElement.Tag
-public class TruthwatcherPotionEffectProcedure extends StormlightModModElements.ModElement {
-	public TruthwatcherPotionEffectProcedure(StormlightModModElements instance) {
-		super(instance, 190);
-	}
+public class TruthwatcherPotionEffectProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure TruthwatcherPotionEffect!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure TruthwatcherPotionEffect!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
+		if (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
 				? ((ServerPlayerEntity) entity).getAdvancements()
 						.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
 								.getAdvancement(new ResourceLocation("stormlight_mod:truthwatcherlevel_1")))
 						.isDone()
-				: false)) {
+				: false) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.INVISIBILITY,
 						(int) ((entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null)

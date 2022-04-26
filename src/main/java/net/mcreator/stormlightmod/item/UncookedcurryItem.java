@@ -22,6 +22,7 @@ import java.util.List;
 public class UncookedcurryItem extends StormlightModModElements.ModElement {
 	@ObjectHolder("stormlight_mod:uncookedcurry")
 	public static final Item block = null;
+
 	public UncookedcurryItem(StormlightModModElements instance) {
 		super(instance, 70);
 	}
@@ -30,10 +31,13 @@ public class UncookedcurryItem extends StormlightModModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new FoodItemCustom());
 	}
+
 	public static class FoodItemCustom extends Item {
 		public FoodItemCustom() {
 			super(new Item.Properties().group(ItemGroup.FOOD).maxStackSize(64).rarity(Rarity.COMMON)
-					.food((new Food.Builder()).hunger(2).saturation(0f).meat().build()));
+					.food((new Food.Builder()).hunger(2).saturation(0f)
+
+							.meat().build()));
 			setRegistryName("uncookedcurry");
 		}
 

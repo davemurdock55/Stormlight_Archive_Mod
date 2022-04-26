@@ -5,20 +5,16 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 
-@StormlightModModElements.ModElement.Tag
-public class CurryFoodEatenProcedure extends StormlightModModElements.ModElement {
-	public CurryFoodEatenProcedure(StormlightModModElements instance) {
-		super(instance, 5);
-	}
+public class CurryFoodEatenProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure CurryFoodEaten!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure CurryFoodEaten!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");

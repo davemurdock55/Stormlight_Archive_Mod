@@ -9,36 +9,33 @@ import net.minecraft.entity.Entity;
 
 import net.mcreator.stormlightmod.item.InfusedRubyChipItem;
 import net.mcreator.stormlightmod.item.DunRubyChipItem;
-import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 
-@StormlightModModElements.ModElement.Tag
-public class DunRubyChipRightClickedProcedure extends StormlightModModElements.ModElement {
-	public DunRubyChipRightClickedProcedure(StormlightModModElements instance) {
-		super(instance, 269);
-	}
+public class DunRubyChipRightClickedProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure DunRubyChipRightClicked!");
-			return;
-		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure DunRubyChipRightClicked!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency world for procedure DunRubyChipRightClicked!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure DunRubyChipRightClicked!");
+			return;
+		}
 		IWorld world = (IWorld) dependencies.get("world");
-		if ((world.getWorld().isRaining())) {
+		Entity entity = (Entity) dependencies.get("entity");
+		if (world.getWorldInfo().isRaining()) {
 			if (entity instanceof PlayerEntity) {
-				ItemStack _stktoremove = new ItemStack(DunRubyChipItem.block, (int) (1));
-				((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+				ItemStack _stktoremove = new ItemStack(DunRubyChipItem.block);
+				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
+						((PlayerEntity) entity).container.func_234641_j_());
 			}
 			if (entity instanceof PlayerEntity) {
-				ItemStack _setstack = new ItemStack(InfusedRubyChipItem.block, (int) (1));
+				ItemStack _setstack = new ItemStack(InfusedRubyChipItem.block);
 				_setstack.setCount((int) 1);
 				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
 			}

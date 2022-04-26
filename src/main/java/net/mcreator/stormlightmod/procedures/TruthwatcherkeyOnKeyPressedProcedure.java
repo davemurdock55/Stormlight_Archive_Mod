@@ -21,57 +21,53 @@ import net.mcreator.stormlightmod.gui.TruthwatchersprenspawningGui;
 import net.mcreator.stormlightmod.gui.SkybreakerGui;
 import net.mcreator.stormlightmod.gui.HssssssssGui;
 import net.mcreator.stormlightmod.StormlightModModVariables;
-import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 
 import io.netty.buffer.Unpooled;
 
-@StormlightModModElements.ModElement.Tag
-public class TruthwatcherkeyOnKeyPressedProcedure extends StormlightModModElements.ModElement {
-	public TruthwatcherkeyOnKeyPressedProcedure(StormlightModModElements instance) {
-		super(instance, 313);
-	}
+public class TruthwatcherkeyOnKeyPressedProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure TruthwatcherkeyOnKeyPressed!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				StormlightModMod.LOGGER.warn("Failed to load dependency world for procedure TruthwatcherkeyOnKeyPressed!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				System.err.println("Failed to load dependency x for procedure TruthwatcherkeyOnKeyPressed!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency x for procedure TruthwatcherkeyOnKeyPressed!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				System.err.println("Failed to load dependency y for procedure TruthwatcherkeyOnKeyPressed!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency y for procedure TruthwatcherkeyOnKeyPressed!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				System.err.println("Failed to load dependency z for procedure TruthwatcherkeyOnKeyPressed!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency z for procedure TruthwatcherkeyOnKeyPressed!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure TruthwatcherkeyOnKeyPressed!");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure TruthwatcherkeyOnKeyPressed!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if ((((entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new StormlightModModVariables.PlayerVariables())).bondAmount) <= 2)) {
-			if ((((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
+		Entity entity = (Entity) dependencies.get("entity");
+		if ((entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new StormlightModModVariables.PlayerVariables())).bondAmount <= 2) {
+			if (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
 					? ((ServerPlayerEntity) entity).getAdvancements()
 							.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
 									.getAdvancement(new ResourceLocation("stormlight_mod:makeabook")))
 							.isDone()
-					: false)) {
+					: false) {
 				{
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -91,12 +87,12 @@ public class TruthwatcherkeyOnKeyPressedProcedure extends StormlightModModElemen
 					}
 				}
 			}
-			if ((((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
+			if (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
 					? ((ServerPlayerEntity) entity).getAdvancements()
 							.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
 									.getAdvancement(new ResourceLocation("minecraft:adventure/voluntary_exile")))
 							.isDone()
-					: false)) {
+					: false) {
 				{
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -115,12 +111,12 @@ public class TruthwatcherkeyOnKeyPressedProcedure extends StormlightModModElemen
 					}
 				}
 			}
-			if ((((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
+			if (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
 					? ((ServerPlayerEntity) entity).getAdvancements()
 							.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
 									.getAdvancement(new ResourceLocation("minecraft:adventure/hero_of_the_village")))
 							.isDone()
-					: false)) {
+					: false) {
 				{
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {

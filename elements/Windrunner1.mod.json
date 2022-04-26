@@ -1,8 +1,7 @@
 {
-  "_fv": 13,
-  "_type": "potion",
+  "_fv": 24,
+  "_type": "potioneffect",
   "definition": {
-    "name": "Windrunner 1",
     "effectName": "Windrunner 1",
     "icon": "image.png",
     "color": {
@@ -12,7 +11,6 @@
     "isInstant": true,
     "isBad": false,
     "isBenefitical": false,
-    "registerPotionType": false,
     "renderStatusInInventory": true,
     "renderStatusInHUD": true,
     "onStarted": {

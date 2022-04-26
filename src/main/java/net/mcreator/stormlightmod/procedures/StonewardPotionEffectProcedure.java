@@ -9,38 +9,34 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.stormlightmod.potion.GravitationPotion;
+import net.mcreator.stormlightmod.potion.GravitationPotionEffect;
 import net.mcreator.stormlightmod.StormlightModModVariables;
-import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 
-@StormlightModModElements.ModElement.Tag
-public class StonewardPotionEffectProcedure extends StormlightModModElements.ModElement {
-	public StonewardPotionEffectProcedure(StormlightModModElements instance) {
-		super(instance, 194);
-	}
+public class StonewardPotionEffectProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure StonewardPotionEffect!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure StonewardPotionEffect!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
+		if (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
 				? ((ServerPlayerEntity) entity).getAdvancements()
 						.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
 								.getAdvancement(new ResourceLocation("stormlight_mod:windrunner")))
 						.isDone()
-				: false)) {
+				: false) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOW_FALLING,
 						(int) ((entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new StormlightModModVariables.PlayerVariables())).stormlightConsumedAmnt),
 						(int) 1));
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(GravitationPotion.potion,
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(GravitationPotionEffect.potion,
 						(int) ((entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new StormlightModModVariables.PlayerVariables())).stormlightConsumedAmnt),
 						(int) 1));

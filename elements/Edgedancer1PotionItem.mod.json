@@ -1,0 +1,21 @@
+{
+  "_fv": 24,
+  "_type": "potioneffect",
+  "definition": {
+    "potionName": "Edgedancer 1",
+    "splashName": "Splash Edgedancer 1",
+    "lingeringName": "Lingering Edgedancer 1",
+    "arrowName": "Arrow of Edgedancer 1",
+    "effects": [
+      {
+        "effect": {
+          "value": "CUSTOM:Edgedancer1"
+        },
+        "duration": 3600,
+        "amplifier": 0,
+        "ambient": false,
+        "showParticles": true
+      }
+    ]
+  }
+}

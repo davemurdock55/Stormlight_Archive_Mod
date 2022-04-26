@@ -21,14 +21,17 @@ import net.minecraft.block.BlockState;
 import net.mcreator.stormlightmod.procedures.InfusedRubyBroamRightClickedProcedure;
 import net.mcreator.stormlightmod.StormlightModModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @StormlightModModElements.ModElement.Tag
 public class InfusedRubyBroamItem extends StormlightModModElements.ModElement {
 	@ObjectHolder("stormlight_mod:infused_ruby_broam")
 	public static final Item block = null;
+
 	public InfusedRubyBroamItem(StormlightModModElements instance) {
 		super(instance, 244);
 	}
@@ -37,6 +40,7 @@ public class InfusedRubyBroamItem extends StormlightModModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64).rarity(Rarity.COMMON));
@@ -77,12 +81,10 @@ public class InfusedRubyBroamItem extends StormlightModModElements.ModElement {
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("world", world);
-				InfusedRubyBroamRightClickedProcedure.executeProcedure($_dependencies);
-			}
+
+			InfusedRubyBroamRightClickedProcedure
+					.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("entity", entity))
+							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return ar;
 		}
 	}

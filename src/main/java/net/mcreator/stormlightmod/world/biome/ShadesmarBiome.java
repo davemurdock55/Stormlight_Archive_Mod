@@ -1,212 +1,186 @@
 
 package net.mcreator.stormlightmod.world.biome;
 
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.RegistryEvent;
 
+import net.minecraft.world.gen.trunkplacer.StraightTrunkPlacer;
+import net.minecraft.world.gen.treedecorator.TrunkVineTreeDecorator;
+import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
+import net.minecraft.world.gen.treedecorator.LeaveVineTreeDecorator;
+import net.minecraft.world.gen.treedecorator.CocoaTreeDecorator;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
-import net.minecraft.world.gen.feature.structure.MineshaftStructure;
-import net.minecraft.world.gen.feature.structure.MineshaftConfig;
-import net.minecraft.world.gen.feature.IFeatureConfig;
+import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
+import net.minecraft.world.gen.feature.structure.StructureFeatures;
+import net.minecraft.world.gen.feature.TwoLayerFeature;
+import net.minecraft.world.gen.feature.Features;
+import net.minecraft.world.gen.feature.FeatureSpread;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
-import net.minecraft.world.gen.feature.AbstractTreeFeature;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
-import net.minecraft.world.gen.IWorldGenerationReader;
 import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
+import net.minecraft.world.biome.BiomeGenerationSettings;
+import net.minecraft.world.biome.BiomeAmbience;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.IWorldWriter;
-import net.minecraft.world.IWorld;
+import net.minecraft.world.ISeedReader;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.block.material.Material;
+import net.minecraft.state.BooleanProperty;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Block;
 
 import net.mcreator.stormlightmod.block.ShadesmarObsidianBlock;
 import net.mcreator.stormlightmod.StormlightModModElements;
 
 import java.util.Set;
 import java.util.Random;
+import java.util.List;
+
+import com.google.common.collect.ImmutableList;
 
 @StormlightModModElements.ModElement.Tag
 public class ShadesmarBiome extends StormlightModModElements.ModElement {
-	@ObjectHolder("stormlight_mod:shadesmar")
-	public static final CustomBiome biome = null;
+	public static Biome biome;
+
 	public ShadesmarBiome(StormlightModModElements instance) {
 		super(instance, 21);
+		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
 
-	@Override
-	public void initElements() {
-		elements.biomes.add(() -> new CustomBiome());
+	private static class BiomeRegisterHandler {
+		@SubscribeEvent
+		public void registerBiomes(RegistryEvent.Register<Biome> event) {
+			if (biome == null) {
+				BiomeAmbience effects = new BiomeAmbience.Builder().setFogColor(12638463).setWaterColor(-16382457).setWaterFogColor(-16382457)
+						.withSkyColor(7972607).withFoliageColor(-16382457).withGrassColor(-16382457).build();
+				BiomeGenerationSettings.Builder biomeGenerationSettings = new BiomeGenerationSettings.Builder().withSurfaceBuilder(
+						SurfaceBuilder.DEFAULT.func_242929_a(new SurfaceBuilderConfig(ShadesmarObsidianBlock.block.getDefaultState(),
+								ShadesmarObsidianBlock.block.getDefaultState(), ShadesmarObsidianBlock.block.getDefaultState())));
+				biomeGenerationSettings.withStructure(StructureFeatures.STRONGHOLD);
+				biomeGenerationSettings.withStructure(StructureFeatures.MINESHAFT);
+				biomeGenerationSettings.withStructure(StructureFeatures.PILLAGER_OUTPOST);
+				biomeGenerationSettings.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.TREE
+						.withConfiguration((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(Blocks.OBSIDIAN.getDefaultState()),
+								new SimpleBlockStateProvider(Blocks.PINK_STAINED_GLASS.getDefaultState()),
+								new BlobFoliagePlacer(FeatureSpread.func_242252_a(2), FeatureSpread.func_242252_a(0), 3),
+								new StraightTrunkPlacer(6, 2, 0), new TwoLayerFeature(1, 0, 1)))
+										.setDecorators(ImmutableList.of(CustomLeaveVineTreeDecorator.instance, CustomTrunkVineTreeDecorator.instance,
+												new CustomCocoaTreeDecorator()))
+										.build())
+						.withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT)
+						.withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(1, 0.1F, 1))));
+				DefaultBiomeFeatures.withCavesAndCanyons(biomeGenerationSettings);
+				DefaultBiomeFeatures.withMonsterRoom(biomeGenerationSettings);
+				DefaultBiomeFeatures.withOverworldOres(biomeGenerationSettings);
+				DefaultBiomeFeatures.withLavaAndWaterLakes(biomeGenerationSettings);
+				DefaultBiomeFeatures.withFrozenTopLayer(biomeGenerationSettings);
+				MobSpawnInfo.Builder mobSpawnInfo = new MobSpawnInfo.Builder().isValidSpawnBiomeForPlayer();
+				biome = new Biome.Builder().precipitation(Biome.RainType.NONE).category(Biome.Category.SWAMP).depth(0.1f).scale(0.2f).temperature(2f)
+						.downfall(0f).setEffects(effects).withMobSpawnSettings(mobSpawnInfo.copy())
+						.withGenerationSettings(biomeGenerationSettings.build()).build();
+				event.getRegistry().register(biome.setRegistryName("stormlight_mod:shadesmar"));
+			}
+		}
 	}
 
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 	}
-	static class CustomBiome extends Biome {
-		public CustomBiome() {
-			super(new Biome.Builder().downfall(0f).depth(0.1f).scale(0.2f).temperature(2f).precipitation(Biome.RainType.NONE)
-					.category(Biome.Category.SWAMP).waterColor(-16382457).waterFogColor(-16382457)
-					.surfaceBuilder(SurfaceBuilder.DEFAULT, new SurfaceBuilderConfig(ShadesmarObsidianBlock.block.getDefaultState(),
-							ShadesmarObsidianBlock.block.getDefaultState(), ShadesmarObsidianBlock.block.getDefaultState())));
-			setRegistryName("shadesmar");
-			DefaultBiomeFeatures.addCarvers(this);
-			DefaultBiomeFeatures.addMonsterRooms(this);
-			DefaultBiomeFeatures.addStructures(this);
-			DefaultBiomeFeatures.addOres(this);
-			DefaultBiomeFeatures.addLakes(this);
-			this.addStructure(Feature.STRONGHOLD.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
-			this.addStructure(Feature.MINESHAFT.withConfiguration(new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL)));
-			this.addStructure(Feature.PILLAGER_OUTPOST.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
-			addFeature(GenerationStage.Decoration.VEGETAL_DECORATION,
-					new CustomTreeFeature()
-							.withConfiguration((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(Blocks.OBSIDIAN.getDefaultState()),
-									new SimpleBlockStateProvider(Blocks.PINK_STAINED_GLASS.getDefaultState()))).baseHeight(6)
-											.setSapling((net.minecraftforge.common.IPlantable) Blocks.JUNGLE_SAPLING).build())
-							.withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.1F, 1))));
+
+	private static class CustomLeaveVineTreeDecorator extends LeaveVineTreeDecorator {
+		public static final CustomLeaveVineTreeDecorator instance = new CustomLeaveVineTreeDecorator();
+		public static com.mojang.serialization.Codec<LeaveVineTreeDecorator> codec;
+		public static TreeDecoratorType tdt;
+		static {
+			codec = com.mojang.serialization.Codec.unit(() -> instance);
+			tdt = new TreeDecoratorType(codec);
+			tdt.setRegistryName("shadesmar_lvtd");
+			ForgeRegistries.TREE_DECORATOR_TYPES.register(tdt);
 		}
 
-		@OnlyIn(Dist.CLIENT)
 		@Override
-		public int getGrassColor(double posX, double posZ) {
-			return -16382457;
+		protected TreeDecoratorType<?> func_230380_a_() {
+			return tdt;
 		}
 
-		@OnlyIn(Dist.CLIENT)
 		@Override
-		public int getFoliageColor() {
-			return -16382457;
+		protected void func_227424_a_(IWorldWriter ww, BlockPos bp, BooleanProperty bpr, Set<BlockPos> sbc, MutableBoundingBox mbb) {
+			this.func_227423_a_(ww, bp, Blocks.AIR.getDefaultState(), sbc, mbb);
 		}
 	}
 
-	static class CustomTreeFeature extends AbstractTreeFeature<BaseTreeFeatureConfig> {
-		CustomTreeFeature() {
-			super(BaseTreeFeatureConfig::deserialize);
+	private static class CustomTrunkVineTreeDecorator extends TrunkVineTreeDecorator {
+		public static final CustomTrunkVineTreeDecorator instance = new CustomTrunkVineTreeDecorator();
+		public static com.mojang.serialization.Codec<CustomTrunkVineTreeDecorator> codec;
+		public static TreeDecoratorType tdt;
+		static {
+			codec = com.mojang.serialization.Codec.unit(() -> instance);
+			tdt = new TreeDecoratorType(codec);
+			tdt.setRegistryName("shadesmar_tvtd");
+			ForgeRegistries.TREE_DECORATOR_TYPES.register(tdt);
 		}
 
 		@Override
-		protected boolean place(IWorldGenerationReader worldgen, Random rand, BlockPos position, Set<BlockPos> changedBlocks,
-				Set<BlockPos> changedBlocks2, MutableBoundingBox bbox, BaseTreeFeatureConfig conf) {
-			if (!(worldgen instanceof IWorld))
-				return false;
-			IWorld world = (IWorld) worldgen;
-			int height = rand.nextInt(5) + 6;
-			boolean spawnTree = true;
-			if (position.getY() >= 1 && position.getY() + height + 1 <= world.getHeight()) {
-				for (int j = position.getY(); j <= position.getY() + 1 + height; j++) {
-					int k = 1;
-					if (j == position.getY())
-						k = 0;
-					if (j >= position.getY() + height - 1)
-						k = 2;
-					for (int px = position.getX() - k; px <= position.getX() + k && spawnTree; px++) {
-						for (int pz = position.getZ() - k; pz <= position.getZ() + k && spawnTree; pz++) {
-							if (j >= 0 && j < world.getHeight()) {
-								if (!this.isReplaceable(world, new BlockPos(px, j, pz))) {
-									spawnTree = false;
-								}
-							} else {
-								spawnTree = false;
+		protected TreeDecoratorType<?> func_230380_a_() {
+			return tdt;
+		}
+
+		@Override
+		protected void func_227424_a_(IWorldWriter ww, BlockPos bp, BooleanProperty bpr, Set<BlockPos> sbc, MutableBoundingBox mbb) {
+			this.func_227423_a_(ww, bp, Blocks.AIR.getDefaultState(), sbc, mbb);
+		}
+	}
+
+	private static class CustomCocoaTreeDecorator extends CocoaTreeDecorator {
+		public static final CustomCocoaTreeDecorator instance = new CustomCocoaTreeDecorator();
+		public static com.mojang.serialization.Codec<CustomCocoaTreeDecorator> codec;
+		public static TreeDecoratorType tdt;
+		static {
+			codec = com.mojang.serialization.Codec.unit(() -> instance);
+			tdt = new TreeDecoratorType(codec);
+			tdt.setRegistryName("shadesmar_ctd");
+			ForgeRegistries.TREE_DECORATOR_TYPES.register(tdt);
+		}
+
+		public CustomCocoaTreeDecorator() {
+			super(0.2f);
+		}
+
+		@Override
+		protected TreeDecoratorType<?> func_230380_a_() {
+			return tdt;
+		}
+
+		@Override
+		public void func_225576_a_(ISeedReader p_225576_1_, Random p_225576_2_, List<BlockPos> p_225576_3_, List<BlockPos> p_225576_4_,
+				Set<BlockPos> p_225576_5_, MutableBoundingBox p_225576_6_) {
+			if (!(p_225576_2_.nextFloat() >= 0.2F)) {
+				int i = p_225576_3_.get(0).getY();
+				p_225576_3_.stream().filter((p_236867_1_) -> {
+					return p_236867_1_.getY() - i <= 2;
+				}).forEach((p_242865_5_) -> {
+					for (Direction direction : Direction.Plane.HORIZONTAL) {
+						if (p_225576_2_.nextFloat() <= 0.25F) {
+							Direction direction1 = direction.getOpposite();
+							BlockPos blockpos = p_242865_5_.add(direction1.getXOffset(), 0, direction1.getZOffset());
+							if (Feature.isAirAt(p_225576_1_, blockpos)) {
+								BlockState blockstate = Blocks.AIR.getDefaultState();
+								this.func_227423_a_(p_225576_1_, blockpos, blockstate, p_225576_5_, p_225576_6_);
 							}
 						}
 					}
-				}
-				if (!spawnTree) {
-					return false;
-				} else {
-					Block ground = world.getBlockState(position.add(0, -1, 0)).getBlock();
-					Block ground2 = world.getBlockState(position.add(0, -2, 0)).getBlock();
-					if (!((ground == ShadesmarObsidianBlock.block.getDefaultState().getBlock()
-							|| ground == ShadesmarObsidianBlock.block.getDefaultState().getBlock())
-							&& (ground2 == ShadesmarObsidianBlock.block.getDefaultState().getBlock()
-									|| ground2 == ShadesmarObsidianBlock.block.getDefaultState().getBlock())))
-						return false;
-					BlockState state = world.getBlockState(position.down());
-					if (position.getY() < world.getHeight() - height - 1) {
-						setTreeBlockState(changedBlocks, world, position.down(), ShadesmarObsidianBlock.block.getDefaultState(), bbox);
-						for (int genh = position.getY() - 3 + height; genh <= position.getY() + height; genh++) {
-							int i4 = genh - (position.getY() + height);
-							int j1 = (int) (1 - i4 * 0.5);
-							for (int k1 = position.getX() - j1; k1 <= position.getX() + j1; ++k1) {
-								for (int i2 = position.getZ() - j1; i2 <= position.getZ() + j1; ++i2) {
-									int j2 = i2 - position.getZ();
-									if (Math.abs(position.getX()) != j1 || Math.abs(j2) != j1 || rand.nextInt(2) != 0 && i4 != 0) {
-										BlockPos blockpos = new BlockPos(k1, genh, i2);
-										state = world.getBlockState(blockpos);
-										if (state.getBlock().isAir(state, world, blockpos) || state.getMaterial().blocksMovement()
-												|| state.isIn(BlockTags.LEAVES) || state.getBlock() == Blocks.AIR.getDefaultState().getBlock()
-												|| state.getBlock() == Blocks.PINK_STAINED_GLASS.getDefaultState().getBlock()) {
-											setTreeBlockState(changedBlocks, world, blockpos, Blocks.PINK_STAINED_GLASS.getDefaultState(), bbox);
-										}
-									}
-								}
-							}
-						}
-						for (int genh = 0; genh < height; genh++) {
-							BlockPos genhPos = position.up(genh);
-							state = world.getBlockState(genhPos);
-							setTreeBlockState(changedBlocks, world, genhPos, Blocks.OBSIDIAN.getDefaultState(), bbox);
-							if (state.getBlock().isAir(state, world, genhPos) || state.getMaterial().blocksMovement() || state.isIn(BlockTags.LEAVES)
-									|| state.getBlock() == Blocks.AIR.getDefaultState().getBlock()
-									|| state.getBlock() == Blocks.PINK_STAINED_GLASS.getDefaultState().getBlock()) {
-							}
-						}
-						if (rand.nextInt(4) == 0 && height > 5) {
-							for (int hlevel = 0; hlevel < 2; hlevel++) {
-								for (Direction Direction : Direction.Plane.HORIZONTAL) {
-									if (rand.nextInt(4 - hlevel) == 0) {
-										Direction dir = Direction.getOpposite();
-										setTreeBlockState(changedBlocks, world, position.add(dir.getXOffset(), height - 5 + hlevel, dir.getZOffset()),
-												Blocks.AIR.getDefaultState(), bbox);
-									}
-								}
-							}
-						}
-						return true;
-					} else {
-						return false;
-					}
-				}
-			} else {
-				return false;
+				});
 			}
-		}
-
-		private void addVines(IWorld world, BlockPos pos, Set<BlockPos> changedBlocks, MutableBoundingBox bbox) {
-			setTreeBlockState(changedBlocks, world, pos, Blocks.AIR.getDefaultState(), bbox);
-			int i = 5;
-			for (BlockPos blockpos = pos.down(); world.isAirBlock(blockpos) && i > 0; --i) {
-				setTreeBlockState(changedBlocks, world, blockpos, Blocks.AIR.getDefaultState(), bbox);
-				blockpos = blockpos.down();
-			}
-		}
-
-		private boolean canGrowInto(Block blockType) {
-			return blockType.getDefaultState().getMaterial() == Material.AIR || blockType == Blocks.OBSIDIAN.getDefaultState().getBlock()
-					|| blockType == Blocks.PINK_STAINED_GLASS.getDefaultState().getBlock()
-					|| blockType == ShadesmarObsidianBlock.block.getDefaultState().getBlock()
-					|| blockType == ShadesmarObsidianBlock.block.getDefaultState().getBlock();
-		}
-
-		private boolean isReplaceable(IWorld world, BlockPos pos) {
-			BlockState state = world.getBlockState(pos);
-			return state.getBlock().isAir(state, world, pos) || canGrowInto(state.getBlock()) || !state.getMaterial().blocksMovement();
-		}
-
-		private void setTreeBlockState(Set<BlockPos> changedBlocks, IWorldWriter world, BlockPos pos, BlockState state, MutableBoundingBox mbb) {
-			super.func_227217_a_(world, pos, state, mbb);
-			changedBlocks.add(pos.toImmutable());
 		}
 	}
 }

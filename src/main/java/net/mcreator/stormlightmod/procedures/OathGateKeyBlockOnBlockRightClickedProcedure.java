@@ -17,52 +17,46 @@ import net.minecraft.entity.Entity;
 
 import net.mcreator.stormlightmod.item.SprenbladeItem;
 import net.mcreator.stormlightmod.gui.OathGateGui;
-import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 
 import io.netty.buffer.Unpooled;
 
-@StormlightModModElements.ModElement.Tag
-public class OathGateKeyBlockOnBlockRightClickedProcedure extends StormlightModModElements.ModElement {
-	public OathGateKeyBlockOnBlockRightClickedProcedure(StormlightModModElements instance) {
-		super(instance, 377);
-	}
+public class OathGateKeyBlockOnBlockRightClickedProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure OathGateKeyBlockOnBlockRightClicked!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				StormlightModMod.LOGGER.warn("Failed to load dependency world for procedure OathGateKeyBlockOnBlockRightClicked!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				System.err.println("Failed to load dependency x for procedure OathGateKeyBlockOnBlockRightClicked!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency x for procedure OathGateKeyBlockOnBlockRightClicked!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				System.err.println("Failed to load dependency y for procedure OathGateKeyBlockOnBlockRightClicked!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency y for procedure OathGateKeyBlockOnBlockRightClicked!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				System.err.println("Failed to load dependency z for procedure OathGateKeyBlockOnBlockRightClicked!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency z for procedure OathGateKeyBlockOnBlockRightClicked!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure OathGateKeyBlockOnBlockRightClicked!");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure OathGateKeyBlockOnBlockRightClicked!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if (((entity instanceof PlayerEntity)
-				? ((PlayerEntity) entity).inventory.hasItemStack(new ItemStack(SprenbladeItem.block, (int) (1)))
-				: false)) {
+		Entity entity = (Entity) dependencies.get("entity");
+		if ((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).inventory.hasItemStack(new ItemStack(SprenbladeItem.block)) : false) {
 			{
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {

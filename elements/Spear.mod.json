@@ -1,5 +1,5 @@
 {
-  "_fv": 13,
+  "_fv": 24,
   "_type": "tool",
   "definition": {
     "renderType": 0,
@@ -26,6 +26,7 @@
         "value": "Items.IRON_INGOT"
       }
     ],
+    "immuneToFire": false,
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "onRightClickedInAir": {

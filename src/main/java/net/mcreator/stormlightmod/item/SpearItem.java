@@ -21,14 +21,17 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.mcreator.stormlightmod.procedures.SpearRightClickedInAirProcedure;
 import net.mcreator.stormlightmod.StormlightModModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @StormlightModModElements.ModElement.Tag
 public class SpearItem extends StormlightModModElements.ModElement {
 	@ObjectHolder("stormlight_mod:spear")
 	public static final Item block = null;
+
 	public SpearItem(StormlightModModElements instance) {
 		super(instance, 78);
 	}
@@ -57,7 +60,7 @@ public class SpearItem extends StormlightModModElements.ModElement {
 			}
 
 			public Ingredient getRepairMaterial() {
-				return Ingredient.fromStacks(new ItemStack(Items.IRON_INGOT, (int) (1)));
+				return Ingredient.fromStacks(new ItemStack(Items.IRON_INGOT));
 			}
 		}, 3, -2f, new Item.Properties().group(ItemGroup.COMBAT)) {
 			@Override
@@ -73,12 +76,9 @@ public class SpearItem extends StormlightModModElements.ModElement {
 				double x = entity.getPosX();
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("entity", entity);
-					$_dependencies.put("world", world);
-					SpearRightClickedInAirProcedure.executeProcedure($_dependencies);
-				}
+
+				SpearRightClickedInAirProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 		}.setRegistryName("spear"));

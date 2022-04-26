@@ -6,10 +6,11 @@ import net.minecraftforge.common.ToolType;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
-import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
@@ -29,6 +30,7 @@ import java.util.Collections;
 public class ShadesmarObsidianBlock extends StormlightModModElements.ModElement {
 	@ObjectHolder("stormlight_mod:shadesmar_obsidian")
 	public static final Block block = null;
+
 	public ShadesmarObsidianBlock(StormlightModModElements instance) {
 		super(instance, 21);
 	}
@@ -39,10 +41,11 @@ public class ShadesmarObsidianBlock extends StormlightModModElements.ModElement 
 		elements.items
 				.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.ORGANIC).sound(SoundType.GLASS).hardnessAndResistance(3f, 20f).lightValue(0).harvestLevel(2)
-					.harvestTool(ToolType.PICKAXE).slipperiness(0.8f));
+			super(Block.Properties.create(Material.ORGANIC).sound(SoundType.GLASS).hardnessAndResistance(3f, 20f).setLightLevel(s -> 0)
+					.harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().slipperiness(0.8f));
 			setRegistryName("shadesmar_obsidian");
 		}
 
@@ -51,6 +54,11 @@ public class ShadesmarObsidianBlock extends StormlightModModElements.ModElement 
 		public void addInformation(ItemStack itemstack, IBlockReader world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
 			list.add(new StringTextComponent("The ground in Shadesmar is made of this glassy substance"));
+		}
+
+		@Override
+		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+			return 15;
 		}
 
 		@Override

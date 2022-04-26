@@ -9,32 +9,28 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
-import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 import java.util.Iterator;
 
-@StormlightModModElements.ModElement.Tag
-public class ShardplateHelmetTickEventProcedure extends StormlightModModElements.ModElement {
-	public ShardplateHelmetTickEventProcedure(StormlightModModElements instance) {
-		super(instance, 77);
-	}
+public class ShardplateHelmetTickEventProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure ShardplateHelmetTickEvent!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure ShardplateHelmetTickEvent!");
 			return;
 		}
 		if (dependencies.get("itemstack") == null) {
 			if (!dependencies.containsKey("itemstack"))
-				System.err.println("Failed to load dependency itemstack for procedure ShardplateHelmetTickEvent!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency itemstack for procedure ShardplateHelmetTickEvent!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
-		((itemstack)).addEnchantment(Enchantments.PROTECTION, (int) 10);
-		((itemstack)).addEnchantment(Enchantments.UNBREAKING, (int) 10);
+		(itemstack).addEnchantment(Enchantments.PROTECTION, (int) 10);
+		(itemstack).addEnchantment(Enchantments.UNBREAKING, (int) 10);
 		if (entity instanceof ServerPlayerEntity) {
 			Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
 					.getAdvancement(new ResourceLocation("stormlight_mod:becominga_shardbearer"));

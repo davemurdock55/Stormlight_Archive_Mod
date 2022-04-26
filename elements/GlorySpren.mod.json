@@ -1,5 +1,5 @@
 {
-  "_fv": 13,
+  "_fv": 24,
   "_type": "particle",
   "definition": {
     "texture": "defaultsphere.png",
@@ -12,6 +12,8 @@
     "gravity": -0.30000000000000004,
     "maxAge": 7,
     "maxAgeDiff": 0,
+    "angularVelocity": 0.0,
+    "angularAcceleration": 0.0,
     "canCollide": true,
     "alwaysShow": true,
     "renderType": "LIT"

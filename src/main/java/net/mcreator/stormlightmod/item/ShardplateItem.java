@@ -24,8 +24,10 @@ import net.mcreator.stormlightmod.procedures.ShardplateBootsTickEventProcedure;
 import net.mcreator.stormlightmod.procedures.ShardplateBodyTickEventProcedure;
 import net.mcreator.stormlightmod.StormlightModModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @StormlightModModElements.ModElement.Tag
 public class ShardplateItem extends StormlightModModElements.ModElement {
@@ -37,6 +39,7 @@ public class ShardplateItem extends StormlightModModElements.ModElement {
 	public static final Item legs = null;
 	@ObjectHolder("stormlight_mod:shardplate_boots")
 	public static final Item boots = null;
+
 	public ShardplateItem(StormlightModModElements instance) {
 		super(instance, 9);
 	}
@@ -44,33 +47,45 @@ public class ShardplateItem extends StormlightModModElements.ModElement {
 	@Override
 	public void initElements() {
 		IArmorMaterial armormaterial = new IArmorMaterial() {
+			@Override
 			public int getDurability(EquipmentSlotType slot) {
 				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 25;
 			}
 
+			@Override
 			public int getDamageReductionAmount(EquipmentSlotType slot) {
 				return new int[]{20, 17, 20, 17}[slot.getIndex()];
 			}
 
+			@Override
 			public int getEnchantability() {
 				return 10;
 			}
 
+			@Override
 			public net.minecraft.util.SoundEvent getSoundEvent() {
 				return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.place"));
 			}
 
+			@Override
 			public Ingredient getRepairMaterial() {
 				return Ingredient.EMPTY;
 			}
 
 			@OnlyIn(Dist.CLIENT)
+			@Override
 			public String getName() {
 				return "shardplate";
 			}
 
+			@Override
 			public float getToughness() {
 				return 5f;
+			}
+
+			@Override
+			public float getKnockbackResistance() {
+				return 0f;
 			}
 		};
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)) {
@@ -85,12 +100,10 @@ public class ShardplateItem extends StormlightModModElements.ModElement {
 				double x = entity.getPosX();
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("entity", entity);
-					$_dependencies.put("itemstack", itemstack);
-					ShardplateHelmetTickEventProcedure.executeProcedure($_dependencies);
-				}
+
+				ShardplateHelmetTickEventProcedure.executeProcedure(
+						Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("shardplate_helmet"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)) {
@@ -104,12 +117,10 @@ public class ShardplateItem extends StormlightModModElements.ModElement {
 				double x = entity.getPosX();
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("entity", entity);
-					$_dependencies.put("itemstack", itemstack);
-					ShardplateBodyTickEventProcedure.executeProcedure($_dependencies);
-				}
+
+				ShardplateBodyTickEventProcedure.executeProcedure(
+						Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("shardplate_chestplate"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)) {
@@ -123,12 +134,10 @@ public class ShardplateItem extends StormlightModModElements.ModElement {
 				double x = entity.getPosX();
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("entity", entity);
-					$_dependencies.put("itemstack", itemstack);
-					ShardplateLeggingsTickEventProcedure.executeProcedure($_dependencies);
-				}
+
+				ShardplateLeggingsTickEventProcedure.executeProcedure(
+						Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("shardplate_leggings"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)) {
@@ -142,13 +151,12 @@ public class ShardplateItem extends StormlightModModElements.ModElement {
 				double x = entity.getPosX();
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("entity", entity);
-					$_dependencies.put("itemstack", itemstack);
-					ShardplateBootsTickEventProcedure.executeProcedure($_dependencies);
-				}
+
+				ShardplateBootsTickEventProcedure.executeProcedure(
+						Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("shardplate_boots"));
 	}
+
 }

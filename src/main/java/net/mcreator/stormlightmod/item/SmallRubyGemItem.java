@@ -15,6 +15,7 @@ import net.mcreator.stormlightmod.StormlightModModElements;
 public class SmallRubyGemItem extends StormlightModModElements.ModElement {
 	@ObjectHolder("stormlight_mod:small_ruby_gem")
 	public static final Item block = null;
+
 	public SmallRubyGemItem(StormlightModModElements instance) {
 		super(instance, 332);
 	}
@@ -23,6 +24,7 @@ public class SmallRubyGemItem extends StormlightModModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64).rarity(Rarity.COMMON));

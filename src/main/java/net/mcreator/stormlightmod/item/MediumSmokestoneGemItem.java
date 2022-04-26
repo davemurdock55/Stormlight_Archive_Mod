@@ -15,6 +15,7 @@ import net.mcreator.stormlightmod.StormlightModModElements;
 public class MediumSmokestoneGemItem extends StormlightModModElements.ModElement {
 	@ObjectHolder("stormlight_mod:medium_smokestone_gem")
 	public static final Item block = null;
+
 	public MediumSmokestoneGemItem(StormlightModModElements instance) {
 		super(instance, 256);
 	}
@@ -23,6 +24,7 @@ public class MediumSmokestoneGemItem extends StormlightModModElements.ModElement
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64).rarity(Rarity.COMMON));

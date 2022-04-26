@@ -7,21 +7,17 @@ import net.minecraft.entity.Entity;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
-import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
 import java.util.Map;
 import java.util.Iterator;
 
-@StormlightModModElements.ModElement.Tag
-public class InfusedSphereInInventoryProcedure extends StormlightModModElements.ModElement {
-	public InfusedSphereInInventoryProcedure(StormlightModModElements instance) {
-		super(instance, 169);
-	}
+public class InfusedSphereInInventoryProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure InfusedSphereInInventory!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure InfusedSphereInInventory!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");

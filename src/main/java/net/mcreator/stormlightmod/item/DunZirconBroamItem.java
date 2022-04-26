@@ -21,14 +21,17 @@ import net.mcreator.stormlightmod.procedures.DunZirconBromeRightClickedInAirProc
 import net.mcreator.stormlightmod.procedures.DunZirconBromeItemInInventoryTickProcedure;
 import net.mcreator.stormlightmod.StormlightModModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @StormlightModModElements.ModElement.Tag
 public class DunZirconBroamItem extends StormlightModModElements.ModElement {
 	@ObjectHolder("stormlight_mod:dun_zircon_broam")
 	public static final Item block = null;
+
 	public DunZirconBroamItem(StormlightModModElements instance) {
 		super(instance, 209);
 	}
@@ -37,6 +40,7 @@ public class DunZirconBroamItem extends StormlightModModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64).rarity(Rarity.COMMON));
@@ -72,11 +76,9 @@ public class DunZirconBroamItem extends StormlightModModElements.ModElement {
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				DunZirconBromeRightClickedInAirProcedure.executeProcedure($_dependencies);
-			}
+
+			DunZirconBromeRightClickedInAirProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return ar;
 		}
 
@@ -86,12 +88,10 @@ public class DunZirconBroamItem extends StormlightModModElements.ModElement {
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("world", world);
-				DunZirconBromeItemInInventoryTickProcedure.executeProcedure($_dependencies);
-			}
+
+			DunZirconBromeItemInInventoryTickProcedure
+					.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("entity", entity))
+							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

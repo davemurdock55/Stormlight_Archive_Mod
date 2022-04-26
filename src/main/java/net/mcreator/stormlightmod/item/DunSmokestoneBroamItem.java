@@ -21,6 +21,7 @@ import java.util.List;
 public class DunSmokestoneBroamItem extends StormlightModModElements.ModElement {
 	@ObjectHolder("stormlight_mod:dun_smokestone_broam")
 	public static final Item block = null;
+
 	public DunSmokestoneBroamItem(StormlightModModElements instance) {
 		super(instance, 203);
 	}
@@ -29,6 +30,7 @@ public class DunSmokestoneBroamItem extends StormlightModModElements.ModElement 
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64).rarity(Rarity.COMMON));

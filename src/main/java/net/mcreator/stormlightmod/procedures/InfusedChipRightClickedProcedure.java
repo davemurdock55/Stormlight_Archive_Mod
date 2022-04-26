@@ -12,59 +12,55 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.stormlightmod.StormlightModModVariables;
-import net.mcreator.stormlightmod.StormlightModModElements;
+import net.mcreator.stormlightmod.StormlightModMod;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
-@StormlightModModElements.ModElement.Tag
-public class InfusedChipRightClickedProcedure extends StormlightModModElements.ModElement {
-	public InfusedChipRightClickedProcedure(StormlightModModElements instance) {
-		super(instance, 198);
-	}
+public class InfusedChipRightClickedProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure InfusedChipRightClicked!");
-			return;
-		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure InfusedChipRightClicked!");
+				StormlightModMod.LOGGER.warn("Failed to load dependency world for procedure InfusedChipRightClicked!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				StormlightModMod.LOGGER.warn("Failed to load dependency entity for procedure InfusedChipRightClicked!");
+			return;
+		}
 		IWorld world = (IWorld) dependencies.get("world");
-		if ((((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
+		Entity entity = (Entity) dependencies.get("entity");
+		if (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
 				? ((ServerPlayerEntity) entity).getAdvancements()
 						.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
 								.getAdvancement(new ResourceLocation("stormlight_mod:radiant")))
 						.isDone()
-				: false)) {
+				: false) {
 			{
-				double _setval = (double) (StormlightModModVariables.WorldVariables.get(world).chipStormlightAmount);
+				double _setval = StormlightModModVariables.WorldVariables.get(world).chipStormlightAmount;
 				entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.stormlightConsumedAmnt = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			{
-				double _setval = (double) (StormlightModModVariables.WorldVariables.get(world).chipStormlightAmount);
+				double _setval = StormlightModModVariables.WorldVariables.get(world).chipStormlightAmount;
 				entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.lastInfusionAmnt = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				UseRadientPowersProcedure.executeProcedure($_dependencies);
-			}
+			UseRadientPowersProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			if (entity instanceof PlayerEntity) {
 				ItemStack _stktoremove = ((entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new StormlightModModVariables.PlayerVariables())).sphereTypeInfused);
-				((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
+						((PlayerEntity) entity).container.func_234641_j_());
 			}
 			if (entity instanceof PlayerEntity) {
 				ItemStack _setstack = ((entity.getCapability(StormlightModModVariables.PLAYER_VARIABLES_CAPABILITY, null)

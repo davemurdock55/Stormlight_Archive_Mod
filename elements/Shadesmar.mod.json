@@ -1,5 +1,5 @@
 {
-  "_fv": 13,
+  "_fv": 24,
   "_type": "biome",
   "definition": {
     "name": "Shadesmar",
@@ -8,22 +8,6 @@
     },
     "undergroundBlock": {
       "value": "CUSTOM:ShadesmarObsidian"
-    },
-    "treeType": 1,
-    "vanillaTreeType": "Default",
-    "minHeight": 6,
-    "spawnVines": false,
-    "treeVines": {
-      "value": "Blocks.AIR"
-    },
-    "treeStem": {
-      "value": "Blocks.OBSIDIAN"
-    },
-    "treeBranch": {
-      "value": "Blocks.STAINED_GLASS#6"
-    },
-    "treeFruits": {
-      "value": "Blocks.AIR"
     },
     "grassColor": {
       "value": -16382457,
@@ -41,45 +25,73 @@
       "value": -16382457,
       "falpha": 0.0
     },
-    "treesPerChunk": 1,
+    "moodSoundDelay": 0,
+    "spawnParticles": false,
+    "particlesProbability": 0.0,
+    "biomeCategory": "SWAMP",
+    "parent": {
+      "value": "No parent"
+    },
+    "rainingPossibility": 0.0,
+    "temperature": 2.0,
+    "baseHeight": 0.1,
+    "heightVariation": 0.2,
+    "biomeType": "DESERT",
+    "spawnBiome": false,
+    "biomeWeight": 200,
+    "biomeDictionaryTypes": [],
     "grassPerChunk": 0,
     "seagrassPerChunk": 0,
     "flowersPerChunk": 0,
     "mushroomsPerChunk": 0,
     "bigMushroomsChunk": 0,
-    "sandPathcesPerChunk": 0,
+    "sandPatchesPerChunk": 0,
     "gravelPatchesPerChunk": 0,
     "reedsPerChunk": 0,
     "cactiPerChunk": 0,
-    "rainingPossibility": 0.0,
-    "temperature": 2.0,
-    "baseHeight": 0.1,
-    "heightVariation": 0.2,
-    "spawnBiome": false,
-    "biomeWeight": 200,
-    "biomeType": "DESERT",
-    "biomeCategory": "SWAMP",
-    "parent": {
-      "value": "No parent"
+    "treesPerChunk": 1,
+    "vanillaTreeType": "Default",
+    "treeType": 1,
+    "minHeight": 6,
+    "treeStem": {
+      "value": "Blocks.OBSIDIAN"
+    },
+    "treeBranch": {
+      "value": "Blocks.STAINED_GLASS#6"
+    },
+    "treeVines": {
+      "value": "Blocks.AIR"
+    },
+    "treeFruits": {
+      "value": "Blocks.AIR"
     },
     "spawnStronghold": true,
     "spawnMineshaft": true,
+    "spawnMineshaftMesa": false,
     "spawnPillagerOutpost": true,
     "villageType": "none",
     "spawnWoodlandMansion": false,
     "spawnJungleTemple": false,
     "spawnDesertPyramid": false,
+    "spawnSwampHut": false,
     "spawnIgloo": false,
     "spawnOceanMonument": false,
     "spawnShipwreck": false,
+    "spawnShipwreckBeached": false,
+    "spawnBuriedTreasure": false,
     "oceanRuinType": "NONE",
-    "biomeDictionaryTypes": [],
+    "spawnNetherBridge": false,
+    "spawnNetherFossil": false,
+    "spawnBastionRemnant": false,
+    "spawnEndCity": false,
+    "spawnRuinedPortal": "NONE",
     "defaultFeatures": [
       "Caves",
       "MonsterRooms",
       "Structures",
       "Ores",
-      "Lakes"
+      "Lakes",
+      "FrozenTopLayer"
     ],
     "spawnEntries": []
   }

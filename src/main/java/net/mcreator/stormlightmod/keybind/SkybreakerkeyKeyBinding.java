@@ -22,14 +22,17 @@ import net.mcreator.stormlightmod.procedures.SkybreakerkeyOnKeyPressedProcedure;
 import net.mcreator.stormlightmod.StormlightModModElements;
 import net.mcreator.stormlightmod.StormlightModMod;
 
+import java.util.stream.Stream;
 import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @StormlightModModElements.ModElement.Tag
 public class SkybreakerkeyKeyBinding extends StormlightModModElements.ModElement {
 	@OnlyIn(Dist.CLIENT)
 	private KeyBinding keys;
+
 	public SkybreakerkeyKeyBinding(StormlightModModElements instance) {
 		super(instance, 307);
 		elements.addNetworkMessage(KeyBindingPressedMessage.class, KeyBindingPressedMessage::buffer, KeyBindingPressedMessage::new,
@@ -39,7 +42,7 @@ public class SkybreakerkeyKeyBinding extends StormlightModModElements.ModElement
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
-		keys = new KeyBinding("key.mcreator.skybreakerkey", GLFW.GLFW_KEY_X, "key.categories.misc");
+		keys = new KeyBinding("key.stormlight_mod.skybreakerkey", GLFW.GLFW_KEY_X, "key.categories.misc");
 		ClientRegistry.registerKeyBinding(keys);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
@@ -56,8 +59,10 @@ public class SkybreakerkeyKeyBinding extends StormlightModModElements.ModElement
 			}
 		}
 	}
+
 	public static class KeyBindingPressedMessage {
 		int type, pressedms;
+
 		public KeyBindingPressedMessage(int type, int pressedms) {
 			this.type = type;
 			this.pressedms = pressedms;
@@ -81,6 +86,7 @@ public class SkybreakerkeyKeyBinding extends StormlightModModElements.ModElement
 			context.setPacketHandled(true);
 		}
 	}
+
 	private static void pressAction(PlayerEntity entity, int type, int pressedms) {
 		World world = entity.world;
 		double x = entity.getPosX();
@@ -90,15 +96,11 @@ public class SkybreakerkeyKeyBinding extends StormlightModModElements.ModElement
 		if (!world.isBlockLoaded(new BlockPos(x, y, z)))
 			return;
 		if (type == 0) {
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				SkybreakerkeyOnKeyPressedProcedure.executeProcedure($_dependencies);
-			}
+
+			SkybreakerkeyOnKeyPressedProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }
